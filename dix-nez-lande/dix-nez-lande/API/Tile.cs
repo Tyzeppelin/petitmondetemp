@@ -5,12 +5,8 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface Race
+    public interface Tile
     {
-        string name
-        {
-            get;
-            set;
-        }
+        Position positionTile { get; set; }
     }
 }

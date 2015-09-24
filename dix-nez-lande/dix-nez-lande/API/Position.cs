@@ -5,12 +5,7 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface Race
+    public interface Position
     {
-        string name
-        {
-            get;
-            set;
-        }
     }
 }
