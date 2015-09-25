@@ -5,9 +5,7 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface Tile
+    public interface Tank : Unit
     {
-        Position positionTile { get; set; }
-        List<Unit> units { get; set; }
     }
 }

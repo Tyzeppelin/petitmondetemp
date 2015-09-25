@@ -5,9 +5,8 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface Tile
+    public interface Wizard : Unit
     {
-        Position positionTile { get; set; }
-        List<Unit> units { get; set; }
+        int mag { get; set; }
     }
 }

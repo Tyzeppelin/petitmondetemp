@@ -39,9 +39,7 @@ namespace dix_nez_lande
         Race race { get; set; }
         Position positionUnit { get; set; }
 
-        void attack();
-
-        void defend();
+        void attack(Position p);
 
         bool isAlive();
 
