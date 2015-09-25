@@ -47,6 +47,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="API\Tile.cs" />
     <Compile Include="API\Unit.cs" />
+    <Compile Include="API\Range.cs" />
+    <Compile Include="API\Tank.cs" />
+    <Compile Include="API\Wizard.cs" />
+    <Compile Include="API\Warrior.cs" />
     <Compile Include="xsge.cs" />
   </ItemGroup>
   <ItemGroup>

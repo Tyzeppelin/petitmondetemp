@@ -8,6 +8,5 @@ namespace dix_nez_lande
     public interface Tile
     {
         Position positionTile { get; set; }
-        List<Unit> units { get; set; }
     }
 }
