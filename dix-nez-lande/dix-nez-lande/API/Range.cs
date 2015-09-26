@@ -5,7 +5,7 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface Range : Unit
+    public interface Range : Unit, UnitInterface
     {
     }
 }

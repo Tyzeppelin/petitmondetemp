@@ -5,7 +5,7 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface Warrior : Unit
+    public interface Warrior : Unit, UnitInterface
     {
     }
 }

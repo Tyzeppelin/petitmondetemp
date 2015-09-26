@@ -5,44 +5,155 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface Unit
+    public class Unit : UnitInterface
     {
-        int atk
+        public Unit(Race r, string s)
         {
-            get;
-            set;
+            name = s;
+            mov = 2;
+            if (r.getName() == "humain")
+            {
+                hp = 15;
+                atk = 6;
+                def = 3;
+                dis = 1;
+            }
+            else
+            {
+                if (r.getName() == "elfe")
+                {
+                    hp = 12;
+                    atk = 4;
+                    def = 3;
+                    dis = 2;
+                }
+                else
+                {
+                    hp = 17;
+                    atk = 5;
+                    def = 2;
+                    dis = 1;
+                }
+            }
         }
 
-        int def
+        public int atk
         {
-            get;
-            set;
+            get
+            {
+                return atk;
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        int hp
+        public int def
         {
-            get;
-            set;
+            get
+            {
+                return def;
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        int mov
+        public int dis
         {
-            get;
-            set;
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        String name
+        public int hp
         {
-            get;
-            set;
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
-        Race race { get; set; }
-        Position positionUnit { get; set; }
 
-        void attack(Position p);
+        public int mov
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
 
-        bool isAlive();
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
 
-        void move();
+        public string name
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public Position positionUnit
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public Race race
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public void attack(Position p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool isAlive()
+        {
+            return hp == 0;
+        }
+
+        public void move(Position p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -24,5 +24,6 @@ namespace dix_nez_lande
             get;
             set;
         }
+        string getName();
     }
 }

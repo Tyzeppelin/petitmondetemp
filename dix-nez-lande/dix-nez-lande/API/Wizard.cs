@@ -5,7 +5,7 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface Wizard : Unit
+    public interface Wizard : Unit, UnitInterface
     {
         int mag { get; set; }
     }
