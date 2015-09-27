@@ -5,13 +5,18 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface Race
+    public interface GameInterface
     {
-        string name
+        MapInterface map
         {
             get;
             set;
         }
-        string getName();
+
+        PlayerInterface[] players
+        {
+            get;
+            set;
+        }
     }
 }

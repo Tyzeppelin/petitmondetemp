@@ -5,7 +5,7 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface Position
+    public interface PositionInterface
     {
     }
 }

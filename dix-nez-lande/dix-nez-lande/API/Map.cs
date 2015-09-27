@@ -5,18 +5,41 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface Map
+    public class Map : MapInterface
     {
-        int size
+        public int size
         {
-            get;
-            set;
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        List<Tile> tiles
+        public TileInterface[][] tiles
         {
-            get;
-            set;
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public Map(int size)
+        {
+            tiles = new TileInterface[size][];
+            for(int i = 0; i < size; i++)
+            {
+                tiles[i] = new TileInterface[size];
+            }
         }
     }
 }

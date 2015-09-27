@@ -5,25 +5,66 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface Player
+    public class Player : PlayerInterface
     {
-        string name
+        public string name
         {
-            get;
-            set;
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        Race race
+        public RaceInterface race
         {
-            get;
-            set;
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        List<Unit> units
+        public List<UnitInterface> units
         {
-            get;
-            set;
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
-        string getName();
+
+        public string getName()
+        {
+            throw new NotImplementedException();
+        }
+
+        public RaceInterface getRace()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void setUnits(List<UnitInterface> list)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Player(RaceInterface r, string s)
+        {
+            race = r;
+            name = s;
+        }
     }
 }

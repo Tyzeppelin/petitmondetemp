@@ -36,14 +36,14 @@ namespace dix_nez_lande
             get;
             set;
         }
-        Race race { get; set; }
-        Position positionUnit { get; set; }
+        RaceInterface race { get; set; }
+        PositionInterface positionUnit { get; set; }
         int dis { get; set; }
 
-        void attack(Position p);
+        void attack(PositionInterface p);
 
         bool isAlive();
 
-        void move(Position p);
+        void move(PositionInterface p);
     }
 }

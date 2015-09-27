@@ -10,12 +10,8 @@ namespace dix_nez_lande
         #region Singleton
 
         private static UnitsFactory _instance = null;
-        private List<UnitInterface> unitsP1;
-        private List<UnitInterface> unitsP2;
 
         private UnitsFactory() {
-            unitsP1 = new List<UnitInterface>();
-            unitsP2 = new List<UnitInterface>();
         }
 
         public static UnitsFactory getUnitFactory() {
@@ -25,19 +21,13 @@ namespace dix_nez_lande
         }
         #endregion
 
-        void createUnits(Race r, Player p, int nb) {
+        void createUnits(PlayerInterface p, int nb) {
             List<UnitInterface> list = new List<UnitInterface>();
             for (int i = 0; i< nb; i++)
             {
-                list.Add(new Unit(r, "Unite"+i));
+                list.Add(new Unit(p.getRace(), "Unite"+i));
             }
-            if (p.getName() == "p1")
-            {
-                unitsP1 = list;
-            } else
-            {
-                unitsP2 = list;
-            }
+            p.setUnits(list);
         }
     }
 }

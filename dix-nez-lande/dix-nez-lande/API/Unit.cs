@@ -7,7 +7,7 @@ namespace dix_nez_lande
 {
     public class Unit : UnitInterface
     {
-        public Unit(Race r, string s)
+        public Unit(RaceInterface r, string s)
         {
             name = s;
             mov = 2;
@@ -115,7 +115,7 @@ namespace dix_nez_lande
             }
         }
 
-        public Position positionUnit
+        public PositionInterface positionUnit
         {
             get
             {
@@ -128,7 +128,7 @@ namespace dix_nez_lande
             }
         }
 
-        public Race race
+        public RaceInterface race
         {
             get
             {
@@ -141,7 +141,7 @@ namespace dix_nez_lande
             }
         }
 
-        public void attack(Position p)
+        public void attack(PositionInterface p)
         {
             throw new NotImplementedException();
         }
@@ -151,7 +151,7 @@ namespace dix_nez_lande
             return hp == 0;
         }
 
-        public void move(Position p)
+        public void move(PositionInterface p)
         {
             throw new NotImplementedException();
         }

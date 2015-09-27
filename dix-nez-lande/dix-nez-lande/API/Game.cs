@@ -5,18 +5,38 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface Game
+    public class Game : GameInterface
     {
-        Map map
+        public MapInterface map
         {
-            get;
-            set;
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        List<Player> players
+        public PlayerInterface[] players
         {
-            get;
-            set;
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public Game(int size)
+        {
+            map = new Map(size);
+            players = new PlayerInterface[2];
         }
     }
 }
