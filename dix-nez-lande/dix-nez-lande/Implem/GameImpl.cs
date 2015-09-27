@@ -10,14 +10,14 @@ namespace dix_nez_lande.Implem
     {
         public Map map
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get { return map; }
+            set { map = value; }
         }
 
         public List<Player> players
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get { return players; }
+            set { players = value; }
         }
 
         public GameImpl() { }

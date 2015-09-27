@@ -10,6 +10,11 @@ namespace dix_nez_lande.Implem
     {
         private MapFactory() { }
         
-        public static Map createMap(int size) { return new MapImpl(); }
+        public static Map createMap(int size) {
+
+            //List<Tile> board = new List<Tile>();
+
+            return new MapImpl();
+        }
     }
 }

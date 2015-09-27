@@ -12,17 +12,17 @@ namespace dix_nez_lande.Implem
         {
 
         }
+
+        public int size
+        {
+            get { return size; }
+            set { size = value; }
+        }
+
         public List<Tile> tiles
         {
-            get
-            {
-                return tiles;
-            }
-
-            set
-            {
-                tiles = value;
-            }
+            get { return tiles; }
+            set { tiles = value; }
         }
     }
 }

@@ -16,7 +16,7 @@
   <Interface Name="dix_nez_lande.Map">
     <Position X="5.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>API\Map.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -71,7 +71,7 @@
     </ShowAsAssociation>
   </Interface>
   <Interface Name="dix_nez_lande.TileFactory">
-    <Position X="9.25" Y="4.25" Width="1.5" />
+    <Position X="9.25" Y="4.25" Width="1.75" />
     <AssociationLine Name="instances" Type="dix_nez_lande.Tile">
       <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
         <Position X="0.11" Y="0.06" Height="0.162" Width="0.994" />
