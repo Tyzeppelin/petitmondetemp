@@ -49,6 +49,8 @@
     <Compile Include="Implem\MapImpl.cs" />
     <Compile Include="Implem\PlayerFactory.cs" />
     <Compile Include="Implem\PlayerImpl.cs" />
+    <Compile Include="Implem\RaceImpl.cs" />
+    <Compile Include="Implem\RaceFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="API\Race.cs" />
     <Compile Include="API\Tile.cs" />

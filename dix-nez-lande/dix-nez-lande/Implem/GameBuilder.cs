@@ -52,7 +52,5 @@ namespace dix_nez_lande.Implem
         }
 
     }
-    //(MapFactory.createMap(size));
-
 
 }

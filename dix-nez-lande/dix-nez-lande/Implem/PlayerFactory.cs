@@ -12,7 +12,24 @@ namespace dix_nez_lande.Implem
 
         public static Player createPlayer(String race, String name)
         {
-            return new PlayerImpl();
+            Race r;
+            switch(race)
+            {
+                case "human":
+                    r = RaceFactory.getHuman();
+                    break;
+                case "orc":
+                    r = RaceFactory.getOrc();
+                    break;
+                case "elve":
+                    r = RaceFactory.getElve();
+                    break;
+                default:
+                    // by default you're a human
+                    r = RaceFactory.getHuman();
+                    break;
+            }
+            return new PlayerImpl(r, name);
         }
     }
 }

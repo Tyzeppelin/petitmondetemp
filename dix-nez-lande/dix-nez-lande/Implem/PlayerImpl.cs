@@ -26,5 +26,12 @@ namespace dix_nez_lande.Implem
 
             set { throw new NotImplementedException(); }
         }
+
+        public PlayerImpl(Race race, String name)
+        {
+            this.race = race;
+            this.name = name;
+            this.units = new List<Unit>();
+        }
     }
 }
