@@ -5,7 +5,8 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface Range : Unit, UnitInterface
+    public interface Race
     {
+        string name { get; set; }
     }
 }

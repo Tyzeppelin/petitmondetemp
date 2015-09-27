@@ -39,28 +39,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API\RaceInterface.cs" />
-    <Compile Include="API\GameInterface.cs" />
-    <Compile Include="API\MapInterface.cs" />
-    <Compile Include="API\PlayerInterface.cs" />
-    <Compile Include="API\PositionInterface.cs" />
-    <Compile Include="API\UnitInterface.cs" />
-    <Compile Include="API\UnitsFactory.cs" />
-    <Compile Include="API\GameFactory.cs" />
     <Compile Include="API\Game.cs" />
     <Compile Include="API\Map.cs" />
     <Compile Include="API\Player.cs" />
+    <Compile Include="API\Position.cs" />
+    <Compile Include="Implem\GameImpl.cs" />
+    <Compile Include="Implem\MapFactory.cs" />
+    <Compile Include="Implem\GameBuilder.cs" />
+    <Compile Include="Implem\MapImpl.cs" />
+    <Compile Include="Implem\PlayerFactory.cs" />
+    <Compile Include="Implem\PlayerImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="API\Race.cs" />
     <Compile Include="API\Tile.cs" />
     <Compile Include="API\Unit.cs" />
-    <Compile Include="API\Range.cs" />
-    <Compile Include="API\Tank.cs" />
-    <Compile Include="API\Wizard.cs" />
-    <Compile Include="API\Warrior.cs" />
+    <Compile Include="API\TileFactory.cs" />
     <Compile Include="xsge.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="API\ClassDiagram01.cd" />
+    <None Include="API\model.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

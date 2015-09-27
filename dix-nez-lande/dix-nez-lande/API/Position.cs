@@ -5,8 +5,9 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface Wizard : Unit, UnitInterface
+    public interface Position
     {
-        int mag { get; set; }
+        int x { get; set; }
+        int y { get; set; }
     }
 }

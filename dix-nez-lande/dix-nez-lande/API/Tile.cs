@@ -5,8 +5,8 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface TileInterface
+    public interface Tile
     {
-        PositionInterface positionTile { get; set; }
+        Position position { get; set; }
     }
 }
