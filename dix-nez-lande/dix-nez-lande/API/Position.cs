@@ -7,7 +7,6 @@ namespace dix_nez_lande
 {
     public interface Position
     {
-        int x { get; set; }
-        int y { get; set; }
+        Dictionary<Tile, List<Unit>> ouKilEst { get; set; }
     }
 }
