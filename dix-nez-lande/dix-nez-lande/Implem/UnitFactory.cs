@@ -28,6 +28,7 @@ namespace dix_nez_lande
             List<Unit> list = new List<Unit>();
             for (int i = 0; i < nb; i++)
             {
+                //voir nomdefantasy.com pour plus de pimp
                 list.Add(new UnitImpl(race, "Unit " + i));
             }
             return list;

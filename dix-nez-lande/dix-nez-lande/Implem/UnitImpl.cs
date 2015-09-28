@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dix_nez_lande.Implem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -119,7 +120,7 @@ namespace dix_nez_lande
             }
         }
 
-        public Position position
+        public Race race
         {
             get
             {
@@ -132,7 +133,7 @@ namespace dix_nez_lande
             }
         }
 
-        public Race race
+        public Tile tile
         {
             get
             {
@@ -157,7 +158,9 @@ namespace dix_nez_lande
 
         public void move(Tile t)
         {
-            throw new NotImplementedException();
+            Position pos = PositionImpl.getPosition();
+            pos.moveTo(this, t);
+            tile = t;
         }
     }
 }

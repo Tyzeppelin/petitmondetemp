@@ -7,6 +7,5 @@ namespace dix_nez_lande
 {
     public interface Tile
     {
-        Position position { get; set; }
     }
 }

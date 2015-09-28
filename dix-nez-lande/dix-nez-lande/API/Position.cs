@@ -8,5 +8,7 @@ namespace dix_nez_lande
     public interface Position
     {
         Dictionary<Tile, List<Unit>> ouKilEst { get; set; }
+
+        void moveTo(Unit u, Tile t);
     }
 }
