@@ -10,9 +10,9 @@ namespace dix_nez_lande.Implem
     {
 
         private int sizeMap;
-        private String player1Race;
+        private Race player1Race;
         private String player1Name;
-        private String player2Race;
+        private Race player2Race;
         private String player2Name;
 
         private GameBuilder() { }
@@ -30,14 +30,16 @@ namespace dix_nez_lande.Implem
 
         public GameBuilder player1(String race, String name)
         {
-            this.player1Race = race;
+            RaceFactory rF = RaceFactory.getRaceFactory();
+            this.player1Race = rF.getRace(race);
             this.player1Name = name;
             return this;
         }
 
         public GameBuilder player2(String race, String name)
         {
-            this.player2Race = race;
+            RaceFactory rF = RaceFactory.getRaceFactory();
+            this.player2Race = rF.getRace(race);
             this.player2Name = name;
             return this;
         }
@@ -45,9 +47,19 @@ namespace dix_nez_lande.Implem
         public Game build()
         {
             Game res = new GameImpl();
-            res.map = MapFactory.createMap(sizeMap);
-            res.players.Add(PlayerFactory.createPlayer(player1Race, player1Name));
-            res.players.Add(PlayerFactory.createPlayer(player2Race, player2Name));
+
+            MapFactory mF = MapFactory.getMapFactory();
+            UnitFactory uF = UnitFactory.getUnitFactory();
+            PlayerFactory pF = PlayerFactory.getMapFactory();
+            
+
+            res.map = mF.createMap(sizeMap);
+            Player player1 = pF.createPlayer(player1Race, player1Name);
+            player1.units = uF.createArmy(player1Race, sizeMap);
+            res.players.Add(player1);
+            Player player2 = pF.createPlayer(player2Race, player2Name);
+            player2.units = uF.createArmy(player2Race, sizeMap);
+            res.players.Add(player2);
             return res;
         }
 

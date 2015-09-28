@@ -8,9 +8,21 @@ namespace dix_nez_lande.Implem
 {
     class MapFactory
     {
+        #region Singleton
+
+        private static MapFactory _instance = null;
+
         private MapFactory() { }
-        
-        public static Map createMap(int size) {
+
+        public static MapFactory getMapFactory()
+        {
+            if (_instance == null)
+                _instance = new MapFactory();
+            return _instance;
+        }
+        #endregion
+
+        public Map createMap(int size) {
 
             //List<Tile> board = new List<Tile>();
 

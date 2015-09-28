@@ -8,28 +8,24 @@ namespace dix_nez_lande.Implem
 {
     class PlayerFactory
     {
+        #region Singleton
+
+        private static PlayerFactory _instance = null;
+
         private PlayerFactory() { }
 
-        public static Player createPlayer(String race, String name)
+        public static PlayerFactory getMapFactory()
         {
-            Race r;
-            switch(race)
-            {
-                case "human":
-                    r = RaceFactory.getHuman();
-                    break;
-                case "orc":
-                    r = RaceFactory.getOrc();
-                    break;
-                case "elve":
-                    r = RaceFactory.getElve();
-                    break;
-                default:
-                    // by default you're a human
-                    r = RaceFactory.getHuman();
-                    break;
-            }
-            return new PlayerImpl(r, name);
+            if (_instance == null)
+                _instance = new PlayerFactory();
+            return _instance;
+        }
+        #endregion
+
+        public Player createPlayer(Race race, String name)
+        {
+            return new PlayerImpl(race, name);
+
         }
     }
 }

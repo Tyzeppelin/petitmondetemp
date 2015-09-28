@@ -8,10 +8,7 @@ namespace dix_nez_lande.Implem
 {
     class MapImpl : Map
     {
-        public MapImpl()
-        {
-
-        }
+        public MapImpl() { }
 
         public int size
         {

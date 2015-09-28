@@ -12,7 +12,11 @@ namespace dix_nez_lande
         int def { get; set; }
         int mov { get; set; }
         int hp { get; set; }
-        int name { get; set; }
+        string name { get; set; }
+        Race race { get; set; }
+
         void attack(Tile t);
+        void move(Tile t);
+        bool isAlive();
     }
 }

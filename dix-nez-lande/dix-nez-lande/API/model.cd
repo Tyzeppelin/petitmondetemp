@@ -63,11 +63,12 @@
   <Interface Name="dix_nez_lande.Unit">
     <Position X="3.25" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAApAAAAAAEAACAgABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAEAAAAAAAACAAAAApAAAAAAEAACAgABAAAEAAAA=</HashCode>
       <FileName>API\Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="position" />
+      <Property Name="race" />
     </ShowAsAssociation>
   </Interface>
   <Interface Name="dix_nez_lande.TileFactory">
