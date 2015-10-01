@@ -27,11 +27,11 @@ namespace dix_nez_lande.Implem
             set { units = value; }
         }
 
-        public PlayerImpl(Race race, String name)
+        public PlayerImpl(Race race, String name, List<Unit> units)
         {
             this.race = race;
             this.name = name;
-            this.units = new List<Unit>();
+            this.units = units;
         }
 
         public Unit  getUnit(int no)

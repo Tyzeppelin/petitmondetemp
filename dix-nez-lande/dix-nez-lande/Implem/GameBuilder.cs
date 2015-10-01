@@ -10,9 +10,9 @@ namespace dix_nez_lande.Implem
     {
 
         private int sizeMap;
-        private Race player1Race;
+        private String player1Race;
         private String player1Name;
-        private Race player2Race;
+        private String player2Race;
         private String player2Name;
 
         private GameBuilder() { }
@@ -28,19 +28,17 @@ namespace dix_nez_lande.Implem
             return this;
         }
 
-        public GameBuilder player1(String race, String name)
+        public GameBuilder player1(String name, String race)
         {
-            RaceFactory rF = RaceFactory.getRaceFactory();
-            this.player1Race = rF.getRace(race);
             this.player1Name = name;
+            this.player1Race = race;
             return this;
         }
 
-        public GameBuilder player2(String race, String name)
+        public GameBuilder player2(String name, String race)
         {
-            RaceFactory rF = RaceFactory.getRaceFactory();
-            this.player2Race = rF.getRace(race);
             this.player2Name = name;
+            this.player2Race = race;
             return this;
         }
 
@@ -49,17 +47,22 @@ namespace dix_nez_lande.Implem
             Game res = new GameImpl();
 
             MapFactory mF = MapFactory.getMapFactory();
-            UnitFactory uF = UnitFactory.getUnitFactory();
             PlayerFactory pF = PlayerFactory.getMapFactory();
-            
+            RaceFactory rF = RaceFactory.getRaceFactory();
+            UnitFactory uF = UnitFactory.getUnitFactory();
 
             res.map = mF.createMap(sizeMap);
-            Player player1 = pF.createPlayer(player1Race, player1Name);
-            player1.units = uF.createArmy(player1Race, sizeMap);
+
+            Race p1Race = rF.getRace(player1Race);
+            List<Unit> p1Army = uF.createArmy(p1Race, sizeMap);
+            Player player1 = pF.createPlayer(p1Race, player1Name, p1Army);
             res.players.Add(player1);
-            Player player2 = pF.createPlayer(player2Race, player2Name);
-            player2.units = uF.createArmy(player2Race, sizeMap);
+
+            Race p2Race = rF.getRace(player2Race);
+            List<Unit> p2Army = uF.createArmy(p2Race, sizeMap);
+            Player player2 = pF.createPlayer(p2Race, player2Name, p2Army);
             res.players.Add(player2);
+
             return res;
         }
 

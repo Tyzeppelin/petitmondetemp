@@ -22,9 +22,9 @@ namespace dix_nez_lande.Implem
         }
         #endregion
 
-        public Player createPlayer(Race race, String name)
+        public Player createPlayer(Race race, String name, List<Unit> units)
         {
-            return new PlayerImpl(race, name);
+            return new PlayerImpl(race, name, units);
 
         }
     }
