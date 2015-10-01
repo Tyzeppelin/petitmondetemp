@@ -28,7 +28,7 @@ namespace dix_nez_lande.Implem
         {
             get { return ouKilEst;  }
 
-            set { throw new NotImplementedException(); }
+            set { ouKilEst = value; }
         }
 
         void Position.moveTo(Unit u, Tile nouvelle)

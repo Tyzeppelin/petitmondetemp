@@ -44,106 +44,50 @@ namespace dix_nez_lande
 
         public int atk
         {
-            get
-            {
-                return atk;
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return atk; }
+            set { atk = value; }
         }
 
         public int def
         {
-            get
-            {
-                return def;
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return def; }
+            set { def = value; }
         }
 
         public int dis
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return dis; }
+            set { dis = value; }
         }
 
         public int hp
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return hp; }
+            set { hp = value; }
         }
 
         public int mov
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return mov; }
+            set { mov = value; }
         }
 
         public string name
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return name; }
+            set { name = value; }
         }
 
         public Race race
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return race; }
+            set { throw new NotImplementedException(); }
         }
 
         public Tile tile
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return tile; }
+            set { throw new NotImplementedException(); }
         }
 
         public void attack(Tile t)

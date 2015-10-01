@@ -10,8 +10,8 @@ namespace dix_nez_lande.Implem
     {
         public string name
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get { return name; }
+            set { name = value; }
         }
 
         public RaceImpl(String race)
