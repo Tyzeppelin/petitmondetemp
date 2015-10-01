@@ -23,8 +23,24 @@ namespace dix_nez_lande
         }
         #endregion
 
-        public List<Unit> createArmy(Race race, int nb)
+        public List<Unit> createArmy(Race race, int sizeMap)
         {
+            int nb;
+            switch (sizeMap)
+            {
+                case 6:
+                    nb = 4;
+                    break;
+                case 10:
+                    nb = 6;
+                    break;
+                case 8:
+                    nb = 8;
+                    break;
+                default:
+                    nb=4;
+                    break;
+            }
             List<Unit> list = new List<Unit>();
             for (int i = 0; i < nb; i++)
             {
