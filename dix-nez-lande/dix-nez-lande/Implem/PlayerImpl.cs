@@ -10,21 +10,21 @@ namespace dix_nez_lande.Implem
     {
         public string name
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get { return name; }
+            set { name = value; }
         }
 
         public Race race
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get { return race; }
+            set { race = value; }
         }
 
         public List<Unit> units
         {
-            get { throw new NotImplementedException(); }
+            get { return units; }
 
-            set { throw new NotImplementedException(); }
+            set { units = value; }
         }
 
         public PlayerImpl(Race race, String name)
@@ -32,6 +32,16 @@ namespace dix_nez_lande.Implem
             this.race = race;
             this.name = name;
             this.units = new List<Unit>();
+        }
+
+        public Unit  getUnit(int no)
+        {
+            return units[no];
+        }
+
+        public void setUnit(Unit u)
+        {
+            units.Add(u);
         }
     }
 }
