@@ -28,14 +28,14 @@ namespace dix_nez_lande
             int nb;
             switch (sizeMap)
             {
-                case 6:
-                    nb = 4;
+                case Map.LitMap:
+                    nb = Unit.LitArmy;
                     break;
-                case 10:
-                    nb = 6;
+                case Map.MidMap:
+                    nb = Unit.MidArmy;
                     break;
-                case 8:
-                    nb = 8;
+                case Map.BigMap:
+                    nb = Unit.BigArmy;
                     break;
                 default:
                     nb=4;

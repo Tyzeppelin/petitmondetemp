@@ -7,6 +7,9 @@ namespace dix_nez_lande
 {
     public interface Unit
     {
+        public static const int BigArmy = 8;
+        public static const int MidArmy = 6;
+        public static const int LitArmy = 4;
         int atk { get; set; }
         int def { get; set; }
         int mov { get; set; }
