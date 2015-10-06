@@ -33,7 +33,7 @@ namespace dix_nez_lande.Implem
 
         void Position.moveTo(Unit u, Tile nouvelle)
         {
-            Tile ancienne = u.tile;
+            /*Tile ancienne = u.tile;
             List<Unit> list;
 
             //Récupération de l'ancienne liste
@@ -46,7 +46,9 @@ namespace dix_nez_lande.Implem
             //et ajout de l'unité
             ouKilEst.TryGetValue(nouvelle, out list);
             list.Add(u);
-            ouKilEst.Add(nouvelle, list);
+            ouKilEst.Add(nouvelle, list);*/
+
+            //TODO : refactor
         }
         
     }

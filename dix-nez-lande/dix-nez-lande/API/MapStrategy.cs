@@ -5,10 +5,11 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    public interface Map
+    public interface MapStrategy
     {
 
-        int size { get; set; }
-        List<Tile> tiles { get; set; }
+        Map createMap();
+
+        int getSizeArmy();
     }
 }

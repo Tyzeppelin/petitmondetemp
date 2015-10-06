@@ -8,6 +8,14 @@ namespace dix_nez_lande.Implem
 {
     class GameBuilder
     {
+        public const int BigMap = 16;
+        public const int MidMap = 10;
+        public const int LitMap = 6;
+
+        public const int BigArmy = 8;
+        public const int MidArmy = 6;
+        public const int LitArmy = 4;
+
 
         private int sizeMap;
         private String player1Race;
@@ -44,26 +52,43 @@ namespace dix_nez_lande.Implem
 
         public Game build()
         {
-            Game res = new GameImpl();
+            Game game = new GameImpl();
 
-            MapFactory mF = MapFactory.getMapFactory();
+            MapStrategy mS;
+            switch (this.sizeMap) {
+                case GameBuilder.LitMap:
+                    mS = LitMapFactory.getMapStrategy();
+                    break;
+                case GameBuilder.MidMap:
+                    mS = MidMapFactory.getMapStrategy();
+                    break;
+                case GameBuilder.BigMap:
+                    mS = BigMapFactory.getMapStrategy();
+                    break;
+                default:
+                    mS = LitMapFactory.getMapStrategy();
+                    break;
+
+            }
+
+
             PlayerFactory pF = PlayerFactory.getMapFactory();
             RaceFactory rF = RaceFactory.getRaceFactory();
             UnitFactory uF = UnitFactory.getUnitFactory();
 
-            res.map = mF.createMap(sizeMap);
+            game.map = mS.createMap();
 
             Race p1Race = rF.getRace(player1Race);
-            List<Unit> p1Army = uF.createArmy(p1Race, sizeMap);
+            List<Unit> p1Army = uF.createArmy(p1Race, mS.getSizeArmy());
             Player player1 = pF.createPlayer(p1Race, player1Name, p1Army);
-            res.players.Add(player1);
+            game.players.Add(player1);
 
             Race p2Race = rF.getRace(player2Race);
-            List<Unit> p2Army = uF.createArmy(p2Race, sizeMap);
+            List<Unit> p2Army = uF.createArmy(p2Race, mS.getSizeArmy());
             Player player2 = pF.createPlayer(p2Race, player2Name, p2Army);
-            res.players.Add(player2);
+            game.players.Add(player2);
 
-            return res;
+            return game;
         }
 
     }

@@ -8,39 +8,7 @@ namespace dix_nez_lande
 {
     public class UnitImpl : Unit
     {
-        public UnitImpl(Race r, string s)
-        {
-            name = s;
-            mov = 2;
-            switch (race.name)
-            {
-                case "human":
-                    hp = 15;
-                    atk = 6;
-                    def = 3;
-                    dis = 1;
-                    break;
-                case "elf":
-                    hp = 12;
-                    atk = 4;
-                    def = 3;
-                    dis = 2;
-                    break;
-                case "orc":
-                    hp = 17;
-                    atk = 5;
-                    def = 2;
-                    dis = 1;
-                    break;
-                default:
-                    hp = 15;
-                    atk = 6;
-                    def = 3;
-                    dis = 1;
-                    break;
-            }
-            
-        }
+        public UnitImpl() { }
 
         public int atk
         {
@@ -84,12 +52,6 @@ namespace dix_nez_lande
             set { throw new NotImplementedException(); }
         }
 
-        public Tile tile
-        {
-            get { return tile; }
-            set { throw new NotImplementedException(); }
-        }
-
         public void attack(Tile t)
         {
             throw new NotImplementedException();
@@ -102,9 +64,10 @@ namespace dix_nez_lande
 
         public void move(Tile t)
         {
-            Position pos = PositionImpl.getPosition();
+            /*Position pos = PositionImpl.getPosition();
             pos.moveTo(this, t);
-            tile = t;
+            tile = t;*/
+            // TODO : refaire ca
         }
     }
 }

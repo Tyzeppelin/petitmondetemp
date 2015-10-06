@@ -16,7 +16,7 @@
   <Interface Name="dix_nez_lande.Map">
     <Position X="5.5" Y="5.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAAAACAAAQIAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>API\Map.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -25,8 +25,13 @@
   </Interface>
   <Interface Name="dix_nez_lande.Player">
     <Position X="12.5" Y="1.75" Width="2" />
+    <AssociationLine Name="race" Type="dix_nez_lande.Race">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.11" Y="0.06" Height="0.162" Width="0.576" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>CACAAEAAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA=</HashCode>
       <FileName>API\Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -58,14 +63,13 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="dix_nez_lande.Unit">
-    <Position X="8.5" Y="3.5" Width="2" />
+    <Position X="8.5" Y="4" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAABAEAAAAAAAACAAAAAhAAAAAAEAACAgABAAAEAAAA=</HashCode>
+      <HashCode>AAAAAEAAAAAACACCAAAAhAAAAAAEAACAgABABAEAAAA=</HashCode>
       <FileName>API\Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="race" />
-      <Property Name="tile" />
     </ShowAsAssociation>
   </Interface>
   <Interface Name="dix_nez_lande.TileFactory">
@@ -77,6 +81,13 @@
     <ShowAsCollectionAssociation>
       <Property Name="instances" />
     </ShowAsCollectionAssociation>
+  </Interface>
+  <Interface Name="dix_nez_lande.MapStrategy">
+    <Position X="1.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>API\MapStrategy.cs</FileName>
+    </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

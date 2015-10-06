@@ -23,29 +23,49 @@ namespace dix_nez_lande
         }
         #endregion
 
-        public List<Unit> createArmy(Race race, int sizeMap)
+        private Unit createUnit(Race race, String s)
         {
-            int nb;
-            switch (sizeMap)
+            Unit u = new UnitImpl();
+            u.name = s;
+            u.mov = 2;
+            switch (race.name)
             {
-                case Map.LitMap:
-                    nb = Unit.LitArmy;
+                case "human":
+                    u.hp = 15;
+                    u.atk = 6;
+                    u.def = 3;
+                    u.dis = 1;
                     break;
-                case Map.MidMap:
-                    nb = Unit.MidArmy;
+                case "elf":
+                    u.hp = 12;
+                    u.atk = 4;
+                    u.def = 3;
+                    u.dis = 2;
                     break;
-                case Map.BigMap:
-                    nb = Unit.BigArmy;
+                case "orc":
+                    u.hp = 17;
+                    u.atk = 5;
+                    u.def = 2;
+                    u.dis = 1;
                     break;
                 default:
-                    nb=4;
+                    u.hp = 15;
+                    u.atk = 6;
+                    u.def = 3;
+                    u.dis = 1;
                     break;
             }
+            return u;
+        }
+
+        public List<Unit> createArmy(Race race, int sizeArmy)
+        {
+            
             List<Unit> list = new List<Unit>();
-            for (int i = 0; i < nb; i++)
+            for (int i = 0; i < sizeArmy; i++)
             {
                 //voir nomdefantasy.com pour plus de pimp
-                list.Add(new UnitImpl(race, "Unit " + i));
+                list.Add(createUnit(race, "Unit " + i));
             }
             return list;
         }
