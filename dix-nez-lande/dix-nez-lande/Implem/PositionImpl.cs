@@ -33,11 +33,11 @@ namespace dix_nez_lande.Implem
 
         void Position.moveTo(Unit u, Tile nouvelle)
         {
-            /*Tile ancienne = u.tile;
-            List<Unit> list;
+            Tile ancienne = u.tile;
 
             //Récupération de l'ancienne liste
             //supression de l'unité
+            List<Unit> list;
             ouKilEst.TryGetValue(ancienne,out list);
             list.Remove(u);
             ouKilEst.Add(ancienne, list);
@@ -46,9 +46,34 @@ namespace dix_nez_lande.Implem
             //et ajout de l'unité
             ouKilEst.TryGetValue(nouvelle, out list);
             list.Add(u);
-            ouKilEst.Add(nouvelle, list);*/
+            ouKilEst.Add(nouvelle, list);
+        }
 
-            //TODO : refactor
+        void Position.attack(Unit u, Tile t)
+        {
+            //On récupère la liste des défenseurs
+            //présents sur la brique attaquée
+            List<Unit> list;
+            ouKilEst.TryGetValue(t, out list);
+
+            //On récupère le "meilleur" defenseur
+            Unit defenser = new UnitImpl();
+            int nbUnits = list.Count();
+            for (int i = 0; i < nbUnits; i++)
+            {
+                if (defenser.hp < list.ElementAt(i).hp)
+                {
+                    defenser = list.ElementAt(i);
+                }
+            }
+
+            //L'attaquant tape une fois
+            //Puis le defenseur tape s'il n'est pas mort
+            defenser.hp -= u.atk - defenser.def;
+            if (defenser.isAlive())
+            {
+                u.hp -= defenser.atk - u.def;
+            }
         }
         
     }

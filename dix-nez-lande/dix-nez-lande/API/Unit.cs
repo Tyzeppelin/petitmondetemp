@@ -15,6 +15,7 @@ namespace dix_nez_lande
         int dis { get; set; }
         string name { get; set; }
         Race race { get; set; }
+        Tile tile { get; set; }
 
         void attack(Tile t);
         void move(Tile t);

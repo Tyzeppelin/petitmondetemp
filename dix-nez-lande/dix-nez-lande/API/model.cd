@@ -16,7 +16,7 @@
   <Interface Name="dix_nez_lande.Map">
     <Position X="5.5" Y="5.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAACAAAQIAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>API\Map.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -58,18 +58,19 @@
   <Interface Name="dix_nez_lande.Tile">
     <Position X="5.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>API\Tile.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="dix_nez_lande.Unit">
     <Position X="8.5" Y="4" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAACACCAAAAhAAAAAAEAACAgABABAEAAAA=</HashCode>
+      <HashCode>AAABAEAAACAAAACAAAAAhAAAAAAEAACAgABAAAEAAAA=</HashCode>
       <FileName>API\Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="race" />
+      <Property Name="tile" />
     </ShowAsAssociation>
   </Interface>
   <Interface Name="dix_nez_lande.TileFactory">
@@ -85,7 +86,7 @@
   <Interface Name="dix_nez_lande.MapStrategy">
     <Position X="1.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>API\MapStrategy.cs</FileName>
     </TypeIdentifier>
   </Interface>

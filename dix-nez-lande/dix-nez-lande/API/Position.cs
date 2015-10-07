@@ -10,5 +10,6 @@ namespace dix_nez_lande
         Dictionary<Tile, List<Unit>> ouKilEst { get; set; }
 
         void moveTo(Unit u, Tile t);
+        void attack(Unit u, Tile t);
     }
 }

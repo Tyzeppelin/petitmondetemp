@@ -8,7 +8,7 @@ namespace dix_nez_lande
 {
     public class UnitImpl : Unit
     {
-        public UnitImpl() { }
+        public UnitImpl() { hp = 0; }
 
         public int atk
         {
@@ -52,22 +52,28 @@ namespace dix_nez_lande
             set { throw new NotImplementedException(); }
         }
 
+        public Tile tile
+        {
+            get { return tile; }
+            set { tile = value; }
+        }
+
         public void attack(Tile t)
         {
-            throw new NotImplementedException();
+            Position pos = PositionImpl.getPosition();
+            pos.attack(this, t);
         }
 
         public bool isAlive()
         {
-            return hp == 0;
+            return hp <= 0;
         }
 
         public void move(Tile t)
         {
-            /*Position pos = PositionImpl.getPosition();
+            Position pos = PositionImpl.getPosition();
             pos.moveTo(this, t);
-            tile = t;*/
-            // TODO : refaire ca
+            tile = t;
         }
     }
 }
