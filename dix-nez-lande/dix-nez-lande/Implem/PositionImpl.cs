@@ -49,7 +49,7 @@ namespace dix_nez_lande.Implem
             ouKilEst.Add(nouvelle, list);
         }
 
-        void Position.attack(Unit u, Tile t)
+        void Position.attack(Unit attacker, Tile t)
         {
             //On récupère la liste des défenseurs
             //présents sur la brique attaquée
@@ -69,10 +69,10 @@ namespace dix_nez_lande.Implem
 
             //L'attaquant tape une fois
             //Puis le defenseur tape s'il n'est pas mort
-            defenser.hp -= u.atk - defenser.def;
+            defenser.hp -= attacker.atk - defenser.def;
             if (defenser.isAlive())
             {
-                u.hp -= defenser.atk - u.def;
+                attacker.hp -= defenser.atk - attacker.def;
             }
         }
         
