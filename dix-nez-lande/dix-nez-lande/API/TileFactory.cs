@@ -5,11 +5,22 @@ using System.Text;
 
 namespace dix_nez_lande
 {
-    /// <remarks>Flyweight factory</remarks>
+    /**
+    * Factory de Tile
+    * C'est une factory poids-mouche car
+    * seuls 4 types de Tiles vont être utilisés
+    * @author François Boschet
+    * @author Aurélien Fontaine
+    * @version 0.1 (still in alpha)
+    */
     public interface TileFactory
     {
         Dictionary<String, Tile> instances { get; set; }
 
+        /**
+        * Rend une Tile d'un type
+        * @return La Tile voulue
+        */
         Tile getTile(String type);
     }
 }

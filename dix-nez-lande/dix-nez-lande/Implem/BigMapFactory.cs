@@ -1,4 +1,9 @@
-﻿using System;
+﻿/**
+* @author François Boschet
+* @author Aurélien Fontaine
+* @version 0.1 (still in alpha)
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

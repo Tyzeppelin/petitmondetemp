@@ -5,6 +5,12 @@ using System.Text;
 
 namespace dix_nez_lande
 {
+    /**
+    * Interface d'une unité
+    * @author François Boschet
+    * @author Aurélien Fontaine
+    * @version 0.1 (still in alpha)
+    */
     public interface Unit
     {
 
@@ -17,8 +23,21 @@ namespace dix_nez_lande
         Race race { get; set; }
         Tile tile { get; set; }
 
+        /**
+        * Permet l'attaque d'une Tile
+        * @param t La Tile à attaquer
+        */
         void attack(Tile t);
+
+        /**
+        * Permet de déplement de l'unité sur une Tile
+        * @param t La Tile où l'unité se déplace
+        */
         void move(Tile t);
+        /**
+        * Permet de savoir si une unité est en vie ou non
+        * @return Vrai si l'unité est en vie
+        */
         bool isAlive();
     }
 }
