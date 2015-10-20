@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dix-nez-lande", "dix-nez-la
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "models", "..\models\models\models.modelproj", "{D41EE59A-CC10-444F-9DE7-F899F7E4BEC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversImaginaire", "UniversImaginaire\UniversImaginaire.csproj", "{74A9C89C-DDB5-4BF4-95F0-E27E2607B3FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D41EE59A-CC10-444F-9DE7-F899F7E4BEC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D41EE59A-CC10-444F-9DE7-F899F7E4BEC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D41EE59A-CC10-444F-9DE7-F899F7E4BEC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74A9C89C-DDB5-4BF4-95F0-E27E2607B3FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74A9C89C-DDB5-4BF4-95F0-E27E2607B3FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74A9C89C-DDB5-4BF4-95F0-E27E2607B3FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74A9C89C-DDB5-4BF4-95F0-E27E2607B3FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
