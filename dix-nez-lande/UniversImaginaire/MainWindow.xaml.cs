@@ -20,9 +20,33 @@ namespace UniversImaginaire
     /// </summary>
     public partial class MainWindow : Window
     {
+        public MediaPlayer MediaPlayer { get; set; }
+        private static String PATH;
         public MainWindow()
         {
             InitializeComponent();
+            this.MediaPlayer = new MediaPlayer();
+            PATH = System.Environment.CurrentDirectory;
+            PATH = PATH.Replace(@"\Debug", @"\UniversImaginaire\Resources");
+            PATH = PATH.Replace(@"\Release", @"\UniversImaginaire\Resources");
+        }
+
+        private void Doge_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Music_start(object sender, RoutedEventArgs e)
+        {
+            this.MediaPlayer.Volume = 0.4;
+            this.MediaPlayer.Open(new Uri(PATH+@"\music.mp3"));
+            this.MediaPlayer.Play();
+            Console.WriteLine("Let's yhe music play"); 
+        }
+
+        private void ButtonExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
