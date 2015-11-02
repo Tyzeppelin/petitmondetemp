@@ -21,6 +21,9 @@
         <Button Name="Music" Width="Auto" Click="Music_start" RenderTransformOrigin="0.50,0.500" Margin="10,50,637,655">
             <Button.Background>
                 <ImageBrush ImageSource="Ressources/volume-icon.png"/>
+                <TextBlock>
+                    Music
+                </TextBlock>
             </Button.Background>
         </Button>
         <Button Name="Exit" Click="ButtonExit_Click" Margin="10,10,637,693" RenderTransformOrigin="0.50,0.500">
