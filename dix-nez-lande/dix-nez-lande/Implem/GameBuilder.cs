@@ -77,7 +77,7 @@ namespace dix_nez_lande.Implem
             }
 
 
-            PlayerFactory pF = PlayerFactory.getMapFactory();
+            PlayerFactory pF = PlayerFactory.getPlayerFactory();
             RaceFactory rF = RaceFactory.getRaceFactory();
             UnitFactory uF = UnitFactory.getUnitFactory();
 

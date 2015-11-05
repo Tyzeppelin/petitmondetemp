@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace dix_nez_lande.Implem
 {
-    class BigMapFactory : MapStrategy
+    protected class BigMapFactory : MapStrategy
     {
         #region Singleton
 

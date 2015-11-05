@@ -11,7 +11,7 @@ namespace dix_nez_lande
     * @author Aurélien Fontaine
     * @version 0.1 (still in alpha)
     */
-    public class UnitImpl : Unit
+    class UnitImpl : Unit
     {
         public UnitImpl() { hp = 0; }
 
@@ -56,17 +56,17 @@ namespace dix_nez_lande
             get { return race; }
             set { throw new NotImplementedException(); }
         }
-
-        public Tile tile
+        public Position pos
         {
-            get { return tile; }
-            set { tile = value; }
+            get { return pos; }
+            set { pos = value; }
         }
 
-        public void attack(Tile t)
+
+
+        public void attack(Position p)
         {
-            Position pos = PositionImpl.getPosition();
-            pos.attack(this, t);
+            MapImpl.getMap().attack(this, p);
         }
 
         public bool isAlive()
@@ -74,11 +74,10 @@ namespace dix_nez_lande
             return hp <= 0;
         }
 
-        public void move(Tile t)
+        public void move(Position p)
         {
-            Position pos = PositionImpl.getPosition();
-            pos.moveTo(this, t);
-            tile = t;
+            MapImpl.getMap().moveTo(this, p);
+            pos = p;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace dix_nez_lande.Implem
     * @author Aurélien Fontaine
     * @version 0.1 (still in alpha)
     */
-    class PositionImpl : Position
+    protected class PositionImpl : Position
     {
         #region Singleton
 
@@ -29,57 +29,16 @@ namespace dix_nez_lande.Implem
         }
         #endregion
 
-        public Dictionary<Tile, List<Unit>> ouKilEst
+        public int x
         {
-            get { return ouKilEst;  }
-
-            set { ouKilEst = value; }
+            get { return x; }
+            set { x = value; }
         }
 
-        void Position.moveTo(Unit u, Tile nouvelle)
+        public int y
         {
-            Tile ancienne = u.tile;
-
-            //Récupération de l'ancienne liste
-            //supression de l'unité
-            List<Unit> list;
-            ouKilEst.TryGetValue(ancienne,out list);
-            list.Remove(u);
-            ouKilEst.Add(ancienne, list);
-
-            //Récupération de la nouvelle liste
-            //et ajout de l'unité
-            ouKilEst.TryGetValue(nouvelle, out list);
-            list.Add(u);
-            ouKilEst.Add(nouvelle, list);
+            get { return y; }
+            set { y = value; }
         }
-
-        void Position.attack(Unit attacker, Tile t)
-        {
-            //On récupère la liste des défenseurs
-            //présents sur la brique attaquée
-            List<Unit> list;
-            ouKilEst.TryGetValue(t, out list);
-
-            //On récupère le "meilleur" defenseur
-            Unit defenser = new UnitImpl();
-            int nbUnits = list.Count();
-            for (int i = 0; i < nbUnits; i++)
-            {
-                if (defenser.hp < list.ElementAt(i).hp)
-                {
-                    defenser = list.ElementAt(i);
-                }
-            }
-
-            //L'attaquant tape une fois
-            //Puis le defenseur tape s'il n'est pas mort
-            defenser.hp -= attacker.atk - defenser.def;
-            if (defenser.isAlive())
-            {
-                attacker.hp -= defenser.atk - attacker.def;
-            }
-        }
-        
     }
 }

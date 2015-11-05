@@ -19,7 +19,7 @@ namespace dix_nez_lande.Implem
 
         private PlayerFactory() { }
 
-        public static PlayerFactory getMapFactory()
+        public static PlayerFactory getPlayerFactory()
         {
             if (_instance == null)
                 _instance = new PlayerFactory();

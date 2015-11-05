@@ -22,12 +22,12 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
-    <Content Include="DiagrammeDeSequence.sequencediagram">
+    <Content Include="initGame.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="DiagrammeDeSequence.sequencediagram.layout">
+    <Content Include="initGame.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>DiagrammeDeSequence.sequencediagram</DependentUpon>
+      <DependentUpon>initGame.sequencediagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\models.uml">
