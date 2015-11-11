@@ -21,6 +21,10 @@ namespace dix_nez_lande.Implem
         public const int MidArmy = 6;
         public const int LitArmy = 4;
 
+        public const int BigTurn = 30;
+        public const int MidTurn = 20;
+        public const int LitTurn = 5;
+
 
         private int sizeMap;
         private String player1Race;
@@ -59,16 +63,21 @@ namespace dix_nez_lande.Implem
         {
             Game game = new GameImpl();
 
+            // Creation de la carte de la taille voulue
+            // ainsi que le nombre de tours associés
             MapStrategy mS;
             switch (this.sizeMap) {
                 case GameBuilder.LitMap:
                     mS = LitMapFactory.getMapStrategy();
+                    game.nbTurn = LitTurn;
                     break;
                 case GameBuilder.MidMap:
                     mS = MidMapFactory.getMapStrategy();
+                    game.nbTurn = MidTurn;
                     break;
                 case GameBuilder.BigMap:
                     mS = BigMapFactory.getMapStrategy();
+                    game.nbTurn = BigTurn;
                     break;
                 default:
                     mS = LitMapFactory.getMapStrategy();

@@ -11,7 +11,7 @@ namespace dix_nez_lande.Implem
     * @author Aurélien Fontaine
     * @version 0.1 (still in alpha)
     */
-    protected class PlayerImpl : Player
+    class PlayerImpl : Player
     {
         public string name
         {
@@ -47,6 +47,11 @@ namespace dix_nez_lande.Implem
         public void setUnit(Unit u)
         {
             units.Add(u);
+        }
+
+        public void endTurn()
+        {
+            Console.WriteLine("Le joueur " + name + " a fini de jouer son tour");
         }
     }
 }

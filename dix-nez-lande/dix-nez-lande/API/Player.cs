@@ -29,5 +29,10 @@ namespace dix_nez_lande
         * @param u L'unité à ajouter
         */
         void setUnit(Unit u);
+
+        /**
+        * Fin du tour pour le joueur courant
+        */
+        void endTurn();
     }
 }

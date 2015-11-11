@@ -11,7 +11,7 @@ namespace dix_nez_lande.Implem
     * @author Aurélien Fontaine
     * @version 0.1 (still in alpha)
     */
-    protected class GameImpl : Game
+    class GameImpl : Game
     {
         public Map map
         {
@@ -23,6 +23,12 @@ namespace dix_nez_lande.Implem
         {
             get { return players; }
             set { players = value; }
+        }
+
+        public int nbTurn
+        {
+            get { return nbTurn; }
+            set { nbTurn = value; }
         }
 
         public GameImpl() { }
