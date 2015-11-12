@@ -48,7 +48,7 @@ Pour y remédier, nous avons procédé le ma manière suivante :
  - La carte décide quelle unité va être attaquée et la retourne à l'unité attaquante ;
  - Lors d'un déplacement, il y a une double modification à faire à la fois dans l'unité et dans la carte.
 
-Le mécanisme de retour dans le passé est géré au moyen d’un memento:  ```Memento```.
+Le mécanisme de retour dans le passé est géré au moyen d’un memento:  ```History```.
 
 \begin{figure}[H]
     \centering
@@ -70,14 +70,9 @@ comme une fabrique de joueur ou une fabrique de carte.
 
 # Fonctionnement
 
-Le mécanisme des combats sont assez simplistes et fonctionnent comme suit:
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\textwidth]{attaque_statechart.png}
-    \caption{Mécanisme d’attaque}
-    \label{fig:attaque}
-\end{figure}
+Le mécanisme des combats sont assez simplistes et fonctionnent comme expliqué pendant la présentation. Une unité attaque une case et un combat est
+engagé entre deux unité. Si l’unité défensive meurt et la case attaquée est vide, l’attaquant est alors déplacé sur la case attaquée. Si la case n’est
+pas vide, l’atatquant reste sur sa case et un nouveau combat peut être lancé. Le statechart diagram du combat est trouvable sur le [gitlab](https://gitlab.insa-rennes.fr/aurelien-fontaine/dix-nez-lande/blob/master/report/1_models/attaque_statechart.png)
 
 La création de la partie se fait grâce au builder, de la manière expliquée dans le diagramme d’activité sur le [gitlab](https://gitlab.insa-rennes.fr/aurelien-fontaine/dix-nez-lande/blob/master/report/1_models/Diagramme_activites.pdf).
 
