@@ -29,19 +29,10 @@ Les combats se jouent entre deux unités ennemis, l’attaquant inflige un nombr
 et des points de défense du défenseur. Lorsque les points de vie d’une unité tombent à zéro elle est détruite.
 Le jeu se déroule au \og tour par tour \fg{}, c’est à dire que les joueurs jouent chacun leur tours.
 
-Le mécanisme des combas sont assez simplistes et foncitonnent comme suit:
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\textwidth]{attaque_statechart.png}
-    \caption{Mécanisme d’attaque}
-    \label{fig:attaque}
-\end{figure}
-
 
 Il doit aussi y avoir une manière de retourner un tour dans le passé (hommage à Code Lyoko) au moyen d’un code de triche.
 
-# Modélisation de l’API
+# Modélisation du jeu
 
 Nous avons commencé par découper notre API de manière intuitive. Nous avons donc séparé les différents éléments clés comme le jeu, la carte, le joueur, etc.
 Une fois ces éléments mis en place, nous avons remarqué que les tuiles étaient toujours les 4 mêmes : forêt, mer, montagne et plaine.
@@ -67,8 +58,6 @@ Nous sommes encore en train de travailler pour améliorer cette gestion, car la 
     \label{fig:model}
 \end{figure}
 
-# Implémentation
-
 Tout d'abord, afin de créer le jeu en une seule fois, nous avons utilisé un constructeur (builder). Ainsi, toute l'initialisation passe par lui, notamment quand à la sélection des différentes valeurs en fonction du mode de jeu. Dans ce constructeur, de nombreuses fabriques sont appelées, comme une fabrique de joueur ou une fabrique de carte.
 
 \begin{figure}[H]
@@ -77,6 +66,20 @@ Tout d'abord, afin de créer le jeu en une seule fois, nous avons utilisé un co
     \caption{implem}
     \label{fig:model}
 \end{figure}
+
+# Fonctionnement
+
+Le mécanisme des combats sont assez simplistes et foncitonnent comme suit:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{attaque_statechart.png}
+    \caption{Mécanisme d’attaque}
+    \label{fig:attaque}
+\end{figure}
+
+La création de la partie se fait grace au builder, de la manièreexpliqué dans le diagramme d’activité sur le [gitlab](https://gitlab.insa-rennes.fr/aurelien-fontaine/dix-nez-lande/blob/master/report/1_models/Diagramme_activites.pdf).
+Le diagramme de séquence pour le builder quand à lui est disponible aussi sur le [gitlab](https://gitlab.insa-rennes.fr/aurelien-fontaine/dix-nez-lande/blob/master/report/1_models/DiagrammeDeSequence.pdf).
 
 # Reste à faire
 
