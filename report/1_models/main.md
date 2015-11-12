@@ -14,7 +14,7 @@ header-includes:
 abstract: Réalisation d’un jeu vidéo inspiré de Smallworld et de Civilisation. Le projet est réalisé intégralement avec Visual Studio\texttrademark et contiendra donc beaucoup d’humour et de sarcasmes.
 ---
 
-# Présentation de dix-nex-lande
+# Présentation de dix-nez-lande
 
 Le but de ce projet est la réalisation, en C#/C++ avec Visual Studio\texttrademark, d’un jeu sous la forme d’un jeu de plateau
 qui s’inspire des plus grands, à savoir Smallworld et Civilisation. La partie graphique du jeu vidéo sera réalisé en C# grâce à la
@@ -48,7 +48,7 @@ Pour y remédier, nous avons procédé le ma manière suivante :
  - La carte décide quelle unité va être attaquée et la retourne à l'unité attaquante ;
  - Lors d'un déplacement, il y a une double modification à faire à la fois dans l'unité et dans la carte.
 
-Le mécanisme de retour dans le passé est geré au moyen d’un memento:  ```Memento```.
+Le mécanisme de retour dans le passé est géré au moyen d’un memento:  ```Memento```.
 
 \begin{figure}[H]
     \centering
@@ -57,7 +57,9 @@ Le mécanisme de retour dans le passé est geré au moyen d’un memento:  ```Me
     \label{fig:model}
 \end{figure}
 
-Tout d'abord, afin de créer le jeu en une seule fois, nous avons utilisé un constructeur (builder). Ainsi, toute l'initialisation passe par lui, notamment quand à la sélection des différentes valeurs en fonction du mode de jeu. Dans ce constructeur, de nombreuses fabriques sont appelées, comme une fabrique de joueur ou une fabrique de carte.
+Tout d'abord, afin de créer le jeu en une seule fois, nous avons utilisé un constructeur (builder). Ainsi, toute l'initialisation passe par lui, 
+notamment quand à la sélection des différentes valeurs en fonction du mode de jeu. Dans ce constructeur, de nombreuses fabriques sont appelées, 
+comme une fabrique de joueur ou une fabrique de carte.
 
 \begin{figure}[H]
     \centering
@@ -68,7 +70,7 @@ Tout d'abord, afin de créer le jeu en une seule fois, nous avons utilisé un co
 
 # Fonctionnement
 
-Le mécanisme des combats sont assez simplistes et foncitonnent comme suit:
+Le mécanisme des combats sont assez simplistes et fonctionnent comme suit:
 
 \begin{figure}[H]
     \centering
@@ -77,12 +79,22 @@ Le mécanisme des combats sont assez simplistes et foncitonnent comme suit:
     \label{fig:attaque}
 \end{figure}
 
-La création de la partie se fait grace au builder, de la manièreexpliqué dans le diagramme d’activité sur le [gitlab](https://gitlab.insa-rennes.fr/aurelien-fontaine/dix-nez-lande/blob/master/report/1_models/Diagramme_activites.pdf).
+La création de la partie se fait grâce au builder, de la manière expliquée dans le diagramme d’activité sur le [gitlab](https://gitlab.insa-rennes.fr/aurelien-fontaine/dix-nez-lande/blob/master/report/1_models/Diagramme_activites.pdf).
+
+Dans ce diagramme, on peut voir qu'il se passe en plusieurs temps. Il y a tout d'abord création du jeu puis de la carte en fonction du mode de jeu choisi.
+En parallèle de la création de la carte, un certain nombre de tours est stocké dans le jeu pour finir la partie au bout d'un certain temps.
+
+Ensuite vient la création des deux joueurs. Ils ont la même construction. Tout d'abord, on initie la race du joueur afin de pouvoir créer son armée 
+d'unités avec la bonne race et les bonnes caractéristiques associées. Une fois l'armée créée, on la "donne" au joueur afin qu'il puisse avoir connaissance 
+de ses unités. Ensuite, on place le joueur créé dans le jeu.
+
+Une fois les deux joueurs créés, la partie peut se lancer.
+
 Le diagramme de séquence pour le builder quand à lui est disponible aussi sur le [gitlab](https://gitlab.insa-rennes.fr/aurelien-fontaine/dix-nez-lande/blob/master/report/1_models/DiagrammeDeSequence.pdf).
 
 # Reste à faire
 
-Maintenant que nous avons terminé la partie de modélisation, nous alons nous attaquer à la partie graphique! Il va falloir tout d’abord créer
+Maintenant que nous avons terminé la partie de modélisation, nous allons nous attaquer à la partie graphique! Il va falloir tout d’abord créer
 les algorithmes de déroulement du jeu en C++ managé, notamment les algorithmes de combat.
 
-Il faudra aussi réaliser toute la partie graphique grace au framework WPF.
+Il faudra aussi réaliser toute la partie graphique grâce au framework WPF.
