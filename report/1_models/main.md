@@ -11,13 +11,14 @@ header-includes:
     - \fancyhead[CO,CE]{}
     - \fancyfoot[CO,CE]{}
     - \fancyfoot[LE,RO]{\thepage}
-abstract: Réalisation d’un jeu inspiré de Smallworld et de Civilisation. Le projet est réalisé intégralement avec Visual Studio\texttrademark et contiendra donc beaucoup d’humour et de sarcasmes.
+abstract: Réalisation d’un jeu vidéo inspiré de Smallworld et de Civilisation. Le projet est réalisé intégralement avec Visual Studio\texttrademark et contiendra donc beaucoup d’humour et de sarcasmes.
 ---
 
 # Présentation de dix-nex-lande
 
 Le but de ce projet est la réalisation, en C#/C++ avec Visual Studio\texttrademark, d’un jeu sous la forme d’un jeu de plateau
-qui s’inspire des plus grands, à savoir Smallworld et Civilisation.
+qui s’inspire des plus grands, à savoir Smallworld et Civilisation. La partie graphique du jeu vidéo sera réalisé en C# grâce à la
+superbe bibliothèque WPF, le moteur du jeu quand à lui sera réalisé en C# pour les structures de données et en C++ managé pour les algorithmes.
 
 Le but du jeu est, pour chaque joueur, d’amasser plus de points que l’adversaire. Les points sont comptés en fonction du nombre de cases qu’il contrôle.
 Pour contrôler une case, le joueur doit avoir au minimum une de ses unité sur la case. Il y a un seul type d’unité pour chacune des trois races
@@ -32,9 +33,14 @@ Il doit aussi y avoir une manière de retourner un tour dans le passé (hommage 
 
 # Modélisation de l’API
 
-Nous avons commencé par découper notre API de manière intuitive. Nous avons donc séparé les différents éléments clés comme le jeu, la carte, le joueur, etc. Une fois ces éléments mis en place, nous avons remarqué que les tuiles étaient toujours les 4 mêmes : forêt, mer, montagne et plaine. Une fabrique-poids-mouche s'est donc imposée afin de réduire le nombre d’instanciation de nos tuiles. e jeu peut être joué selon différents "modes". En fonction du mode de jeu choisi, la carte générée doit être plus ou moins grande. Une stratégie est la solution permettant de changer à la volée des objets complexes, donc nous l'avons utilisée pour créer la carte selon le mode de jeu.
+Nous avons commencé par découper notre API de manière intuitive. Nous avons donc séparé les différents éléments clés comme le jeu, la carte, le joueur, etc.
+Une fois ces éléments mis en place, nous avons remarqué que les tuiles étaient toujours les 4 mêmes : forêt, mer, montagne et plaine.
+Une fabrique-poids-mouche s'est donc imposée afin de réduire le nombre d’instanciation de nos tuiles. e jeu peut être joué selon différents "modes".
+En fonction du mode de jeu choisi, la carte générée doit être plus ou moins grande. Une stratégie est la solution permettant de changer à la volée
+des objets complexes, donc nous l'avons utilisée pour créer la carte selon le mode de jeu.
 
-Nous nous sommes heurtés à un problème : comment les unités peuvent elles savoir où elles sont et comment les bouger / faire attaquer d'autres unités ? Pour y remédier, nous avons procédé le ma manière suivante :
+Nous nous sommes heurtés à un problème : comment les unités peuvent elles savoir où elles sont et comment les bouger / faire attaquer d'autres unités ?
+Pour y remédier, nous avons procédé le ma manière suivante :
 
 - Chaque unité a une position ;
 - Dans la carte, une table de hachage est présente avec les positions en clef et une liste d'unités présentes sur cette position ;
