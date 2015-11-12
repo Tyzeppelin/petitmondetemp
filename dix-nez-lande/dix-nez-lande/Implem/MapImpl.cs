@@ -16,13 +16,13 @@ namespace dix_nez_lande.Implem
 
          #region Singleton
 
-        private static MapImpl _instance = null;
+        private static Map _instance = null;
 
         public MapImpl() {
             _instance = this;
         }
 
-        public static MapImpl getMap()
+        public static Map getMap()
         {
             return _instance;
         }

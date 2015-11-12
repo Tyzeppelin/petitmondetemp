@@ -15,7 +15,7 @@ namespace dix_nez_lande.Implem
     {
         #region Singleton
 
-        private static PositionImpl _instance = null;
+        private static Position _instance = null;
 
         private PositionImpl()
         {

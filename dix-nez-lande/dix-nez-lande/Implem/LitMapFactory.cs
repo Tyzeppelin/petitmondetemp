@@ -15,11 +15,11 @@ namespace dix_nez_lande.Implem
     {
         #region Singleton
 
-        private static LitMapFactory _instance = null;
+        private static MapStrategy _instance = null;
 
         private LitMapFactory() { }
 
-        public static LitMapFactory getMapStrategy()
+        public static MapStrategy getMapStrategy()
         {
             if (_instance == null)
                 _instance = new LitMapFactory();

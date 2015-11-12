@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="dix_nez_lande.Implem.BigMapFactory" BaseTypeListCollapsed="true">
-    <Position X="13.25" Y="2.75" Width="2.5" />
+    <Position X="17" Y="3.75" Width="2.5" />
+    <AssociationLine Name="_instance" Type="dix_nez_lande.MapStrategy">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.921" Y="0.425" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AEAEAAAAAAAAAAAAAAAEAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implem\BigMapFactory.cs</FileName>
@@ -12,14 +17,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dix_nez_lande.Implem.GameBuilder">
-    <Position X="1" Y="1.25" Width="3.25" />
+    <Position X="1.5" Y="1.5" Width="3.25" />
     <TypeIdentifier>
       <HashCode>4AAAAAAAAggACAASQAAAAAABAAAAIAAAIIRABEAAAQA=</HashCode>
       <FileName>Implem\GameBuilder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="dix_nez_lande.Implem.GameImpl" BaseTypeListCollapsed="true">
-    <Position X="4.5" Y="3.5" Width="2" />
+    <Position X="5.25" Y="3.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAAAAAggAAAAAAAgAAIAAAAIAAAAgAAAAA=</HashCode>
       <FileName>Implem\GameImpl.cs</FileName>
@@ -33,7 +38,12 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dix_nez_lande.Implem.LitMapFactory" BaseTypeListCollapsed="true">
-    <Position X="15.5" Y="0.5" Width="2.5" />
+    <Position X="15.5" Y="5.75" Width="2.5" />
+    <AssociationLine Name="_instance" Type="dix_nez_lande.MapStrategy">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.786" Y="0.258" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AEAEAAAAAAAAAAAAAAAEAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implem\LitMapFactory.cs</FileName>
@@ -44,7 +54,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dix_nez_lande.Implem.MapImpl" BaseTypeListCollapsed="true">
-    <Position X="14.5" Y="5" Width="3.5" />
+    <Position X="11.75" Y="0.75" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAEAAAQAAAAAAAAAIAAAAAgAAAQAACACAAAAAAAAAA=</HashCode>
       <FileName>Implem\MapImpl.cs</FileName>
@@ -55,7 +65,12 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dix_nez_lande.Implem.MidMapFactory" BaseTypeListCollapsed="true">
-    <Position X="16.25" Y="2.75" Width="2.5" />
+    <Position X="13.5" Y="3.75" Width="2.5" />
+    <AssociationLine Name="_instance" Type="dix_nez_lande.MapStrategy">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.037" Y="0.123" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AEAEAAAAAAAAAAAAAAAEAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implem\MidMapFactory.cs</FileName>
@@ -66,7 +81,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dix_nez_lande.Implem.PlayerFactory">
-    <Position X="14.25" Y="12.5" Width="4" />
+    <Position X="14.25" Y="11" Width="4" />
     <TypeIdentifier>
       <HashCode>AAAEAAgAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Implem\PlayerFactory.cs</FileName>
@@ -76,7 +91,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="dix_nez_lande.Implem.PlayerImpl" BaseTypeListCollapsed="true">
-    <Position X="14.25" Y="9.75" Width="3.5" />
+    <Position X="15" Y="8.25" Width="3.5" />
     <TypeIdentifier>
       <HashCode>iACAAEAAAAAAAAAAAQAAAAAAAQAUAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implem\PlayerImpl.cs</FileName>
@@ -90,7 +105,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dix_nez_lande.Implem.PositionImpl" BaseTypeListCollapsed="true">
-    <Position X="5" Y="7.25" Width="2" />
+    <Position X="4.5" Y="7.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
       <FileName>Implem\PositionImpl.cs</FileName>
@@ -102,6 +117,11 @@
   </Class>
   <Class Name="dix_nez_lande.Implem.RaceFactory">
     <Position X="11.75" Y="10.5" Width="2.25" />
+    <AssociationLine Name="_instance" Type="dix_nez_lande.Implem.RaceFactory">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.036" Y="0.32" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAEAAAAAABAAAAAAAAAAIAAAAAAAAAAAEAAIAAAQAA=</HashCode>
       <FileName>Implem\RaceFactory.cs</FileName>
@@ -111,7 +131,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="dix_nez_lande.Implem.RaceImpl" BaseTypeListCollapsed="true">
-    <Position X="15" Y="8" Width="2" />
+    <Position X="13" Y="6.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implem\RaceImpl.cs</FileName>
@@ -120,6 +140,18 @@
   </Class>
   <Class Name="dix_nez_lande.Implem.TileFactoryImpl" BaseTypeListCollapsed="true">
     <Position X="3.75" Y="10.5" Width="2.25" />
+    <AssociationLine Name="_instance" Type="dix_nez_lande.TileFactory" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.688" Y="11.988" />
+        <Point X="4.688" Y="12.051" />
+        <Point X="6.062" Y="12.051" />
+        <Point X="6.062" Y="11.619" />
+        <Point X="6.25" Y="11.619" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.445" Y="-0.671" Height="0.182" Width="0.816" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAAAAAACAAABAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Implem\TileFactoryImpl.cs</FileName>
@@ -133,7 +165,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dix_nez_lande.Implem.TileForest" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="6.75" Y="14.25" Width="1.5" />
+    <Position X="8.5" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implem\TileForest.cs</FileName>
@@ -141,7 +173,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dix_nez_lande.Implem.TileMountain" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="6.75" Y="13.25" Width="1.5" />
+    <Position X="8.5" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implem\TileMountain.cs</FileName>
@@ -149,7 +181,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dix_nez_lande.Implem.TilePlain" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="8.5" Y="13.25" Width="1.5" />
+    <Position X="10" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implem\TilePlain.cs</FileName>
@@ -157,7 +189,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dix_nez_lande.Implem.TileWater" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="8.5" Y="14.25" Width="1.5" />
+    <Position X="10" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implem\TileWater.cs</FileName>
@@ -165,7 +197,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="dix_nez_lande.Game">
-    <Position X="7.5" Y="3.5" Width="2" />
+    <Position X="7.5" Y="3.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAAAAAggAAAAAAAgAAIAAAAIAAAAgAAAAA=</HashCode>
       <FileName>API\Game.cs</FileName>
@@ -178,7 +210,12 @@
     </ShowAsCollectionAssociation>
   </Interface>
   <Interface Name="dix_nez_lande.Map">
-    <Position X="9.5" Y="0.75" Width="3.5" />
+    <Position X="7.25" Y="1.25" Width="3.5" />
+    <AssociationLine Name="tiles" Type="dix_nez_lande.Tile">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.098" Y="-0.273" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAgAQAACACAAAAAAAAAA=</HashCode>
       <FileName>API\Map.cs</FileName>
@@ -188,7 +225,7 @@
     </ShowAsCollectionAssociation>
   </Interface>
   <Interface Name="dix_nez_lande.MapStrategy">
-    <Position X="13.25" Y="0.5" Width="1.75" />
+    <Position X="15.75" Y="1" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>API\MapStrategy.cs</FileName>
@@ -229,7 +266,12 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="dix_nez_lande.TileFactory">
-    <Position X="7.25" Y="11.75" Width="2" />
+    <Position X="6.25" Y="11.25" Width="2" />
+    <AssociationLine Name="instances" Type="dix_nez_lande.Tile">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.088" Y="0.195" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>API\TileFactory.cs</FileName>
