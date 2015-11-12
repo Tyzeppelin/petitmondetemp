@@ -23,7 +23,7 @@ Duis rhoncus pharetra est, vel pharetra dolor pharetra in. Etiam maximus tempus 
 
 # Modélisation de l’API
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet enim erat, varius accumsan velit semper id. Curabitur dapibus lacinia mollis. Phasellus tincidunt commodo metus. Morbi quis sapien accumsan, varius justo nec, interdum ex. Fusce at lectus sem. Donec eu interdum nulla, eget convallis nunc. Aenean iaculis lacus non turpis auctor, a viverra tortor elementum. Integer eu elit lacinia, placerat nisi id, vehicula ante. Ut hendrerit nisl a libero placerat cursus. Proin non massa leo. Phasellus et elit egestas, varius lectus non, pellentesque dui. Curabitur efficitur ornare congue.
+Nous avons commencé par découper notre API de manière intuitive. Nous avons donc séparé les différents éléments clés comme le jeu, la carte, le joueur, etc. Une fois ces éléments mis en place, nous avons remarqué que les tuiles étaient toujours les 4 mêmes : forêt, mer, montagne et plaine. Une fabrique-poids-mouche s'est donc imposée afin de réduire le nombre d’instanciation de nos tuiles. e jeu peut être joué selon différents "modes". En fonction du mode de jeu choisi, la carte générée doit être plus ou moins grande. Une stratégie est la solution permettant de changer à la volée des objets complexes, donc nous l'avons utilisée pour créer la carte selon le mode de jeu.
 
 \begin{figure}[H]
     \centering
@@ -32,13 +32,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet enim er
     \label{fig:model}
 \end{figure}
 
-Aenean volutpat imperdiet felis sit amet condimentum. Quisque felis nulla, finibus id iaculis ac, congue ut mi. Donec porttitor urna metus, sit amet pellentesque justo congue non. Integer vulputate tristique dictum. Cras tincidunt lectus tincidunt lorem molestie, ut pulvinar arcu vehicula. Ut elementum, urna a tempus viverra, mauris massa gravida ex, ac efficitur mauris ligula non nunc. Praesent sagittis ipsum a sapien blandit elementum. Etiam condimentum, augue quis dictum ullamcorper, nulla magna congue dolor, a cursus turpis metus ut enim. Proin pulvinar justo eu velit ultrices dignissim. Donec nibh ligula, venenatis sit amet est dignissim, tempor vulputate elit. Mauris feugiat fringilla convallis. Aenean vel fermentum eros. Nullam sollicitudin varius massa ut vulputate. Vivamus pellentesque tortor at erat molestie porttitor.
-
-Duis rhoncus pharetra est, vel pharetra dolor pharetra in. Etiam maximus tempus quam non ultrices. Vestibulum vehicula hendrerit purus in ultrices. Sed id dictum ex. Aliquam erat volutpat. Praesent fermentum augue et hendrerit tincidunt. Cras lobortis tellus nec hendrerit viverra. Sed euismod venenatis enim, tincidunt dapibus ante efficitur et. Sed dictum id arcu sit amet tempor. Nullam ultricies tellus non tellus pretium fringilla. Duis semper vel felis id eleifend. Cras id fringilla eros, et malesuada nibh. 
-
 # Fonctionnement de l’API
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet enim erat, varius accumsan velit semper id. Curabitur dapibus lacinia mollis. Phasellus tincidunt commodo metus. Morbi quis sapien accumsan, varius justo nec, interdum ex. Fusce at lectus sem. Donec eu interdum nulla, eget convallis nunc. Aenean iaculis lacus non turpis auctor, a viverra tortor elementum. Integer eu elit lacinia, placerat nisi id, vehicula ante. Ut hendrerit nisl a libero placerat cursus. Proin non massa leo. Phasellus et elit egestas, varius lectus non, pellentesque dui. Curabitur efficitur ornare congue.
 
 \begin{figure}[H]
     \centering
@@ -46,10 +40,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet enim er
     \caption{implem}
     \label{fig:model}
 \end{figure}
-
-Aenean volutpat imperdiet felis sit amet condimentum. Quisque felis nulla, finibus id iaculis ac, congue ut mi. Donec porttitor urna metus, sit amet pellentesque justo congue non. Integer vulputate tristique dictum. Cras tincidunt lectus tincidunt lorem molestie, ut pulvinar arcu vehicula. Ut elementum, urna a tempus viverra, mauris massa gravida ex, ac efficitur mauris ligula non nunc. Praesent sagittis ipsum a sapien blandit elementum. Etiam condimentum, augue quis dictum ullamcorper, nulla magna congue dolor, a cursus turpis metus ut enim. Proin pulvinar justo eu velit ultrices dignissim. Donec nibh ligula, venenatis sit amet est dignissim, tempor vulputate elit. Mauris feugiat fringilla convallis. Aenean vel fermentum eros. Nullam sollicitudin varius massa ut vulputate. Vivamus pellentesque tortor at erat molestie porttitor.
-
-Duis rhoncus pharetra est, vel pharetra dolor pharetra in. Etiam maximus tempus quam non ultrices. Vestibulum vehicula hendrerit purus in ultrices. Sed id dictum ex. Aliquam erat volutpat. Praesent fermentum augue et hendrerit tincidunt. Cras lobortis tellus nec hendrerit viverra. Sed euismod venenatis enim, tincidunt dapibus ante efficitur et. Sed dictum id arcu sit amet tempor. Nullam ultricies tellus non tellus pretium fringilla. Duis semper vel felis id eleifend. Cras id fringilla eros, et malesuada nibh. 
 
 # Implémentation
 
