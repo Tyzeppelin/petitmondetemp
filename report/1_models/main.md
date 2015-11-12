@@ -29,6 +29,16 @@ Les combats se jouent entre deux unités ennemis, l’attaquant inflige un nombr
 et des points de défense du défenseur. Lorsque les points de vie d’une unité tombent à zéro elle est détruite.
 Le jeu se déroule au \og tour par tour \fg{}, c’est à dire que les joueurs jouent chacun leur tours.
 
+Le mécanisme des combas sont assez simplistes et foncitonnent comme suit:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{attaque_statechart.png}
+    \caption{Mécanisme d’attaque}
+    \label{fig:attaque}
+\end{figure}
+
+
 Il doit aussi y avoir une manière de retourner un tour dans le passé (hommage à Code Lyoko) au moyen d’un code de triche.
 
 # Modélisation de l’API
@@ -70,9 +80,7 @@ Tout d'abord, afin de créer le jeu en une seule fois, nous avons utilisé un co
 
 # Reste à faire
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet enim erat, varius accumsan velit semper id. Curabitur dapibus lacinia mollis. Phasellus tincidunt commodo metus. Morbi quis sapien accumsan, varius justo nec, interdum ex. Fusce at lectus sem. Donec eu interdum nulla, eget convallis nunc. Aenean iaculis lacus non turpis auctor, a viverra tortor elementum. Integer eu elit lacinia, placerat nisi id, vehicula ante. Ut hendrerit nisl a libero placerat cursus. Proin non massa leo. Phasellus et elit egestas, varius lectus non, pellentesque dui. Curabitur efficitur ornare congue.
+Maintenant que nous avons terminé la partie de modélisation, nous alons nous attaquer à la partie graphique! Il va falloir tout d’abord créer
+les algorithmes de déroulement du jeu en C++ managé, notamment les algorithmes de combat.
 
-Aenean volutpat imperdiet felis sit amet condimentum. Quisque felis nulla, finibus id iaculis ac, congue ut mi. Donec porttitor urna metus, sit amet pellentesque justo congue non. Integer vulputate tristique dictum. Cras tincidunt lectus tincidunt lorem molestie, ut pulvinar arcu vehicula. Ut elementum, urna a tempus viverra, mauris massa gravida ex, ac efficitur mauris ligula non nunc. Praesent sagittis ipsum a sapien blandit elementum. Etiam condimentum, augue quis dictum ullamcorper, nulla magna congue dolor, a cursus turpis metus ut enim. Proin pulvinar justo eu velit ultrices dignissim. Donec nibh ligula, venenatis sit amet est dignissim, tempor vulputate elit. Mauris feugiat fringilla convallis. Aenean vel fermentum eros. Nullam sollicitudin varius massa ut vulputate. Vivamus pellentesque tortor at erat molestie porttitor.
-
-Duis rhoncus pharetra est, vel pharetra dolor pharetra in. Etiam maximus tempus quam non ultrices. Vestibulum vehicula hendrerit purus in ultrices. Sed id dictum ex. Aliquam erat volutpat. Praesent fermentum augue et hendrerit tincidunt. Cras lobortis tellus nec hendrerit viverra. Sed euismod venenatis enim, tincidunt dapibus ante efficitur et. Sed dictum id arcu sit amet tempor. Nullam ultricies tellus non tellus pretium fringilla. Duis semper vel felis id eleifend. Cras id fringilla eros, et malesuada nibh. 
-
+Il faudra aussi réaliser toute la partie graphique grace au framework WPF.
