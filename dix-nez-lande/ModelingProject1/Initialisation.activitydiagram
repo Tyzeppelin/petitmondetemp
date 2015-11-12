@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="b1632b2e-9472-4d1d-bf1a-325f7e667779" name="Builder" linkedPackageId="224dec40-d9ca-4880-a856-5910205e88a6" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="b1632b2e-9472-4d1d-bf1a-325f7e667779" name="Initialisation" linkedPackageId="224dec40-d9ca-4880-a856-5910205e88a6" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
   <profileInstances>
     <packageHasProfileInstances Id="391ab65b-eb0a-44d0-accc-12aba6f9595a">
       <profileInstance Id="50d4b9db-3157-4b6b-a2de-cdc267a413ab" name="StandardProfileL2">
@@ -16,7 +16,7 @@
   </profileInstances>
   <packagedElements>
     <activityRootModelHasActivity>
-      <activity Id="1c8e292a-54cd-4ce4-881c-e9a2c4672bc6" name="Builder" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+      <activity Id="1c8e292a-54cd-4ce4-881c-e9a2c4672bc6" name="Initialisation" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
         <elementDefinition Id="a6a8204d-decf-43c9-a3ca-fb97160c6cca" />
         <nodes>
           <initialNode Id="86765947-6281-4eee-928d-e427640c97f8" name="Initial1" isLeaf="false">

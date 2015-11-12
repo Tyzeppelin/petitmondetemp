@@ -21,7 +21,7 @@
     <packageHasNamedElement>
       <activity
         Id="a6a8204d-decf-43c9-a3ca-fb97160c6cca"
-        name="Builder"
+        name="Initialisation"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false"

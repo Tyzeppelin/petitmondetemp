@@ -23,12 +23,12 @@
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
     <Folder Include="ModelDefinition\" />
-    <Content Include="Builder.activitydiagram">
+    <Content Include="Initialisation.activitydiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Builder.activitydiagram.layout">
+    <Content Include="Initialisation.activitydiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Builder.activitydiagram</DependentUpon>
+      <DependentUpon>Initialisation.activitydiagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\ModelingProject1.uml">
       <SubType>Content</SubType>
