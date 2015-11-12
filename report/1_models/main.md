@@ -96,5 +96,13 @@ Le diagramme de séquence pour le builder quand à lui est disponible aussi sur 
 
 Maintenant que nous avons terminé la partie de modélisation, nous allons nous attaquer à la partie graphique! Il va falloir tout d’abord créer
 les algorithmes de déroulement du jeu en C++ managé, notamment les algorithmes de combat.
-
 Il faudra aussi réaliser toute la partie graphique grâce au framework WPF.
+
+Pour rendre notre jeu un peu plus joli, nous pourrons aussi
+créer des textures personnalisées ainsi qu’ajouter du contenu au jeu en ajoutant, par exemple des types d’unités différentes, des races différentes
+ainsi que des bonus/malus de combat en fonction du type de la case, etc.
+
+En conclusion, nous avons terminé la partie la plus importante du projet, la modélisation. Il nous reste la partie la plus longue, c’est à dire
+coder l’interface graphique du jeu et une partie du moteur du jeu. Et, s’il nous reste du temps dans le projet, nous allons essayer de rendre le
+jeu joli et plus interessant.
+
