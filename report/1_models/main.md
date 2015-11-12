@@ -11,7 +11,7 @@ header-includes:
     - \fancyhead[CO,CE]{}
     - \fancyfoot[CO,CE]{}
     - \fancyfoot[LE,RO]{\thepage}
-abstract: Réalisation d’un jeu vidéo inspiré de Smallworld et de Civilisation. Le projet est réalisé intégralement avec Visual Studio\texttrademark et contiendra donc beaucoup d’humour et de sarcasmes.
+abstract: Réalisation d’un jeu vidéo inspiré de Smallworld et de Civilisation. Le projet est réalisé intégralement avec Visual Studio\texttrademark et contiendra donc beaucoup de C#, de C++, d’humour et de sarcasmes.
 ---
 
 # Présentation de dix-nez-lande
