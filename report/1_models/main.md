@@ -25,6 +25,16 @@ Duis rhoncus pharetra est, vel pharetra dolor pharetra in. Etiam maximus tempus 
 
 Nous avons commencé par découper notre API de manière intuitive. Nous avons donc séparé les différents éléments clés comme le jeu, la carte, le joueur, etc. Une fois ces éléments mis en place, nous avons remarqué que les tuiles étaient toujours les 4 mêmes : forêt, mer, montagne et plaine. Une fabrique-poids-mouche s'est donc imposée afin de réduire le nombre d’instanciation de nos tuiles. e jeu peut être joué selon différents "modes". En fonction du mode de jeu choisi, la carte générée doit être plus ou moins grande. Une stratégie est la solution permettant de changer à la volée des objets complexes, donc nous l'avons utilisée pour créer la carte selon le mode de jeu.
 
+Nous nous sommes heurtés à un problème : comment les unités peuvent elles savoir où elles sont et comment les bouger / faire attaquer d'autres unités ? Pour y remédier, nous avons procédé le ma manière suivante :
+
+- Chaque unité a une position ;
+- Dans la carte, une table de hachage est présente avec les positions en clef et une liste d'unités présentes sur cette position ;
+- Lors de l'attaque d'une unité, celle-ci attaque une position ;
+- La carte décide quelle unité va être attaquée et la retourne à l'unité attaquante ;
+- Lors d'un déplacement, il y a une double modification à faire à la fois dans l'unité et dans la carte.
+
+Nous sommes encore en train de travailler pour améliorer cette gestion, car la duplication de position peut être source d'erreurs.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{model.png}
