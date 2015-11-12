@@ -17,16 +17,16 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dix_nez_lande.Implem.GameBuilder">
-    <Position X="1.5" Y="1.5" Width="3.25" />
+    <Position X="1.5" Y="1" Width="3.25" />
     <TypeIdentifier>
       <HashCode>4AAAAAAAAggACAASQAAAAAABAAAAIAAAIIRABEAAAQA=</HashCode>
       <FileName>Implem\GameBuilder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="dix_nez_lande.Implem.GameImpl" BaseTypeListCollapsed="true">
-    <Position X="5.25" Y="3.5" Width="2" />
+    <Position X="5" Y="3" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAAAAAAAAAggAAAAAAAgAAIAAAAIAAAAgAAAAA=</HashCode>
+      <HashCode>AAAAEAAEAAAAAAEggAAAAAAAgAAIAAAAIAAAAgAAAAA=</HashCode>
       <FileName>Implem\GameImpl.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -105,7 +105,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dix_nez_lande.Implem.PositionImpl" BaseTypeListCollapsed="true">
-    <Position X="4.5" Y="7.25" Width="2" />
+    <Position X="5.5" Y="8.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
       <FileName>Implem\PositionImpl.cs</FileName>
@@ -165,7 +165,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dix_nez_lande.Implem.TileForest" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="8.5" Y="11.75" Width="1.5" />
+    <Position X="5.75" Y="13" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implem\TileForest.cs</FileName>
@@ -173,7 +173,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dix_nez_lande.Implem.TileMountain" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="8.5" Y="11" Width="1.5" />
+    <Position X="7.75" Y="13" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implem\TileMountain.cs</FileName>
@@ -181,7 +181,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dix_nez_lande.Implem.TilePlain" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="10" Y="11" Width="1.5" />
+    <Position X="10" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implem\TilePlain.cs</FileName>
@@ -189,21 +189,66 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dix_nez_lande.Implem.TileWater" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="10" Y="11.75" Width="1.5" />
+    <Position X="10" Y="13" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implem\TileWater.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="dix_nez_lande.Game">
-    <Position X="7.5" Y="3.75" Width="2" />
+  <Class Name="dix_nez_lande.Implem.HistoryImpl">
+    <Position X="8.75" Y="5.75" Width="1.5" />
+    <AssociationLine Name="states" Type="dix_nez_lande.GameState">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-3.563" Y="0.1" Height="0.182" Width="1.78" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAEAAAAAAAAAAggAAAAAAAgAAIAAAAIAAAAgAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAQAAAAAAACgAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Implem\HistoryImpl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="states" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="dix_nez_lande.Implem.HistoryFactory">
+    <Position X="2" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAIAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implem\HistoryFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_instance" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="dix_nez_lande.Implem.GameStateFactory">
+    <Position X="3.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAIAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implem\GameStateFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_instance" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="dix_nez_lande.Implem.GameStateImpl">
+    <Position X="2" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Implem\GameStateImpl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="dix_nez_lande.Game">
+    <Position X="7.5" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAEAAAAAAEggAAAAAAAgAAIAAAAIAAAAgAAAAA=</HashCode>
       <FileName>API\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="map" />
+      <Property Name="saveStates" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="players" />
@@ -232,7 +277,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="dix_nez_lande.Player">
-    <Position X="11" Y="4" Width="2" />
+    <Position X="11" Y="4.25" Width="2" />
     <TypeIdentifier>
       <HashCode>iACAAEAAAAAAAAAAAQAAAAAAAQAUAAAAAAAAAAAAAAA=</HashCode>
       <FileName>API\Player.cs</FileName>
@@ -245,7 +290,7 @@
     </ShowAsCollectionAssociation>
   </Interface>
   <Interface Name="dix_nez_lande.Position">
-    <Position X="7.5" Y="7.75" Width="1.5" />
+    <Position X="7.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
       <FileName>API\Position.cs</FileName>
@@ -259,7 +304,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="dix_nez_lande.Tile">
-    <Position X="7.5" Y="9.75" Width="1.5" />
+    <Position X="7.5" Y="10.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>API\Tile.cs</FileName>
@@ -281,7 +326,7 @@
     </ShowAsCollectionAssociation>
   </Interface>
   <Interface Name="dix_nez_lande.Unit">
-    <Position X="9.75" Y="7.5" Width="2" />
+    <Position X="9.75" Y="8.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAACAAAACAAAAAhIAAAAAEAACAgABAAAEAAAA=</HashCode>
       <FileName>API\Unit.cs</FileName>
@@ -290,6 +335,32 @@
       <Property Name="race" />
       <Property Name="pos" />
     </ShowAsAssociation>
+  </Interface>
+  <Interface Name="dix_nez_lande.History">
+    <Position X="7" Y="5.75" Width="1.5" />
+    <AssociationLine Name="states" Type="dix_nez_lande.GameState" FixedToPoint="true">
+      <Path>
+        <Point X="7" Y="7.5" />
+        <Point X="5.25" Y="7.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.11" Y="-0.188" Height="0.162" Width="1.607" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAQAAAAAAACgAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>API\History.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="states" />
+    </ShowAsCollectionAssociation>
+  </Interface>
+  <Interface Name="dix_nez_lande.GameState">
+    <Position X="3.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>API\GameState.cs</FileName>
+    </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

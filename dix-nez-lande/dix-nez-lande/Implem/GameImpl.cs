@@ -37,6 +37,12 @@ namespace dix_nez_lande.Implem
             set { current = value; }
         }
 
+        public History saveStates
+        {
+            get { return saveStates; }
+            set { saveStates = value; }
+        }
+
         public GameImpl() { }
 
 
@@ -62,6 +68,10 @@ namespace dix_nez_lande.Implem
         public Player whoWin()
         {
             return players[0];
+        }
+
+        void undo()
+        {
         }
     }
 }

@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Interface Name="dix_nez_lande.Game">
-    <Position X="2.75" Y="3.25" Width="2" />
+    <Position X="3" Y="3.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAAAAAAAAAggAAAAAAAgAAIAAAAIAAAAgAAAAA=</HashCode>
+      <HashCode>AAAAEAAEAAAAAAEggAAAAAAAgAAIAAAAIAAAAgAAAAA=</HashCode>
       <FileName>API\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="map" />
+      <Property Name="saveStates" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="players" />
@@ -58,7 +59,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="dix_nez_lande.Unit">
-    <Position X="5" Y="5.5" Width="2" />
+    <Position X="5.25" Y="5.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAACAAAACAAAAAhIAAAAAEAACAgABAAAEAAAA=</HashCode>
       <FileName>API\Unit.cs</FileName>
@@ -83,6 +84,23 @@
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>API\MapStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="dix_nez_lande.History">
+    <Position X="1" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAQAAAAAAACgAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>API\History.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="states" />
+    </ShowAsCollectionAssociation>
+  </Interface>
+  <Interface Name="dix_nez_lande.GameState">
+    <Position X="1" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>API\GameState.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

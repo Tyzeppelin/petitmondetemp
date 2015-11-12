@@ -17,9 +17,11 @@ namespace dix_nez_lande
         List<Player> players { get; set; }
         int nbTurn { get; set; }
         Player current { get; set; }
+        History saveStates { get; set; }
 
         void start();
         void switchPlayer();
         Player whoWin();
+        void undo();
     }
 }

@@ -22,12 +22,21 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+<<<<<<< Updated upstream
     <Content Include="initGame.sequencediagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="initGame.sequencediagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>initGame.sequencediagram</DependentUpon>
+=======
+    <Content Include="GameBuilderSequenceDiagram.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="GameBuilderSequenceDiagram.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>GameBuilderSequenceDiagram.sequencediagram</DependentUpon>
+>>>>>>> Stashed changes
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\models.uml">

@@ -399,7 +399,11 @@
     <packageHasNamedElement>
       <interaction
         Id="1541b384-72ff-46c3-9939-d590bed03e1c"
+<<<<<<< Updated upstream
         name="init Game"
+=======
+        name="GameBuilder"
+>>>>>>> Stashed changes
         collapseFragmentsFlag="false"
         isActiveClass="false"
         isAbstract="false"
@@ -939,18 +943,32 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
+<<<<<<< Updated upstream
             Id="c0879470-aa8c-4d38-b4fc-fce3520cee0f"
             name="MessageOccurrenceSpecification69">
             <covered>
               <lifelineMoniker
                 Id="b7061e5a-e261-41ae-a8eb-8dd15deb9e33"
                 LastKnownName="GameBuilder"
+=======
+            Id="d273bcd6-0220-4faf-b157-fb44df7569f3"
+            name="MessageOccurrenceSpecification30">
+            <covered>
+              <lifelineMoniker
+                Id="111ba756-8203-4d79-bffa-4a50a6eab866"
+                LastKnownName="Map"
+>>>>>>> Stashed changes
                 LastKnownLocation="models.uml" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
+<<<<<<< Updated upstream
             Id="919527fc-9507-490d-9f79-6f33e73b26e6"
             name="MessageOccurrenceSpecification70">
+=======
+            Id="b354200e-da56-4f0c-9f3d-36e55b2215aa"
+            name="MessageOccurrenceSpecification29">
+>>>>>>> Stashed changes
             <covered>
               <lifelineMoniker
                 Id="df026118-da43-4bc6-a828-0ec12dfc9c13"
@@ -1263,22 +1281,40 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
+<<<<<<< Updated upstream
             Id="06c520c4-4ec8-45ee-af05-d31c9b331751"
             name="MessageOccurrenceSpecification82">
             <covered>
               <lifelineMoniker
                 Id="1cc99e68-93b8-492d-aee8-b2fd54682259"
                 LastKnownName="RaceFactory"
+=======
+            Id="d47ef7e7-3af9-4424-bfd9-5a7794c49456"
+            name="MessageOccurrenceSpecification41">
+            <covered>
+              <lifelineMoniker
+                Id="df026118-da43-4bc6-a828-0ec12dfc9c13"
+                LastKnownName="Game"
+>>>>>>> Stashed changes
                 LastKnownLocation="models.uml" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
+<<<<<<< Updated upstream
             Id="4e9499ba-8398-4d2c-a2ad-55d3fff4cc29"
             name="MessageOccurrenceSpecification81">
             <covered>
               <lifelineMoniker
                 Id="b7061e5a-e261-41ae-a8eb-8dd15deb9e33"
                 LastKnownName="GameBuilder"
+=======
+            Id="fd3948c3-4f1b-4d09-aa8f-457c401485d0"
+            name="MessageOccurrenceSpecification42">
+            <covered>
+              <lifelineMoniker
+                Id="b238a59f-1fb2-4f38-b611-c17a6390d6a2"
+                LastKnownName="Unit"
+>>>>>>> Stashed changes
                 LastKnownLocation="models.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -1391,22 +1427,40 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
+<<<<<<< Updated upstream
             Id="8fd2fb44-e962-4e3f-a2bb-f5425b0e296b"
             name="MessageOccurrenceSpecification87">
             <covered>
               <lifelineMoniker
                 Id="b238a59f-1fb2-4f38-b611-c17a6390d6a2"
                 LastKnownName="UnitFactory"
+=======
+            Id="ae2952a5-e76b-4f7b-b7aa-91bbd48691ee"
+            name="MessageOccurrenceSpecification55">
+            <covered>
+              <lifelineMoniker
+                Id="1cc99e68-93b8-492d-aee8-b2fd54682259"
+                LastKnownName="Race"
+>>>>>>> Stashed changes
                 LastKnownLocation="models.uml" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
+<<<<<<< Updated upstream
             Id="d35ed84a-1339-4dc7-84ca-37b25b562517"
             name="MessageOccurrenceSpecification88">
             <covered>
               <lifelineMoniker
                 Id="b7061e5a-e261-41ae-a8eb-8dd15deb9e33"
                 LastKnownName="GameBuilder"
+=======
+            Id="1e22e2d8-1ca1-40c0-82be-1775401a4409"
+            name="MessageOccurrenceSpecification56">
+            <covered>
+              <lifelineMoniker
+                Id="df026118-da43-4bc6-a828-0ec12dfc9c13"
+                LastKnownName="Game"
+>>>>>>> Stashed changes
                 LastKnownLocation="models.uml" />
             </covered>
           </messageOccurrenceSpecification>
