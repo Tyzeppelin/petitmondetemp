@@ -30,7 +30,7 @@ et des points de défense du défenseur. Lorsque les points de vie d’une unit�
 Le jeu se déroule au \og tour par tour \fg{}, c’est à dire que les joueurs jouent chacun leur tours.
 
 
-Il doit aussi y avoir une manière de retourner un tour dans le passé (hommage à Code Lyoko) au moyen d’un code de triche.
+Il doit aussi y avoir une manière de retourner un tour dans le passé au moyen d’un code de triche.
 
 # Modélisation du jeu
 
@@ -42,14 +42,13 @@ des objets complexes, donc nous l'avons utilisée pour créer la carte selon le 
 
 Nous nous sommes heurtés à un problème : comment les unités peuvent elles savoir où elles sont et comment les bouger / faire attaquer d'autres unités ?
 Pour y remédier, nous avons procédé le ma manière suivante :
+ - Chaque unité a une position ;
+ - Dans la carte, une table de hachage est présente avec les positions en clef et une liste d'unités présentes sur cette position ;
+ - Lors de l'attaque d'une unité, celle-ci attaque une position ;
+ - La carte décide quelle unité va être attaquée et la retourne à l'unité attaquante ;
+ - Lors d'un déplacement, il y a une double modification à faire à la fois dans l'unité et dans la carte.
 
-- Chaque unité a une position ;
-- Dans la carte, une table de hachage est présente avec les positions en clef et une liste d'unités présentes sur cette position ;
-- Lors de l'attaque d'une unité, celle-ci attaque une position ;
-- La carte décide quelle unité va être attaquée et la retourne à l'unité attaquante ;
-- Lors d'un déplacement, il y a une double modification à faire à la fois dans l'unité et dans la carte.
-
-Nous sommes encore en train de travailler pour améliorer cette gestion, car la duplication de position peut être source d'erreurs.
+Le mécanisme de retour dans le passé est geré au moyen d’un memento:  ```Memento```.
 
 \begin{figure}[H]
     \centering
