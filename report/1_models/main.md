@@ -11,20 +11,24 @@ header-includes:
     - \fancyhead[CO,CE]{}
     - \fancyfoot[CO,CE]{}
     - \fancyfoot[LE,RO]{\thepage}
-abstract: Réalisation d’un jeu inspiré de smallworld et de civilisation. Le projet est réalisé intégralement avec Visual Studio\textregistered et contiendra donc beaucoup d’humour et de sarcasmes.
+abstract: Réalisation d’un jeu inspiré de Smallworld et de Civilisation. Le projet est réalisé intégralement avec Visual Studio\texttrademark et contiendra donc beaucoup d’humour et de sarcasmes.
 ---
 
 # Présentation de dix-nex-lande
 
-Le but de ce projet est la réalisation, en C#/C++ avec visual studio, d’un jeu sous la forme d’un jeu de plateau
-qui s’inspire des plus grands, à savoir smallworld et civilisation.
+Le but de ce projet est la réalisation, en C#/C++ avec Visual Studio\texttrademark, d’un jeu sous la forme d’un jeu de plateau
+qui s’inspire des plus grands, à savoir Smallworld et Civilisation.
 
 Le but du jeu est, pour chaque joueur, d’amasser plus de points que l’adversaire. Les points sont comptés en fonction du nombre de cases qu’il controle.
 Pour controler une case, le joueur doit avoir au minimum une de ses unité sur la case. Il y a un seul type d’unité pour chacune des trois races
-jouables par le joueur que sont les humains, les elfs et les orques. Pour capturer les cases ennemies, un joueur doit au préalable détruire toutes les
-unités présentes dessus. Les combats se jouent entre deux unités ennemis, l’attaquant inflige un nombre de dégat au defenseur qui est fonction de ses points d’attaque
-et des points de défense de l’adversaire. Lorsque les points de vie d’une unité tombent à zéro elle est détruite.
-Le jeu se déroule au \og tour par tour \fg{}, c’est à dre que les joueurs jouent exclusivement chacuns leur tours. 
+jouables par le joueur que sont les humains, les elfes et les orques. Pour capturer les cases ennemies, un joueur doit au préalable détruire toutes les
+unités présentes dessus. Les combats se font entre deux cases adjacentes (Nord, Sud, Est Ouest), ou, dans le cas des orcs, à deux cases de distance
+si la case sur laquelle est situé l’orc attaquant est du type montagne.
+Les combats se jouent entre deux unités ennemis, l’attaquant inflige un nombre de dégat au defenseur qui est fonction de ses points d’attaque
+et des points de défense du défenseur. Lorsque les points de vie d’une unité tombent à zéro elle est détruite.
+Le jeu se déroule au \og tour par tour \fg{}, c’est à dre que les joueurs jouent chacun leur tours.
+
+Il doit aussi y avoir une manière de retourner un tour dans le passé (hommage à Code Lyoko) au moyen d’un code de triche.
 
 # Modélisation de l’API
 
