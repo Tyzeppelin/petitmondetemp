@@ -72,7 +72,7 @@ comme une fabrique de joueur ou une fabrique de carte.
 
 Le mécanisme des combats sont assez simplistes et fonctionnent comme expliqué pendant la présentation. Une unité attaque une case et un combat est
 engagé entre deux unité. Si l’unité défensive meurt et la case attaquée est vide, l’attaquant est alors déplacé sur la case attaquée. Si la case n’est
-pas vide, l’atatquant reste sur sa case et un nouveau combat peut être lancé. Le statechart diagram du combat est trouvable sur le [gitlab](https://gitlab.insa-rennes.fr/aurelien-fontaine/dix-nez-lande/blob/master/report/1_models/attaque_statechart.png)
+pas vide, l’attaquant reste sur sa case et un nouveau combat peut être lancé. Le statechart diagram du combat est trouvable sur le [gitlab](https://gitlab.insa-rennes.fr/aurelien-fontaine/dix-nez-lande/blob/master/report/1_models/attaque_statechart.png)
 
 La création de la partie se fait grâce au builder, de la manière expliquée dans le diagramme d’activité sur le [gitlab](https://gitlab.insa-rennes.fr/aurelien-fontaine/dix-nez-lande/blob/master/report/1_models/Diagramme_activites.pdf).
 
@@ -99,5 +99,5 @@ ainsi que des bonus/malus de combat en fonction du type de la case, etc.
 
 En conclusion, nous avons terminé la partie la plus importante du projet, la modélisation. Il nous reste la partie la plus longue, c’est à dire
 coder l’interface graphique du jeu et une partie du moteur du jeu. Et, s’il nous reste du temps dans le projet, nous allons essayer de rendre le
-jeu joli et plus interessant.
+jeu joli et plus intéressant.
 
