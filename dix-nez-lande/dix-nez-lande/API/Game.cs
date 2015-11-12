@@ -16,8 +16,10 @@ namespace dix_nez_lande
         Map map { get; set; }
         List<Player> players { get; set; }
         int nbTurn { get; set; }
+        Player current { get; set; }
+
+        void start();
+        void switchPlayer();
+        Player whoWin();
     }
-
-    
-
 }

@@ -28,7 +28,6 @@ namespace dix_nez_lande.Implem
         public List<Unit> units
         {
             get { return units; }
-
             set { units = value; }
         }
 
@@ -49,9 +48,19 @@ namespace dix_nez_lande.Implem
             units.Add(u);
         }
 
+        public void beginTurn()
+        {
+            Console.WriteLine("Le joueur " + name + " commence son tour");
+        }
+
         public void endTurn()
         {
             Console.WriteLine("Le joueur " + name + " a fini de jouer son tour");
+        }
+
+        public void rageQuit()
+        {
+            Console.WriteLine("Le joueur " + name + " abandonne lâchement");
         }
     }
 }

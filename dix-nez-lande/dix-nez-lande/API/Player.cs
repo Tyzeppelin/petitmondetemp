@@ -31,8 +31,18 @@ namespace dix_nez_lande
         void setUnit(Unit u);
 
         /**
+         * Début du tour du joueur courant
+         */
+        void beginTurn();
+
+        /**
         * Fin du tour pour le joueur courant
         */
         void endTurn();
+
+        /**
+         * Le joueur courant abandonne la partie
+         */
+        void rageQuit();
     }
 }

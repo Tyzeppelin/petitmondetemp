@@ -31,6 +31,37 @@ namespace dix_nez_lande.Implem
             set { nbTurn = value; }
         }
 
+         public Player current
+        {
+            get { return current; }
+            set { current = value; }
+        }
+
         public GameImpl() { }
+
+
+        public void start()
+        {
+            current = players[0];
+            current.beginTurn();
+        }
+
+        public void switchPlayer()
+        {
+            if (current == players[0])
+            {
+                current = players[1];
+            }
+            else
+            {
+                current = players[0];
+            }
+            current.beginTurn();
+        }
+
+        public Player whoWin()
+        {
+            return players[0];
+        }
     }
 }
