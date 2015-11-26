@@ -35,7 +35,7 @@ namespace dix_nez_lande.Implem
             set { size = value; }
         }
 
-        List<Tile> Map.tiles
+        public List<Tile> tiles
         {
             get { return tiles; }
             set { tiles = value; }
