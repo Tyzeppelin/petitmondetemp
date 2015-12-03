@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 namespace dix_nez_lande.Implem
 {
@@ -35,7 +36,7 @@ namespace dix_nez_lande.Implem
             set { size = value; }
         }
 
-        public List<Tile> tiles
+        public Tile[] tiles
         {
             get { return tiles; }
             set { tiles = value; }
@@ -45,6 +46,15 @@ namespace dix_nez_lande.Implem
         {
             get { return units; }
             set { units = value; }
+        }
+
+        [DllImport(@"../../ModelEtudiant/bin/Debug/ModdelEtudiant.dll")]
+        private static extern void fillMap(int[] map, int size);
+        public MapImpl(int s)
+        {
+            size = s;
+            int[] tab = new int[size*size];
+            fillMap(tab, size);
         }
 
         public void moveTo(Unit u, Position to)

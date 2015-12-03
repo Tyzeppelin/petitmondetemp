@@ -11,7 +11,7 @@ namespace dix_nez_lande.Implem
     * @author Aurélien Fontaine
     * @version 0.1 (still in alpha)
     */
-    class GameImpl : Game
+    public class GameImpl : Game
     {
         public Map map
         {
@@ -70,7 +70,7 @@ namespace dix_nez_lande.Implem
             return players[0];
         }
 
-        void undo()
+        public void undo()
         {
         }
     }
