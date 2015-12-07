@@ -24,5 +24,10 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void NewGame(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
