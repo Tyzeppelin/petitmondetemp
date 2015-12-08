@@ -17,6 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWrapper", "TestWrapper\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{F9FC4363-7AB9-4332-A4C5-CA6B16F6D773}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "desTests", "desTests\desTests.csproj", "{97127073-A9A4-4F75-B5F7-CE80FE22F21F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{799A70DB-2D2E-41D5-8734-70EBB24D402C} = {799A70DB-2D2E-41D5-8734-70EBB24D402C}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +104,18 @@ Global
 		{F9FC4363-7AB9-4332-A4C5-CA6B16F6D773}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F9FC4363-7AB9-4332-A4C5-CA6B16F6D773}.Release|Win32.ActiveCfg = Release|Any CPU
 		{F9FC4363-7AB9-4332-A4C5-CA6B16F6D773}.Release|Win32.Build.0 = Release|Any CPU
+		{97127073-A9A4-4F75-B5F7-CE80FE22F21F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97127073-A9A4-4F75-B5F7-CE80FE22F21F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97127073-A9A4-4F75-B5F7-CE80FE22F21F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{97127073-A9A4-4F75-B5F7-CE80FE22F21F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{97127073-A9A4-4F75-B5F7-CE80FE22F21F}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{97127073-A9A4-4F75-B5F7-CE80FE22F21F}.Debug|Win32.Build.0 = Debug|Any CPU
+		{97127073-A9A4-4F75-B5F7-CE80FE22F21F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97127073-A9A4-4F75-B5F7-CE80FE22F21F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97127073-A9A4-4F75-B5F7-CE80FE22F21F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{97127073-A9A4-4F75-B5F7-CE80FE22F21F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{97127073-A9A4-4F75-B5F7-CE80FE22F21F}.Release|Win32.ActiveCfg = Release|Any CPU
+		{97127073-A9A4-4F75-B5F7-CE80FE22F21F}.Release|Win32.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
