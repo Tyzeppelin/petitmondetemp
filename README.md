@@ -18,7 +18,9 @@ ever made (probably).
 
 Dans ce projet, il y a des chemins absolus afin de charger la DLL. Il faut les
 changer pour les faire correspondre à votre arborescence de fichier pour que le
-programme fonctionne.
+programme fonctionne. C'est le seul moyen que nous avons trouvé pour que Visual
+sache où sons situé les DLL. Les chemins à éditer sont présent à la fin du
+fichier ``` .\dix-nez-lande\dix-nez-lande\Implem\Algo.cs ```
 
 Afin de vous permettre de mieux apprécier cette petite modification, vous pourrez
 admirer ci-dessous une magnifique licorne, symbole de notre jeu.
