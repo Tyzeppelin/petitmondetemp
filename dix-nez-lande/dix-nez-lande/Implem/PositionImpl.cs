@@ -17,14 +17,16 @@ namespace dix_nez_lande.Implem
 
         private static Position _instance = null;
 
-        private PositionImpl()
+        private PositionImpl(int x, int y)
         {
+            this.x = x;
+            this.y = y;
         }
 
-        public static Position getPosition()
+        public static Position getPosition(int x, int y)
         {
             if (_instance == null)
-                _instance = new PositionImpl();
+                _instance = new PositionImpl(x, y);
             return _instance;
         }
         #endregion

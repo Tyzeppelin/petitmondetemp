@@ -68,6 +68,42 @@ namespace dix_nez_lande.Implem
             }
         }
 
+        public void placeArmy(Player p, int numPlayer)
+        {
+            Race r = p.race;
+            Random rand = new Random();
+            int pos = 0;
+            if (numPlayer == 1)
+            {
+                while (!positionValide(pos, r))
+                {
+                    pos = rand.Next(0, (size* size)/2);
+                }
+            }
+            else
+            {
+                pos =(size*size)/2;
+                while (!positionValide(pos, r))
+                {
+                    pos = rand.Next((size*size)/2, size*size);
+                }
+            }
+            int posX = pos % size;
+            int posY = pos / size;
+            Position position = PositionImpl.getPosition(posX, posY);
+            foreach(Unit unit in p.units ) {
+                unit.pos = position;
+            }
+        }
+
+        private bool positionValide(int pos, Race r)
+        {
+            if (r.name != "humain") {
+                return (tiles[pos].GetType() != typeof(TileWater));
+            }
+            return true;
+        }
+
         public void moveTo(Unit u, Position to)
         {
             Position from = u.pos;

@@ -21,6 +21,12 @@ namespace dix_nez_lande
         Map createMap();
 
         /**
+        * Place l'armée en paramètre sur la carte
+        * @param units L'armée à placer
+        */
+        void placeArmy(List<Unit> units);
+
+        /**
         * Permet de récupérer le nombre d'unités
         * en fonction de la taille de la carte
         * @return int Le nombre d'unités à créer

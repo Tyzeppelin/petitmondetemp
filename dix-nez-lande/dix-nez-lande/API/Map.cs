@@ -19,6 +19,11 @@ namespace dix_nez_lande
         Dictionary<Position, List<Unit>> units { get; set; }
 
         /**
+        * Place une armée sur la carte
+        */
+        void placeArmy(Player p, int numPlayer);
+
+        /**
        * Déplace une unité sur une Tile
        * @param u L'unité à déplacer
        * @param t La Tile d'arrivée de l'unité
