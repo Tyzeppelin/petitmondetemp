@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dix-nez-lande", "dix-nez-lande\dix-nez-lande.csproj", "{799A70DB-2D2E-41D5-8734-70EBB24D402C}"
 EndProject
@@ -10,10 +10,6 @@ EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Diagramme_d_activite", "ModelingProject1\Diagramme_d_activite.modelproj", "{91976BA6-4E31-431F-A03B-F27945BFCD72}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libCPP", "libCPP\libCPPP.vcxproj", "{81E670FE-8518-4C71-B28D-D3D6AC90C790}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelEtudiant", "ModelEtudiant\ModelEtudiant.csproj", "{04085094-32F3-4C5E-8EB4-5EB4AA5AC3F3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWrapper", "TestWrapper\TestWrapper.csproj", "{9EDC1B31-95BC-4E60-A9E6-797CED3AE95C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{F9FC4363-7AB9-4332-A4C5-CA6B16F6D773}"
 EndProject
@@ -72,26 +68,6 @@ Global
 		{81E670FE-8518-4C71-B28D-D3D6AC90C790}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{81E670FE-8518-4C71-B28D-D3D6AC90C790}.Release|Win32.ActiveCfg = Release|Win32
 		{81E670FE-8518-4C71-B28D-D3D6AC90C790}.Release|Win32.Build.0 = Release|Win32
-		{04085094-32F3-4C5E-8EB4-5EB4AA5AC3F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04085094-32F3-4C5E-8EB4-5EB4AA5AC3F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04085094-32F3-4C5E-8EB4-5EB4AA5AC3F3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{04085094-32F3-4C5E-8EB4-5EB4AA5AC3F3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{04085094-32F3-4C5E-8EB4-5EB4AA5AC3F3}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{04085094-32F3-4C5E-8EB4-5EB4AA5AC3F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04085094-32F3-4C5E-8EB4-5EB4AA5AC3F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{04085094-32F3-4C5E-8EB4-5EB4AA5AC3F3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{04085094-32F3-4C5E-8EB4-5EB4AA5AC3F3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{04085094-32F3-4C5E-8EB4-5EB4AA5AC3F3}.Release|Win32.ActiveCfg = Release|Any CPU
-		{9EDC1B31-95BC-4E60-A9E6-797CED3AE95C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9EDC1B31-95BC-4E60-A9E6-797CED3AE95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9EDC1B31-95BC-4E60-A9E6-797CED3AE95C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{9EDC1B31-95BC-4E60-A9E6-797CED3AE95C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{9EDC1B31-95BC-4E60-A9E6-797CED3AE95C}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{9EDC1B31-95BC-4E60-A9E6-797CED3AE95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9EDC1B31-95BC-4E60-A9E6-797CED3AE95C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9EDC1B31-95BC-4E60-A9E6-797CED3AE95C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{9EDC1B31-95BC-4E60-A9E6-797CED3AE95C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{9EDC1B31-95BC-4E60-A9E6-797CED3AE95C}.Release|Win32.ActiveCfg = Release|Any CPU
 		{F9FC4363-7AB9-4332-A4C5-CA6B16F6D773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F9FC4363-7AB9-4332-A4C5-CA6B16F6D773}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9FC4363-7AB9-4332-A4C5-CA6B16F6D773}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU

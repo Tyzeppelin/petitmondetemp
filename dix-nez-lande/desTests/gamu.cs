@@ -10,7 +10,7 @@ namespace desTests
     public class Gametest
     {
         [TestMethod]
-        public void TestBuilder(int SizeMap)
+        public void TestBuilder()
         {
             // INIT
             GameBuilder g = GameBuilder.create();

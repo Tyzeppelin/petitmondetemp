@@ -11,7 +11,7 @@ namespace dix_nez_lande.Implem
     * @author Aurélien Fontaine
     * @version 0.1 (still in alpha)
     */
-    class PlayerImpl : Player
+    public class PlayerImpl : Player
     {
         public string name
         {

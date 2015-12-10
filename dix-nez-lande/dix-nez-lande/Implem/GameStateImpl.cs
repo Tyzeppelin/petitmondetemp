@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace dix_nez_lande.Implem
 {
-    class GameStateImpl : GameState
+    public class GameStateImpl : GameState
     {
         public Player player1
         { get { return player1; }

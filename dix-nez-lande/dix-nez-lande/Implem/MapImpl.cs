@@ -12,7 +12,7 @@ namespace dix_nez_lande.Implem
     * @author Aurélien Fontaine
     * @version 0.1 (still in alpha)
     */
-    class MapImpl : Map
+    public class MapImpl : Map
     {
 
          #region Singleton

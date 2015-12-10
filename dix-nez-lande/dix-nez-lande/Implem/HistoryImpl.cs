@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace dix_nez_lande.Implem
 {
-    class HistoryImpl : History
+    public class HistoryImpl : History
     {
         
         public List<GameState> states

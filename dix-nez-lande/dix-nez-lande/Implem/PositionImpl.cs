@@ -11,7 +11,7 @@ namespace dix_nez_lande.Implem
     * @author Aurélien Fontaine
     * @version 0.1 (still in alpha)
     */
-    class PositionImpl : Position
+    public class PositionImpl : Position
     {
         #region Singleton
 

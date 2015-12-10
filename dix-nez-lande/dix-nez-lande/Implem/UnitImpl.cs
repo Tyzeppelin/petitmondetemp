@@ -11,7 +11,7 @@ namespace dix_nez_lande
     * @author Aurélien Fontaine
     * @version 0.1 (still in alpha)
     */
-    class UnitImpl : Unit
+    public class UnitImpl : Unit
     {
         public UnitImpl() { hp = 0; }
 
