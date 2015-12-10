@@ -96,19 +96,24 @@ namespace dix_nez_lande.Implem
             List<Unit> p1Army = uF.createArmy(p1Race, mS.getSizeArmy());
             Player player1 = pF.createPlayer(p1Race, player1Name, p1Army);
             game.map.placeArmy(player1, 1);
-            game.players.Add(player1);
 
             Race p2Race = rF.getRace(player2Race);
             List<Unit> p2Army = uF.createArmy(p2Race, mS.getSizeArmy());
             Player player2 = pF.createPlayer(p2Race, player2Name, p2Army);
             game.map.placeArmy(player2, 2);
-            game.players.Add(player2);
+
+            List<Player> pl = new List<Player>();
+            pl.Add(player1);
+            pl.Add(player2);
+            game.players = pl;
+
+            game.current = player1;
+
+            game.nbTurn = 0;
 
             History h = HistoryFactory.getHistoryFactory().createHistory();
             game.saveStates = h;
             return game;
         }
-
     }
-
 }
