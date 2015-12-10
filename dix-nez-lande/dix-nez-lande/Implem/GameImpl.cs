@@ -72,7 +72,8 @@ namespace dix_nez_lande.Implem
 
         public Player whoWin()
         {
-            return players[0];
+            
+            return players[0].Points > players[1].Points? players[0]:players[1];
         }
 
         public void undo()

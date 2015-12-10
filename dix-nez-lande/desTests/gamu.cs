@@ -5,15 +5,11 @@ using dix_nez_lande.Implem;
 using System.Diagnostics;
 using dix_nez_lande;
 
-namespace desTests
-
-{
+namespace desTests {
     [TestClass]
-    public class Gametest
-    {
+    public class Gametest {
         [TestMethod]
-        public void TestFact()
-        {
+        public void TestFact() {
 
             RaceFactory rf = RaceFactory.getRaceFactory();
             Assert.IsNotNull(rf);
@@ -42,8 +38,7 @@ namespace desTests
         }
 
         [TestMethod]
-        public void TestAlgo()
-        {
+        public void TestAlgo() {
             Algo algo = new Algo();
             int[] tab = algo.FillMap(4);
             List<int> mm = new List<int>(tab);
@@ -51,8 +46,7 @@ namespace desTests
         }
 
        [TestMethod]
-        public void TestBuilder()
-        {
+        public void TestBuilder() {
             GameBuilder g = GameBuilder.create();
             g = g.board(GameBuilder.LitMap).player1("francois", "human").player2("aurelien", "orc");
             Game tg = g.build();
@@ -60,8 +54,27 @@ namespace desTests
 
             Assert.AreEqual(tg.current.name, "francois");
             Assert.AreEqual(tg.map.tiles.Length, GameBuilder.LitMap* GameBuilder.LitMap);
+            Assert.AreEqual(tg.players[0].Points, 0);
             Assert.AreEqual(tg.saveStates.states.Count, 0);
-            
+        }
+
+        [TestMethod]
+        public void TestBehaviour() {
+            GameBuilder g = GameBuilder.create();
+            g = g.board(GameBuilder.LitMap).player1("francois", "human").player2("aurelien", "orc");
+            Game tg = g.build();
+            Assert.IsNotNull(tg);
+
+            tg.players[0].Points = 12;
+
+            Assert.AreEqual(tg.whoWin(), tg.players[0]);
+
+            Assert.IsTrue(tg.current == tg.players[0] || tg.current == tg.players[1]);
+
+            Player old_cur = tg.current;
+            tg.switchPlayer();
+            Assert.AreNotEqual(tg.current, old_cur);
+
         }
     }
 }

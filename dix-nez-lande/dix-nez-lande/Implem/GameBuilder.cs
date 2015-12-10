@@ -61,6 +61,7 @@ namespace dix_nez_lande.Implem
 
         public Game build()
         {
+            Random rnd = new Random();
             Game game = new GameImpl();
 
             // Creation de la carte de la taille voulue
@@ -107,7 +108,7 @@ namespace dix_nez_lande.Implem
             pl.Add(player2);
             game.players = pl;
 
-            game.current = player1;
+            game.current = game.players[rnd.Next(0,1)];
 
             game.nbTurn = 0;
 

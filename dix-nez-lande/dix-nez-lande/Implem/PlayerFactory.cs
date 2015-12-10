@@ -29,7 +29,9 @@ namespace dix_nez_lande.Implem
 
         public Player createPlayer(Race race, String name, List<Unit> units)
         {
-            return new PlayerImpl(race, name, units);
+            Player p =  new PlayerImpl(race, name, units);
+            p.Points = 0;
+            return p;
 
         }
     }
