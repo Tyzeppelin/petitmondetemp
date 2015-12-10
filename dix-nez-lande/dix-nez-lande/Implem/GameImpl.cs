@@ -54,7 +54,22 @@ namespace dix_nez_lande.Implem
         public void start()
         {
             current = players[0];
-            current.beginTurn();
+            beginTurn();
+        }
+
+        public void beginTurn()
+        {
+            Console.WriteLine("Le joueur " + current.name + " commence son tour");
+        }
+
+        public void endTurn()
+        {
+            foreach (Unit units in current.units)
+            {
+                current.points += units.getPoints();
+            }
+            Console.WriteLine("Le joueur " + current.name + " a fini de jouer son tour");
+            switchPlayer();
         }
 
         public void switchPlayer()
@@ -67,7 +82,19 @@ namespace dix_nez_lande.Implem
             {
                 current = players[0];
             }
-            current.beginTurn();
+            beginTurn();
+        }
+
+        public void endGame()
+        {
+            whoWin();
+        }
+
+        public void rageQuit()
+        {
+            Console.WriteLine("Le joueur " + current.name + " abandonne lâchement");
+            current.points = -1;
+            endGame();
         }
 
         public Player whoWin()

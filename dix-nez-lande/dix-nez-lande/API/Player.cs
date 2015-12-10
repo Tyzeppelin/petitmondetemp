@@ -16,7 +16,7 @@ namespace dix_nez_lande
         String name { get; set; }
         Race race { get; set; }
         List<Unit> units { get; set; }
-        int Points { get; set; }
+        int points { get; set; }
 
         /**
         * Permet de récupérer une unité du joueur
@@ -30,20 +30,5 @@ namespace dix_nez_lande
         * @param u L'unité à ajouter
         */
         void setUnit(Unit u);
-
-        /**
-         * Début du tour du joueur courant
-         */
-        void beginTurn();
-
-        /**
-        * Fin du tour pour le joueur courant
-        */
-        void endTurn();
-
-        /**
-         * Le joueur courant abandonne la partie
-         */
-        void rageQuit();
     }
 }

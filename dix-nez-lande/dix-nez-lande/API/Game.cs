@@ -19,9 +19,45 @@ namespace dix_nez_lande
         Player current { get; set; }
         History saveStates { get; set; }
 
+        /**
+        * Start the game
+        */
         void start();
+
+        /**
+         * Début du tour du joueur courant
+         */
+        void beginTurn();
+
+        /**
+        * Switch the player at this end of a turn
+        */
         void switchPlayer();
+        
+        /**
+        * End the game
+        */
+        void endGame();
+
+        /**
+        * Return the player who won
+        */
         Player whoWin();
+
+        /**
+        * Fin du tour pour le joueur courant
+        */
+        void endTurn();
+
+        /**
+         * Le joueur courant abandonne la partie
+         */
+        void rageQuit();
+
+        /**
+        * Undo all the axtions done by the 
+        * current player for this turn
+        */
         void undo();
     }
 }

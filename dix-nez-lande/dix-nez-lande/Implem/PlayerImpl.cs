@@ -34,7 +34,7 @@ namespace dix_nez_lande.Implem
         }
 
         private int _points;
-        public int Points
+        public int points
         {
             get { return _points; }
             set { _points = value; }
@@ -47,7 +47,7 @@ namespace dix_nez_lande.Implem
             this.units = units;
         }
 
-        public Unit  getUnit(int no)
+        public Unit getUnit(int no)
         {
             return units[no];
         }
@@ -55,25 +55,6 @@ namespace dix_nez_lande.Implem
         public void setUnit(Unit u)
         {
             units.Add(u);
-        }
-
-        public void beginTurn()
-        {
-            Console.WriteLine("Le joueur " + name + " commence son tour");
-        }
-
-        public void endTurn()
-        {
-            foreach(Unit unit in units)
-            {
-                _points += unit.getPoints();
-            }
-            Console.WriteLine("Le joueur " + name + " a fini de jouer son tour");
-        }
-
-        public void rageQuit()
-        {
-            Console.WriteLine("Le joueur " + name + " abandonne lâchement");
         }
     }
 }
