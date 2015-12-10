@@ -24,8 +24,5 @@ namespace dix_nez_lande.Implem
         {
             this.name = race;
         }
-
-        
-
     }
 }

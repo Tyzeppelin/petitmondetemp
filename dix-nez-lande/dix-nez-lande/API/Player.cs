@@ -16,6 +16,7 @@ namespace dix_nez_lande
         String name { get; set; }
         Race race { get; set; }
         List<Unit> units { get; set; }
+        int Points { get; set; }
 
         /**
         * Permet de récupérer une unité du joueur

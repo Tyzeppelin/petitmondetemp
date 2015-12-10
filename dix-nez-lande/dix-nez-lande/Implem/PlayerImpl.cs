@@ -33,6 +33,13 @@ namespace dix_nez_lande.Implem
             set { _units = value; }
         }
 
+        private int _points;
+        int Points
+        {
+            get { return _points; }
+            set { _points = value; }
+        }
+
         public PlayerImpl(Race race, String name, List<Unit> units)
         {
             this.race = race;
@@ -57,6 +64,10 @@ namespace dix_nez_lande.Implem
 
         public void endTurn()
         {
+            foreach(Unit unit in units)
+            {
+                _points += unit.getPoints();
+            }
             Console.WriteLine("Le joueur " + name + " a fini de jouer son tour");
         }
 

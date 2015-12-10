@@ -31,7 +31,7 @@ namespace dix_nez_lande.Implem
             Race r;
             switch (race) {
                 case "human":
-                    r = new RaceImpl("human");
+                    r = this.getHuman();
                     break;
                 case "elf":
                     r = this.getElf();

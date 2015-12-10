@@ -39,5 +39,10 @@ namespace dix_nez_lande
         * @return Vrai si l'unité est en vie
         */
         bool isAlive();
+
+        /**
+        * Rend le nombre points gagnés par l'unité
+        */
+        int getPoints();
     }
 }

@@ -98,7 +98,7 @@ namespace dix_nez_lande.Implem
 
         private bool positionValide(int pos, Race r)
         {
-            if (r.name != "humain") {
+            if (r.name != "human") {
                 return (tiles[pos].GetType() != typeof(TileWater));
             }
             return true;

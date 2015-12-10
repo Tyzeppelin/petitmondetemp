@@ -44,5 +44,11 @@ namespace dix_nez_lande.Implem
             get { return _y; }
             set { _y = value; }
         }
+
+        public Tile getTile()
+        {
+            Map map = MapImpl.getMap();
+            return map.tiles[x + y];
+        }
     }
 }
