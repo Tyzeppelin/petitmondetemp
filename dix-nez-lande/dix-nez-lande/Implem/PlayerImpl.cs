@@ -34,7 +34,7 @@ namespace dix_nez_lande.Implem
         }
 
         private int _points;
-        int Points
+        public int Points
         {
             get { return _points; }
             set { _points = value; }
