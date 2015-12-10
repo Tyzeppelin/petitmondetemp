@@ -79,7 +79,7 @@ namespace dix_nez_lande
 
         public bool isAlive()
         {
-            return hp <= 0;
+            return hp >= 0;
         }
 
         public void move(Position p)

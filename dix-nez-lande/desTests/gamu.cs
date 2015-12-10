@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using dix_nez_lande.Implem;
 using System.Diagnostics;
@@ -45,6 +46,8 @@ namespace desTests
         {
             Algo algo = new Algo();
             int[] tab = algo.FillMap(4);
+            List<int> mm = new List<int>(tab);
+            Assert.AreEqual(mm.Count, 16);
         }
 
        [TestMethod]
@@ -53,8 +56,12 @@ namespace desTests
             GameBuilder g = GameBuilder.create();
             g = g.board(GameBuilder.LitMap).player1("francois", "human").player2("aurelien", "orc");
             Game tg = g.build();
-
             Assert.IsNotNull(tg);
+
+            Assert.AreEqual(tg.current.name, "francois");
+            Assert.AreEqual(tg.map.tiles.Length, GameBuilder.LitMap* GameBuilder.LitMap);
+            Assert.AreEqual(tg.saveStates.states.Count, 0);
+            
         }
     }
 }
