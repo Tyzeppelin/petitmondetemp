@@ -45,6 +45,7 @@
     <Compile Include="API\Position.cs" />
     <Compile Include="API\GameState.cs" />
     <Compile Include="API\History.cs" />
+    <Compile Include="Implem\Algo.cs" />
     <Compile Include="Implem\BigMapFactory.cs" />
     <Compile Include="Implem\GameStateFactory.cs" />
     <Compile Include="Implem\GameStateImpl.cs" />

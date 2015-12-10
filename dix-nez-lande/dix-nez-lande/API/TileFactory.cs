@@ -15,12 +15,12 @@ namespace dix_nez_lande
     */
     public interface TileFactory
     {
-        Dictionary<String, Tile> instances { get; set; }
+        Dictionary<int, Tile> instances { get; set; }
 
         /**
         * Rend une Tile d'un type
         * @return La Tile voulue
         */
-        Tile getTile(String type);
+        Tile getTile(int type);
     }
 }

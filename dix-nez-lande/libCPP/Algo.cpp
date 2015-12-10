@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void Algo::fillMap(TileType map[], int size)
+void Algo::fillMap(int map[], int size)
 {
 	srand(time(NULL));
 	int tabSize = size * size;
@@ -18,7 +18,7 @@ void Algo::fillMap(TileType map[], int size)
 		int tile = rand() % 4;
 		while (!affect){
 			if (nbTilesPerType[tile] != 0){
-				map[i] = (TileType)(tile);
+				map[i] = (int)(tile);
 				affect = true;
 			}
 		}

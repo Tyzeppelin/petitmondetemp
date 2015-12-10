@@ -11,7 +11,7 @@ namespace dix_nez_lande.Implem
     * @author Aurélien Fontaine
     * @version 0.1 (still in alpha)
     */
-    class TileFactoryImpl : TileFactory
+    public class TileFactoryImpl : TileFactory
     {
         #region Singleton
 
@@ -19,13 +19,13 @@ namespace dix_nez_lande.Implem
 
         private TileFactoryImpl()
         {
-            instances.Add("glouglou", new TileWater());
-            instances.Add("chopchop", new TileForest());
-            instances.Add("climbclimb", new TileMountain());
-            instances.Add("petitemaison" , new TilePlain());
+            instances.Add(3, new TileWater());
+            instances.Add(2, new TileForest());
+            instances.Add(1, new TileMountain());
+            instances.Add(0 , new TilePlain());
         }
 
-        public static TileFactory getMapFactory()
+        public static TileFactory getTileFactory()
         {
             if (_instance == null)
                 _instance = new TileFactoryImpl();
@@ -33,11 +33,13 @@ namespace dix_nez_lande.Implem
         }
         #endregion
 
-        public Dictionary<string, Tile> instances
-        { get { throw new NotImplementedException(); }
-          set { throw new NotImplementedException(); } }
+        public Dictionary<int, Tile> instances
+        {
+          get { return instances; }
+          set { /*On ne change pas un singleton*/ } 
+        }
 
-        public Tile getTile(string type)
+        public Tile getTile(int type)
         {
             Tile hoothoot;
             instances.TryGetValue(type, out hoothoot);

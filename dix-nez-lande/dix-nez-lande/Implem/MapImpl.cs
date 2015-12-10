@@ -48,13 +48,22 @@ namespace dix_nez_lande.Implem
             set { units = value; }
         }
 
-        [DllImport(@"../../ModelEtudiant/bin/Debug/ModdelEtudiant.dll")]
-        private static extern void fillMap(int[] map, int size);
         public MapImpl(int s)
         {
+            //Utilisation de la dll cpp pour remplir
+            //un tableau d'entier
+            Algo a = new Algo();
             size = s;
-            int[] tab = new int[size*size];
-            fillMap(tab, size);
+            int nbTiles = size*size;
+            int[] tab = a.FillMap(nbTiles);
+
+            //Utilisation de ce tableau pour générer le
+            //tableau de Tiles
+            tiles = new Tile[nbTiles];
+            TileFactory tf = TileFactoryImpl.getTileFactory();
+            for (int i = 0; i < nbTiles; i++){
+                tiles[i] = tf.getTile(tab[i]);
+            }
         }
 
         public void moveTo(Unit u, Position to)
