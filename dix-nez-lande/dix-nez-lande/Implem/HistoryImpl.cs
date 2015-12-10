@@ -11,31 +11,38 @@ namespace dix_nez_lande.Implem
         
         public List<GameState> states
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get { return states; }
+            set { states = value; }
         }
 
         public GameState stateToSave
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException();  }
+            get { return stateToSave; }
+            set { stateToSave = value;  }
         }
 
         public HistoryImpl() { }
 
         public GameState getLastState()
         {
-            throw new NotImplementedException();
+            return states[states.Count - 1];
         }
 
         public void save()
         {
-            throw new NotImplementedException();
+            states.Add(stateToSave);
         }
-
+        // Set the game to the state it were at GameState g.
         public void set(GameState g)
         {
             throw new NotImplementedException();
+        }
+
+        public GameState pop()
+        {
+            GameState g = states[states.Count - 1];
+            states.RemoveAt(states.Count - 1);
+            return g;
         }
     }
 }

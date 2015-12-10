@@ -11,7 +11,7 @@ namespace dix_nez_lande.Implem
     * @author Aurélien Fontaine
     * @version 0.1 (still in alpha)
     */
-    class GameBuilder
+    public class GameBuilder
     {
         public const int BigMap = 16;
         public const int MidMap = 10;
@@ -102,6 +102,8 @@ namespace dix_nez_lande.Implem
             Player player2 = pF.createPlayer(p2Race, player2Name, p2Army);
             game.players.Add(player2);
 
+            History h = HistoryFactory.getHistoryFactory().createHistory();
+            game.saveStates = h;
             return game;
         }
 
