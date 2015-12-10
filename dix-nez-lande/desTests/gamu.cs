@@ -43,6 +43,15 @@ namespace desTests {
             int[] tab = algo.FillMap(4);
             List<int> mm = new List<int>(tab);
             Assert.AreEqual(mm.Count, 16);
+            Dictionary<int, int> d = new Dictionary<int, int>();
+            d.Add(0, 0); d.Add(1, 0); d.Add(2, 0); d.Add(3, 0);
+            foreach (int n in tab)
+            {
+                d[n] += 1;
+            }
+            Assert.AreEqual(d[0], d[1]);
+            Assert.AreEqual(d[1], d[2]);
+            Assert.AreEqual(d[2], d[3]);
         }
 
        [TestMethod]
