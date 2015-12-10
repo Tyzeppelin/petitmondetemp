@@ -77,6 +77,8 @@ namespace dix_nez_lande.Implem
             {
                 while (!positionValide(pos, r))
                 {
+                    //On cherche une valeur aléatoire dans
+                    //la moitié haute de la carte
                     pos = rand.Next(0, (size* size)/2);
                 }
             }
@@ -85,6 +87,8 @@ namespace dix_nez_lande.Implem
                 pos =(size*size)/2;
                 while (!positionValide(pos, r))
                 {
+                    //On cherche une valeur aléatoire dans
+                    //la moitié basse de la carte
                     pos = rand.Next((size*size)/2, size*size);
                 }
             }
