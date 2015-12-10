@@ -23,7 +23,7 @@ programme fonctionne.
 Afin de vous permettre de mieux apprécier cette petite modification, vous pourrez
 admirer ci-dessous une magnifique licorne, symbole de notre jeu.
 
-
+```
                                                     /
                                                   .7
                                        \       , //
@@ -63,3 +63,4 @@ admirer ci-dessous une magnifique licorne, symbole de notre jeu.
           ) _.'\`-....'                   `-....'
          ('`    \
           `-.___/
+```
