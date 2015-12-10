@@ -61,7 +61,7 @@ namespace dix_nez_lande
         public Race race
         {
             get { return _race; }
-            set { /* no */ }
+            set { _race = value; }
         }
 
         private Position _pos;

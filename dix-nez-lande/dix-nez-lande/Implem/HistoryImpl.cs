@@ -11,15 +11,15 @@ namespace dix_nez_lande.Implem
         private List<GameState> _states;
         public List<GameState> states
         {
-            get { return states; }
-            set { states = value; }
+            get { return _states; }
+            set { _states = value; }
         }
 
         private GameState _stateToSave;
         public GameState stateToSave
         {
-            get { return stateToSave; }
-            set { stateToSave = value;  }
+            get { return _stateToSave; }
+            set { _stateToSave = value;  }
         }
 
         public HistoryImpl() { }
@@ -36,7 +36,7 @@ namespace dix_nez_lande.Implem
         // Set the game to the state it were at GameState g.
         public void set(GameState g)
         {
-            throw new NotImplementedException();
+            stateToSave = g;
         }
 
         public GameState pop()

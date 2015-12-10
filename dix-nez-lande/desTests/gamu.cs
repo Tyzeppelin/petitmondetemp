@@ -11,25 +11,9 @@ namespace desTests
     public class Gametest
     {
         [TestMethod]
-        public void TestBuilder()
+        public void TestFact()
         {
 
-            // INIT
-            /*GameBuilder g = GameBuilder.create();
-            g = g.board(GameBuilder.LitMap).player1("francois", "human").player2("aurelien", "orc");
-            Game tg = g.build();
-            
-            Player p1 = tg.players[0];
-            Player p2 = tg.players[1];
-
-            //qui de mieux ue jordy et willy pour représenter les hommes et les orcs
-
-
-            // !! WARNING : FUN OVERFLOW !!
-
-            Assert.AreEqual(tg.map.size, GameBuilder.LitMap);*/
-
-            // One singleton's factory test (they all are made ont he same pattern/cp)
             RaceFactory rf = RaceFactory.getRaceFactory();
             Assert.IsNotNull(rf);
             Race jordy = rf.getRace("human");
@@ -44,10 +28,37 @@ namespace desTests
             Assert.AreEqual(p1.race.name, jordy.name);
             Assert.AreEqual(p2.race.name, willy.name);
 
-            Assert.AreEqual("test", "test");
+            History h = HistoryFactory.getHistoryFactory().createHistory();
+            Assert.IsNotNull(h);
 
-            return;
+            GameStateFactory gsf = GameStateFactory.getStateFactory();
+            GameState gs = gsf.createGameState();
+            h.set(gs);
+            h.save();
 
+            Assert.AreEqual(h.pop(), gs);
+
+        }
+
+        [TestMethod]
+        public void TestAlgo()
+        {
+            MapStrategy s1 = BigMapFactory.getMapStrategy();
+            Map m1 = s1.createMap();
+            MapStrategy s2 = BigMapFactory.getMapStrategy();
+            Map m2 = s2.createMap();
+            MapStrategy s3 = BigMapFactory.getMapStrategy();
+            Map m3 = s3.createMap();
+        }
+
+       [TestMethod]
+        public void TestBuilder()
+        {
+            GameBuilder g = GameBuilder.create();
+            g = g.board(GameBuilder.LitMap).player1("francois", "human").player2("aurelien", "orc");
+            Game tg = g.build();
+
+            Assert.IsNotNull(tg);
         }
     }
 }

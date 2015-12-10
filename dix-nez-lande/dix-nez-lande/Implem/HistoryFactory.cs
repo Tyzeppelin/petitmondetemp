@@ -26,7 +26,9 @@ namespace dix_nez_lande.Implem
 
         public History createHistory()
         {
-            return new HistoryImpl();
+            History h = new HistoryImpl();
+            h.states = new List<GameState>();
+            return h;
         }
     }
 }

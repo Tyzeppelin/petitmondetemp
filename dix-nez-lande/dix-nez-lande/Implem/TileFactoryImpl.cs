@@ -33,10 +33,10 @@ namespace dix_nez_lande.Implem
         }
         #endregion
 
-        private Dictionary<int, Tile> _instances;
+        private Dictionary<int, Tile> _instances = new Dictionary<int, Tile>();
         public Dictionary<int, Tile> instances
         {
-          get { return instances; }
+          get { return _instances; }
           set { /*On ne change pas un singleton*/ } 
         }
 
