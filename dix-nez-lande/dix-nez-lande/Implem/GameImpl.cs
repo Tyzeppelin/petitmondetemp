@@ -107,12 +107,26 @@ namespace dix_nez_lande.Implem
 
         public Player whoWin()
         {
+<<<<<<< 449e880ac58f2eee86f4425e8e26e97bd9f576d4
             
             return players[0].points > players[1].points? players[0]:players[1];
+=======
+            return players[0].Points > players[1].Points? players[0]:players[1];
+>>>>>>> update history
         }
 
         public void undo()
         {
+            GameState gs = saveStates.pop();
+
+            if (gs.player1.name == players[0].name) {
+                players[0] = gs.player1;
+                players[1] = gs.player2;
+            }else
+            {
+                players[0] = gs.player2;
+                players[1] = gs.player1;
+            }
         }
     }
 }
