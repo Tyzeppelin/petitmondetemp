@@ -70,15 +70,15 @@ namespace dix_nez_lande.Implem
             switch (this.sizeMap) {
                 case GameBuilder.LitMap:
                     mS = LitMapFactory.getMapStrategy();
-                    game.nbTurn = LitTurn;
+                    game.nbTurn = LitTurn * 2;
                     break;
                 case GameBuilder.MidMap:
                     mS = MidMapFactory.getMapStrategy();
-                    game.nbTurn = MidTurn;
+                    game.nbTurn = MidTurn * 2;
                     break;
                 case GameBuilder.BigMap:
                     mS = BigMapFactory.getMapStrategy();
-                    game.nbTurn = BigTurn;
+                    game.nbTurn = BigTurn * 2;
                     break;
                 default:
                     mS = LitMapFactory.getMapStrategy();

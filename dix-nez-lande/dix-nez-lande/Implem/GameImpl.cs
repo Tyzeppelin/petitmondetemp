@@ -69,7 +69,15 @@ namespace dix_nez_lande.Implem
                 current.points += units.getPoints();
             }
             Console.WriteLine("Le joueur " + current.name + " a fini de jouer son tour");
-            switchPlayer();
+            nbTurn--;
+            if (nbTurn == 0)
+            {
+                endGame();
+            }
+            else
+            {
+                switchPlayer();
+            }
         }
 
         public void switchPlayer()
@@ -87,7 +95,7 @@ namespace dix_nez_lande.Implem
 
         public void endGame()
         {
-            whoWin();
+            Console.WriteLine("Le joueur " + whoWin() + " a gagné !");
         }
 
         public void rageQuit()
@@ -100,7 +108,7 @@ namespace dix_nez_lande.Implem
         public Player whoWin()
         {
             
-            return players[0].Points > players[1].Points? players[0]:players[1];
+            return players[0].points > players[1].points? players[0]:players[1];
         }
 
         public void undo()

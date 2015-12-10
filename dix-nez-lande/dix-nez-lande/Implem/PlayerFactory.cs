@@ -30,7 +30,7 @@ namespace dix_nez_lande.Implem
         public Player createPlayer(Race race, String name, List<Unit> units)
         {
             Player p =  new PlayerImpl(race, name, units);
-            p.Points = 0;
+            p.points = 0;
             return p;
 
         }

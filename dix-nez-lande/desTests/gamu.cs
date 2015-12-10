@@ -54,7 +54,7 @@ namespace desTests {
 
             Assert.AreEqual(tg.current.name, "francois");
             Assert.AreEqual(tg.map.tiles.Length, GameBuilder.LitMap* GameBuilder.LitMap);
-            Assert.AreEqual(tg.players[0].Points, 0);
+            Assert.AreEqual(tg.players[0].points, 0);
             Assert.AreEqual(tg.saveStates.states.Count, 0);
         }
 
@@ -65,7 +65,7 @@ namespace desTests {
             Game tg = g.build();
             Assert.IsNotNull(tg);
 
-            tg.players[0].Points = 12;
+            tg.players[0].points = 12;
 
             Assert.AreEqual(tg.whoWin(), tg.players[0]);
 
