@@ -28,30 +28,36 @@ namespace dix_nez_lande.Implem
         #endregion
         public Race getRace(String race)
         {
-            switch (race)
-            {
+            Race r;
+            switch (race) {
                 case "human":
-                    return this.getHuman();
+                    r = new RaceImpl("human");
+                    break;
                 case "elf":
-                    return this.getElf();
+                    r = this.getElf();
+                    break;
                 case "orc":
-                    return this.getOrc();
+                    r = this.getOrc();
+                    break;
                 default:
-                    return this.getHuman();
+                    r = this.getHuman();
+                    break;
             }
+            return r;
         }
 
-        private Race getHuman()
+        public Race getHuman()
         {
             return new RaceImpl("human");
         }
-        private Race getOrc()
+        public Race getOrc()
         {
             return new RaceImpl("orc");
         }
-        private Race getElf()
+        public Race getElf()
         {
-            return new RaceImpl("elf");
+            Race r = new RaceImpl("elf");
+            return r;
         }
     }
 }

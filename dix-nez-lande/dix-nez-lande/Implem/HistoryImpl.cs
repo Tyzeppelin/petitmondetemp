@@ -8,13 +8,14 @@ namespace dix_nez_lande.Implem
 {
     public class HistoryImpl : History
     {
-        
+        private List<GameState> _states;
         public List<GameState> states
         {
             get { return states; }
             set { states = value; }
         }
 
+        private GameState _stateToSave;
         public GameState stateToSave
         {
             get { return stateToSave; }

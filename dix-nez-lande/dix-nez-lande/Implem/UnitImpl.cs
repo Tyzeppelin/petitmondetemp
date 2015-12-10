@@ -15,54 +15,62 @@ namespace dix_nez_lande
     {
         public UnitImpl() { hp = 0; }
 
+        private int _atk;
         public int atk
         {
-            get { return atk; }
-            set { atk = value; }
+            get { return _atk; }
+            set { _atk = value; }
         }
 
+        private int _def;
         public int def
         {
-            get { return def; }
-            set { def = value; }
+            get { return _def; }
+            set { _def = value; }
         }
 
+        private int _dis;
         public int dis
         {
-            get { return dis; }
-            set { dis = value; }
+            get { return _dis; }
+            set { _dis = value; }
         }
 
+        private int _hp;
         public int hp
         {
-            get { return hp; }
-            set { hp = value; }
+            get { return _hp; }
+            set { _hp = value; }
         }
 
+        private int _mov;
         public int mov
         {
-            get { return mov; }
-            set { mov = value; }
+            get { return _mov; }
+            set { _mov = value; }
         }
 
+        private string _name;
         public string name
         {
-            get { return name; }
-            set { name = value; }
+            get { return _name; }
+            set { _name = value; }
         }
 
+        private Race _race;
         public Race race
         {
-            get { return race; }
-            set { throw new NotImplementedException(); }
+            get { return _race; }
+            set { /* no */ }
         }
+
+        private Position _pos;
         public Position pos
         {
-            get { return pos; }
-            set { pos = value; }
+            get { return _pos; }
+            set { _pos = value; }
         }
-
-
+        
 
         public void attack(Position p)
         {

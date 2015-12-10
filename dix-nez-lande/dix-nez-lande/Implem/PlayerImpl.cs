@@ -13,22 +13,24 @@ namespace dix_nez_lande.Implem
     */
     public class PlayerImpl : Player
     {
+        private string _name;
         public string name
-        {
-            get { return name; }
-            set { name = value; }
+        { get { return _name; }
+          set { _name = value; }
         }
 
+        private Race _race;
         public Race race
         {
-            get { return race; }
-            set { race = value; }
+            get { return _race; }
+            set { _race = value; }
         }
 
+        private List<Unit> _units;
         public List<Unit> units
         {
-            get { return units; }
-            set { units = value; }
+            get { return _units; }
+            set { _units = value; }
         }
 
         public PlayerImpl(Race race, String name, List<Unit> units)

@@ -29,16 +29,18 @@ namespace dix_nez_lande.Implem
         }
         #endregion
 
+        private int _x;
         public int x
         {
-            get { return x; }
-            set { x = value; }
+            get { return _x; }
+            set { _x = value; }
         }
 
+        private int _y;
         public int y
         {
-            get { return y; }
-            set { y = value; }
+            get { return _y; }
+            set { _y = value; }
         }
     }
 }

@@ -13,34 +13,39 @@ namespace dix_nez_lande.Implem
     */
     public class GameImpl : Game
     {
+        private Map _map;
         public Map map
         {
-            get { return map; }
-            set { map = value; }
+            get { return _map; }
+            set { _map = value; }
         }
 
+        private List<Player> _players;
         public List<Player> players
         {
-            get { return players; }
-            set { players = value; }
+            get { return _players; }
+            set { _players = value; }
         }
 
+        private int _nbTurn;
         public int nbTurn
         {
-            get { return nbTurn; }
-            set { nbTurn = value; }
+            get { return _nbTurn; }
+            set { _nbTurn = value; }
         }
 
+        private Player _current;
          public Player current
         {
-            get { return current; }
-            set { current = value; }
+            get { return _current; }
+            set { _current = value; }
         }
 
+        private History _saveStates;
         public History saveStates
         {
-            get { return saveStates; }
-            set { saveStates = value; }
+            get { return _saveStates; }
+            set { _saveStates = value; }
         }
 
         public GameImpl() { }

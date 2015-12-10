@@ -13,10 +13,11 @@ namespace dix_nez_lande.Implem
     */
     public class RaceImpl : Race
     {
+        private string _name;
         public string name
         {
-            get { return name; }
-            set { name = value; }
+            get { return _name; }
+            set { _name = value; }
         }
 
         public RaceImpl(String race)

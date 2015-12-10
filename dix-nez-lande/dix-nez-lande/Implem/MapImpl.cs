@@ -28,24 +28,26 @@ namespace dix_nez_lande.Implem
             return _instance;
         }
         #endregion
-        
 
+        private int _size;
         public int size
         {
-            get { return size; }
-            set { size = value; }
+            get { return _size; }
+            set { _size = value; }
         }
 
+        private Tile[] _tiles;
         public Tile[] tiles
         {
-            get { return tiles; }
-            set { tiles = value; }
+            get { return _tiles; }
+            set { _tiles = value; }
         }
 
+        private Dictionary<Position, List<Unit>> _units;
         public Dictionary<Position, List<Unit>> units
         {
-            get { return units; }
-            set { units = value; }
+            get { return _units; }
+            set { _units = value; }
         }
 
         public MapImpl(int s)

@@ -33,6 +33,7 @@ namespace dix_nez_lande.Implem
         }
         #endregion
 
+        private Dictionary<int, Tile> _instances;
         public Dictionary<int, Tile> instances
         {
           get { return instances; }

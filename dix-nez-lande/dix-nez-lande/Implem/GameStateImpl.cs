@@ -8,21 +8,24 @@ namespace dix_nez_lande.Implem
 {
     public class GameStateImpl : GameState
     {
+        private Player _player1;
         public Player player1
-        { get { return player1; }
-          set { player1 = value; }
+        { get { return _player1; }
+          set { _player1 = value; }
         }
 
+        private Player _player2;
         public Player player2
         {
-            get { return player2; }
-            set { player2 = value; }
+            get { return _player2; }
+            set { _player2 = value; }
         }
 
+        private Dictionary<Position, List<Unit>> _unitsPosition;
         public Dictionary<Position, List<Unit>> unitsPosition
         {
-            get { return unitsPosition; }
-            set { unitsPosition = value; }
+            get { return _unitsPosition; }
+            set { _unitsPosition = value; }
         }
 
         public GameStateImpl() { }
