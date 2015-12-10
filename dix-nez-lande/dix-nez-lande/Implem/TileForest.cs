@@ -13,5 +13,9 @@ namespace dix_nez_lande.Implem
     */
     public class TileForest : Tile
     {
+        public int getPoints(Race e)
+        {
+            return (e.name == "elf")? 3:1;
+        }
     }
 }

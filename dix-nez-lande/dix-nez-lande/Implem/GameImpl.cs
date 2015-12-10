@@ -51,9 +51,14 @@ namespace dix_nez_lande.Implem
         public GameImpl() { }
 
 
+        public int getPoints(Unit u)
+        {
+            return map.tiles[u.pos.x + u.pos.y].getPoints(u.race);
+        }
+
         public void start()
         {
-            current = players[0];
+            saveStates.set(GameStateFactory.getStateFactory().createGameState());
             beginTurn();
         }
 
@@ -64,12 +69,11 @@ namespace dix_nez_lande.Implem
 
         public void endTurn()
         {
-            foreach (Unit units in current.units)
+            foreach (Unit unit in current.units)
             {
-                current.points += units.getPoints();
+                current.points += getPoints(unit);
             }
             Console.WriteLine("Le joueur " + current.name + " a fini de jouer son tour");
-            nbTurn--;
             if (nbTurn == 0)
             {
                 endGame();
@@ -77,6 +81,22 @@ namespace dix_nez_lande.Implem
             else
             {
                 switchPlayer();
+            }
+            nbTurn--;
+            // Pour l'history
+            if (nbTurn%2 == 0)
+            {
+                GameState gs = saveStates.stateToSave;
+                gs.player1 = current;
+                saveStates.set(gs);
+                saveStates.save();
+                saveStates.set(GameStateFactory.getStateFactory().createGameState());
+            }
+            else
+            {
+                GameState gs = saveStates.stateToSave;
+                gs.player2 = current;
+                saveStates.set(gs);
             }
         }
 
@@ -107,12 +127,7 @@ namespace dix_nez_lande.Implem
 
         public Player whoWin()
         {
-<<<<<<< 449e880ac58f2eee86f4425e8e26e97bd9f576d4
-            
             return players[0].points > players[1].points? players[0]:players[1];
-=======
-            return players[0].Points > players[1].Points? players[0]:players[1];
->>>>>>> update history
         }
 
         public void undo()

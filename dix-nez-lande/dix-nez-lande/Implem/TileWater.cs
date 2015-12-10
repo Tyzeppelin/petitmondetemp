@@ -13,5 +13,9 @@ namespace dix_nez_lande.Implem
     */
     public class TileWater : Tile
     {
+        public int getPoints(Race r)
+        {
+            return (r.name == "elf") ? 0:1 ;
+        }
     }
 }

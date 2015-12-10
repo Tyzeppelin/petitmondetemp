@@ -13,5 +13,11 @@ namespace dix_nez_lande.Implem
     */
     public class TileMountain : Tile
     {
+        public int getPoints(Race r)
+        {
+            if (r.name == "orc") return 2;
+            else if (r.name == "human") return 1;
+            else return 0;
+        }
     }
 }

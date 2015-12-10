@@ -40,9 +40,5 @@ namespace dix_nez_lande
         */
         bool isAlive();
 
-        /**
-        * Rend le nombre points gagnés par l'unité
-        */
-        int getPoints();
     }
 }

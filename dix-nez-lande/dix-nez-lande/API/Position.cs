@@ -16,10 +16,5 @@ namespace dix_nez_lande
     {
         int x { get; set; }
         int y { get; set; }
-
-        /**
-        * Rend la tile à la position courante.
-        */
-        Tile getTile();
     }
 }

@@ -69,12 +69,17 @@ namespace desTests {
 
             Assert.AreEqual(tg.whoWin(), tg.players[0]);
 
+            tg.start();
             Assert.IsTrue(tg.current == tg.players[0] || tg.current == tg.players[1]);
+            
+            tg.beginTurn();
+            tg.nbTurn = 2;
+            tg.endTurn();
+            Assert.AreEqual(tg.nbTurn, 1);
 
             Player old_cur = tg.current;
             tg.switchPlayer();
             Assert.AreNotEqual(tg.current, old_cur);
-
         }
     }
 }

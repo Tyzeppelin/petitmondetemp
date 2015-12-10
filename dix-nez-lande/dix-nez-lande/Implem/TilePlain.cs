@@ -13,5 +13,9 @@ namespace dix_nez_lande.Implem
     */
     public class TilePlain : Tile
     {
+        public int getPoints(Race r)
+        {
+            return (r.name == "human") ? 2 : 1;
+        }
     }
 }

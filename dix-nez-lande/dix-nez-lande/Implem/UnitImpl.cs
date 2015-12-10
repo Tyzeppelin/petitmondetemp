@@ -87,24 +87,5 @@ namespace dix_nez_lande
             MapImpl.getMap().moveTo(this, p);
             pos = p;
         }
-
-        public int getPoints()
-        {
-            switch (race.name)
-            {
-                case "human":
-                    if (pos.getTile().GetType() == typeof(TileWater)) return 0;
-                    if (pos.getTile().GetType() == typeof(TilePlain)) return 2;
-                    return 1;
-                case "elf":
-                    if (pos.getTile().GetType() == typeof(TileForest)) return 3;
-                    if (pos.getTile().GetType() == typeof(TilePlain)) return 1;
-                    return 0;
-                case "orc":
-                    if (pos.getTile().GetType() == typeof(TileMountain)) return 0;
-                    return 1;
-                default: return 0;
-            }
-        }
     }
 }
