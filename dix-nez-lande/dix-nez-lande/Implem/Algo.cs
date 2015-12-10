@@ -14,7 +14,7 @@ namespace dix_nez_lande.Implem
 
         public int[] FillMap(int nbTiles)
         {
-            var tiles = new int[nbTiles];
+            var tiles = new int[nbTiles* nbTiles];
             Algo_fillMap(nativeAlgo, tiles, nbTiles);
             return tiles;
         }
@@ -49,13 +49,13 @@ namespace dix_nez_lande.Implem
         }
 
 
-        [DllImport("libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:/Users/Malabar/Documents/dix-nez-lande/dix-nez-lande/Debug/libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static void Algo_fillMap(IntPtr algo, int[] tiles, int nbTiles);
 
-        [DllImport("libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:/Users/Malabar/Documents/dix-nez-lande/dix-nez-lande/Debug/libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static IntPtr Algo_new();
 
-        [DllImport("libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:/Users/Malabar/Documents/dix-nez-lande/dix-nez-lande/Debug/libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static IntPtr Algo_delete(IntPtr algo);
     }
 }

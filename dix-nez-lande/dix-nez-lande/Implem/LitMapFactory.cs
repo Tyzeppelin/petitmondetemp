@@ -28,7 +28,7 @@ namespace dix_nez_lande.Implem
         #endregion
         public Map createMap()
         {
-            Map m =  new MapImpl();
+            Map m =  new MapImpl(GameBuilder.LitMap);
             m.size = GameBuilder.LitMap;
             return m;
         }

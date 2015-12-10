@@ -43,12 +43,8 @@ namespace desTests
         [TestMethod]
         public void TestAlgo()
         {
-            MapStrategy s1 = BigMapFactory.getMapStrategy();
-            Map m1 = s1.createMap();
-            MapStrategy s2 = BigMapFactory.getMapStrategy();
-            Map m2 = s2.createMap();
-            MapStrategy s3 = BigMapFactory.getMapStrategy();
-            Map m3 = s3.createMap();
+            Algo algo = new Algo();
+            int[] tab = algo.FillMap(4);
         }
 
        [TestMethod]

@@ -29,7 +29,7 @@ namespace dix_nez_lande.Implem
 
         public Map createMap()
         {
-            Map m = new MapImpl();
+            Map m = new MapImpl(GameBuilder.BigMap);
             m.size = GameBuilder.BigMap;
             return m;
         }
