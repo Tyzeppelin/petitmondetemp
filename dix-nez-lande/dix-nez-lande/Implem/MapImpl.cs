@@ -152,5 +152,10 @@ namespace dix_nez_lande.Implem
                 attacker.hp -= defenser.atk - attacker.def;
             }
         }
+
+        public Boolean canMove(int x, int y, Race r)
+        {
+            return tiles[size * x + y].isAcceptable(r);
+        }
     }
 }

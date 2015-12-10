@@ -53,7 +53,7 @@ namespace dix_nez_lande.Implem
 
         public int getPoints(Unit u)
         {
-            return map.tiles[u.pos.x + u.pos.y].getPoints(u.race);
+            return map.tiles[u.pos.x*map.size + u.pos.y].getPoints(u.race);
         }
 
         public void start()
@@ -88,6 +88,7 @@ namespace dix_nez_lande.Implem
             {
                 GameState gs = saveStates.stateToSave;
                 gs.player1 = current;
+                gs.nbTurn = nbTurn;
                 saveStates.set(gs);
                 saveStates.save();
                 saveStates.set(GameStateFactory.getStateFactory().createGameState());
@@ -133,7 +134,7 @@ namespace dix_nez_lande.Implem
         public void undo()
         {
             GameState gs = saveStates.pop();
-
+            nbTurn = gs.nbTurn;
             if (gs.player1.name == players[0].name) {
                 players[0] = gs.player1;
                 players[1] = gs.player2;
@@ -142,6 +143,26 @@ namespace dix_nez_lande.Implem
                 players[0] = gs.player2;
                 players[1] = gs.player1;
             }
+        }
+
+        public List<Position> suggest()
+        {
+            List<Position> agg = new List<Position>();
+            foreach (Unit u in current.units)
+            {
+                if (map.canMove(u.pos.x + 1, u.pos.y, u.race)) agg.Add(PositionImpl.getPosition(u.pos.x+1,u.pos.y));
+                else if (map.canMove(u.pos.x - 1, u.pos.y, u.race)) agg.Add(PositionImpl.getPosition(u.pos.x - 1, u.pos.y));
+                else if( map.canMove(u.pos.x, u.pos.y +1, u.race)) agg.Add(PositionImpl.getPosition(u.pos.x , u.pos.y+1));
+                else if( map.canMove(u.pos.x, u.pos.y -1, u.race)) agg.Add(PositionImpl.getPosition(u.pos.x, u.pos.y-1));
+            }
+            List<Position> res = new List<Position>();
+            foreach (Position p in agg)
+            {
+                if (!res.Contains(p)) {
+                    res.Add(p);
+                }
+            }
+            return res;
         }
     }
 }

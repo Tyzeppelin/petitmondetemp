@@ -21,11 +21,11 @@ namespace dix_nez_lande.Implem
             set { _player2 = value; }
         }
 
-        private Dictionary<Position, List<Unit>> _unitsPosition;
-        public Dictionary<Position, List<Unit>> unitsPosition
+        private int _nbTurn;
+        public int nbTurn
         {
-            get { return _unitsPosition; }
-            set { _unitsPosition = value; }
+            get { return _nbTurn; }
+            set { _nbTurn = value; }
         }
 
         public GameStateImpl() { }

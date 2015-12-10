@@ -38,5 +38,11 @@ namespace dix_nez_lande
         * @param t La Tile où l'unité attaque
         */
         void attack(Unit attacker , Position p);
+
+        /**
+        * Est-ce que la case situé en x,y est une destination
+        * acceptable pour la race r
+        */
+        Boolean canMove(int x, int y, Race r);
     }
 }

@@ -17,5 +17,9 @@ namespace dix_nez_lande.Implem
         {
             return (r.name == "elf") ? 0:1 ;
         }
+        public Boolean isAcceptable(Race r)
+        {
+            return r.name != "orc";
+        }
     }
 }

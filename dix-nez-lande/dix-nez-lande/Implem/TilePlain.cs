@@ -17,5 +17,9 @@ namespace dix_nez_lande.Implem
         {
             return (r.name == "human") ? 2 : 1;
         }
+        public Boolean isAcceptable(Race r)
+        {
+            return true;
+        }
     }
 }

@@ -14,5 +14,7 @@ namespace dix_nez_lande
     public interface Tile
     {
         int getPoints(Race r);
+
+        Boolean isAcceptable(Race r);
     }
 }

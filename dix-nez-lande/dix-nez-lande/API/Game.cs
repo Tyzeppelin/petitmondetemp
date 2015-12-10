@@ -59,5 +59,10 @@ namespace dix_nez_lande
         * current player for this turn
         */
         void undo();
+
+        /**
+        * Get all the positions available
+        */
+        List<Position> suggest();
     }
 }
