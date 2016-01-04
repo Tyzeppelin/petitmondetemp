@@ -9,7 +9,7 @@
       Title="GameMenu">
 
     <Grid>
-        <Image Margin="0,0,10,0" Stretch="UniformToFill" Source="resources/menuBackground.png" />
+        <Image Margin="0,0,10,0" Stretch="UniformToFill" Source="resources/menuBackground.png" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
         <Button Content="New Game" HorizontalAlignment="Center" Height="96" Margin="0,242,0,0" VerticalAlignment="Top" Width="424" FontFamily="Tw Cen MT" FontSize="72" Click="NewGame"/>
 
     </Grid>
