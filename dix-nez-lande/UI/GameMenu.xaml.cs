@@ -25,9 +25,18 @@ namespace UI
             InitializeComponent();
         }
 
-        private void NewGame(object sender, RoutedEventArgs e)
+        private void newGame(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            MessageBox.Show("TOUHOU");
+        }
+        private void optionButton(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("plop");
+        }
+
+        private void exitButton(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
