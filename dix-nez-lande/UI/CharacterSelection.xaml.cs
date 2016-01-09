@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace UI
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour CharacterSelection.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CharacterSelection : Page
     {
-        public MainWindow()
+        public CharacterSelection()
         {
             InitializeComponent();
         }
