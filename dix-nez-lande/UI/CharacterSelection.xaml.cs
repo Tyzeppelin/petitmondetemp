@@ -24,5 +24,12 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void playGame(object sender, RoutedEventArgs e)
+        {
+            CharacterSelection cs = new CharacterSelection();
+            this.NavigationService.Source = new System.Uri("/CharacterSelection.xaml", System.UriKind.Relative);
+            MessageBox.Show("TOUHOU");
+        }
     }
 }
