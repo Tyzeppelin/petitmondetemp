@@ -121,6 +121,12 @@
   <ItemGroup>
     <Resource Include="resources\icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dix-nez-lande\dix-nez-lande.csproj">
+      <Project>{799a70db-2d2e-41d5-8734-70ebb24d402c}</Project>
+      <Name>dix-nez-lande</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

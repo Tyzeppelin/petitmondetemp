@@ -17,9 +17,35 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Text="NAME PLAYER plays." HorizontalAlignment="Center"/>
-        <Grid>
-            <!--Mettre une grille dynamique ici-->
+        <TextBlock Grid.Row="0" Text="NAME PLAYER plays." HorizontalAlignment="Center"  Margin="10,10,10,10"/>
+        <Grid Grid.Row="1" HorizontalAlignment="Center" Margin="10,10,10,10" >
+            <Grid.RowDefinitions >
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Row="0" Grid.Column="0" Fill="Beige" Stroke="Black"/>
+            <Rectangle Grid.Row="0" Grid.Column="1" Fill="Beige" Stroke="Black"/>
+            <Rectangle Grid.Row="0" Grid.Column="2" Fill="Beige" Stroke="Black"/>
+            <Rectangle Grid.Row="0" Grid.Column="3" Fill="Beige" Stroke="Black"/>
+            <Rectangle Grid.Row="0" Grid.Column="4" Fill="Beige" Stroke="Black"/>
+            <Rectangle Grid.Row="0" Grid.Column="5" Fill="Aqua" Stroke="Black"/>
+            
         </Grid>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
@@ -31,7 +57,7 @@
             <Button Grid.Column="0" x:Name="End_turn" Content="End Turn" HorizontalAlignment="Center" Width="100" Height="50" />
             <Button Grid.Column="1" x:Name="Show_hint" Content="Show Hint" HorizontalAlignment="Center" Width="100" Height="50" />
             <Button Grid.Column="2" x:Name="Undo" Content="Undo" Width="100" Height="50" HorizontalAlignment="Center" />
-            <Button Grid.Column="3" x:Name="Show_help" Content="Help !" HorizontalAlignment="Center" Width="100" Height="50" Click="Show_help_Click" /> 
+            <Button Grid.Column="3" x:Name="Show_help" Content="Help !" HorizontalAlignment="Center" Width="100" Height="50" /> 
         </Grid>
     </Grid>
 </Page>

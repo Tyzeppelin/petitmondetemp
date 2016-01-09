@@ -28,7 +28,7 @@ namespace UI
         private void newGame(object sender, RoutedEventArgs e)
         {
             CharacterSelection cs = new CharacterSelection();
-            this.NavigationService.Source = new System.Uri("/CharacterSelection.xaml", System.UriKind.Relative);
+            this.NavigationService.Source = new System.Uri("/GameSet.xaml", System.UriKind.Relative);
             MessageBox.Show("TOUHOU");
         }
         private void optionButton(object sender, RoutedEventArgs e)
