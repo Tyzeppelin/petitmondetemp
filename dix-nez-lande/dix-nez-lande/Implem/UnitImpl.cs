@@ -87,5 +87,23 @@ namespace dix_nez_lande
             MapImpl.getMap().moveTo(this, p);
             pos = p;
         }
+
+        public void move(int Col, int Row)
+        {
+            Position pos = PositionImpl.getPosition(Col, Row);
+            List<Unit> uList;
+            try
+            {
+                MapImpl.getMap().units.TryGetValue(pos, out uList);
+            }
+            catch (ArgumentNullException e)
+            {
+                move(pos);
+            }
+            finally
+            {
+                attack(pos);
+            }
+        }
     }
 }

@@ -19,6 +19,7 @@ namespace UI
         private int size;
         private int turns;
         private bool isCheatAllowed;
+        private Unit movingUnit;
 
         public GameWindow()
         {
@@ -73,6 +74,7 @@ namespace UI
                     Grid.SetRow(im, i);
                     Grid.SetColumn(im, j);
                     im.MouseLeftButtonDown += Tile_Left_Clicked;
+                    im.MouseRightButtonDown += Tile_Right_Clicked;
                     Game_Grid.Children.Add(im);
                 }
             }
@@ -200,7 +202,22 @@ namespace UI
                 int co = Grid.GetColumn(img);
                 int ro = Grid.GetRow(img);
 
-                game.current.getUnit(co, ro);
+                movingUnit = game.current.getUnit(co, ro);
+                updateUnits();
+                e.Handled = true;
+            }
+        }
+
+        private void Tile_Right_Clicked(object sender, RoutedEventArgs e)
+        {
+            if (sender.GetType().Equals(typeof(Image)))
+            {
+                Image img = (Image)sender;
+
+                int co = Grid.GetColumn(img);
+                int ro = Grid.GetRow(img);
+
+                movingUnit.move(co, ro);
                 updateUnits();
                 e.Handled = true;
             }

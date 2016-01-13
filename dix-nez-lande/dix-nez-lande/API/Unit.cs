@@ -34,6 +34,8 @@ namespace dix_nez_lande
         * @param t La Tile où l'unité se déplace
         */
         void move(Position p);
+
+        void move(int Col, int Row);
         /**
         * Permet de savoir si une unité est en vie ou non
         * @return Vrai si l'unité est en vie
