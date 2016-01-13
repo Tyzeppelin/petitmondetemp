@@ -250,11 +250,11 @@ namespace UI
                     Position p = PositionImpl.getPosition(co, ro);
                     if (u == null)
                     {
-                        movingUnit.move(p);
+                        game.map.moveTo(movingUnit, p);
                     }
                     else
                     { 
-                        movingUnit.attack(p);
+                        game.map.attack(movingUnit, p);
                     }
                 }
                 updateUnits();
