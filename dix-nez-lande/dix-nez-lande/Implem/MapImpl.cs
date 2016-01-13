@@ -20,11 +20,12 @@ namespace dix_nez_lande.Implem
         private static Map _instance = null;
 
         public MapImpl() {
-            _instance = this;
         }
 
         public static Map getMap()
         {
+            if (_instance==null)
+                _instance = new MapImpl();
             return _instance;
         }
         #endregion
