@@ -25,6 +25,8 @@ namespace dix_nez_lande
         */
         Unit getUnit(int no);
 
+        Unit getUnit(int Col, int Row);
+
         /**
         * Permet d'ajouter une unité au joueur
         * @param u L'unité à ajouter

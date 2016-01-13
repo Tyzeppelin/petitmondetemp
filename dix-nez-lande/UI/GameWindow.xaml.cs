@@ -72,10 +72,11 @@ namespace UI
                     Image im = colorTile(game.map.tiles[i + size * j]);
                     Grid.SetRow(im, i);
                     Grid.SetColumn(im, j);
+                    im.MouseLeftButtonDown += Tile_Left_Clicked;
                     Game_Grid.Children.Add(im);
                 }
-                Game_Grid.UpdateLayout();
             }
+            Game_Grid.UpdateLayout();
         }
 
         private Image colorTile(Tile tile)
@@ -188,6 +189,21 @@ namespace UI
         private void PopHelp(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Useful Help");
+        }
+
+        private void Tile_Left_Clicked(object sender, RoutedEventArgs e)
+        {
+            if (sender.GetType().Equals(typeof(Image)))
+            {
+                Image img = (Image)sender;
+
+                int co = Grid.GetColumn(img);
+                int ro = Grid.GetRow(img);
+
+                game.current.getUnit(co, ro);
+                updateUnits();
+                e.Handled = true;
+            }
         }
     }
 }

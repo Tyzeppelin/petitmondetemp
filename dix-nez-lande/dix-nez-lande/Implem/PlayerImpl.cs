@@ -52,6 +52,17 @@ namespace dix_nez_lande.Implem
             return units[no];
         }
 
+        public Unit getUnit(int Col, int Row)
+        {
+            Position pos = PositionImpl.getPosition(Col, Row);
+            int n = units.Count;
+            for (int i = 0; i < n; i++)
+            {
+                if (units[i].pos == pos) return units[i];
+            }   
+            return units[0];
+        }
+
         public void setUnit(Unit u)
         {
             units.Add(u);
