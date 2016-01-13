@@ -90,20 +90,7 @@ namespace dix_nez_lande
 
         public void move(int Col, int Row)
         {
-            Position pos = PositionImpl.getPosition(Col, Row);
-            List<Unit> uList;
-            try
-            {
-                MapImpl.getMap().units.TryGetValue(pos, out uList);
-            }
-            catch (ArgumentNullException e)
-            {
-                move(pos);
-            }
-            finally
-            {
-                attack(pos);
-            }
+            MapImpl.getMap().move(this, Col, Row);
         }
     }
 }

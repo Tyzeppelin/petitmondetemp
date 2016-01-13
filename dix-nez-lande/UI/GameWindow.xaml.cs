@@ -217,7 +217,10 @@ namespace UI
                 int co = Grid.GetColumn(img);
                 int ro = Grid.GetRow(img);
 
-                movingUnit.move(co, ro);
+                if(movingUnit != null)
+                {
+                    movingUnit.move(co, ro);
+                }
                 updateUnits();
                 e.Handled = true;
             }
