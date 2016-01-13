@@ -123,9 +123,9 @@ namespace dix_nez_lande.Implem
             return true;
         }
 
-        public void moveTo(Unit u, Position to, Map m)
+        public void moveTo(Unit u, Position to)
         {
-            if ( !canMove(to.x, to.y, u.race) && !u.aBouge && !accessible(to, u) ) { }
+            if ( (!canMove(to.x, to.y, u.race) &&  !accessible(to, u)) || u.aBouge ) { }
             else
             {
                 Position from = u.pos;
@@ -144,6 +144,7 @@ namespace dix_nez_lande.Implem
                 uList.Add(u);
                 units.Remove(to);
                 units.Add(to, uList);
+                u.move(to);
             }
         }
 
@@ -176,7 +177,7 @@ namespace dix_nez_lande.Implem
 
         public Boolean canMove(int x, int y, Race r)
         {
-            return tiles[size * x + y].isAcceptable(r);
+            return tiles[size * y + x].isAcceptable(r);
         }
 
         public bool accessible(Position p, Unit u)

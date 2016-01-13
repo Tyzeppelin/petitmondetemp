@@ -247,8 +247,8 @@ namespace UI
                     Map m = game.map;
                     if (u == null)
                     {
-                        m.moveTo(movingUnit, p, m);
-                        movingUnit.move(p);
+                        game.map.moveTo(movingUnit, p);
+                        
                     }
                     else
                     { 
