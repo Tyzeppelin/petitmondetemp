@@ -23,6 +23,7 @@ namespace UI
         public MainWindow()
         {
             InitializeComponent();
+            //this.lala.Content = System.AppDomain.CurrentDomain.BaseDirectory;
         }
     }
 }

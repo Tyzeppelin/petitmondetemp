@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dix-nez-lande", "dix-nez-lande\dix-nez-lande.csproj", "{799A70DB-2D2E-41D5-8734-70EBB24D402C}"
 EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Diagramme_de_sequences", "..\models\models\Diagramme_de_sequences.modelproj", "{D41EE59A-CC10-444F-9DE7-F899F7E4BEC6}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libCPP", "libCPP\libCPPP.vcxproj", "{81E670FE-8518-4C71-B28D-D3D6AC90C790}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{F9FC4363-7AB9-4332-A4C5-CA6B16F6D773}"
@@ -36,16 +34,6 @@ Global
 		{799A70DB-2D2E-41D5-8734-70EBB24D402C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{799A70DB-2D2E-41D5-8734-70EBB24D402C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{799A70DB-2D2E-41D5-8734-70EBB24D402C}.Release|Win32.ActiveCfg = Release|Any CPU
-		{D41EE59A-CC10-444F-9DE7-F899F7E4BEC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D41EE59A-CC10-444F-9DE7-F899F7E4BEC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D41EE59A-CC10-444F-9DE7-F899F7E4BEC6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{D41EE59A-CC10-444F-9DE7-F899F7E4BEC6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{D41EE59A-CC10-444F-9DE7-F899F7E4BEC6}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{D41EE59A-CC10-444F-9DE7-F899F7E4BEC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D41EE59A-CC10-444F-9DE7-F899F7E4BEC6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D41EE59A-CC10-444F-9DE7-F899F7E4BEC6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{D41EE59A-CC10-444F-9DE7-F899F7E4BEC6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{D41EE59A-CC10-444F-9DE7-F899F7E4BEC6}.Release|Win32.ActiveCfg = Release|Any CPU
 		{81E670FE-8518-4C71-B28D-D3D6AC90C790}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{81E670FE-8518-4C71-B28D-D3D6AC90C790}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
 		{81E670FE-8518-4C71-B28D-D3D6AC90C790}.Debug|Mixed Platforms.Build.0 = Debug|Win32

@@ -49,13 +49,13 @@ namespace dix_nez_lande.Implem
         }
 
 
-        [DllImport("C:/Users/Malabar/Documents/dix-nez-lande/dix-nez-lande/Debug/libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static void Algo_fillMap(IntPtr algo, int[] tiles, int nbTiles);
 
-        [DllImport("C:/Users/Malabar/Documents/dix-nez-lande/dix-nez-lande/Debug/libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static IntPtr Algo_new();
 
-        [DllImport("C:/Users/Malabar/Documents/dix-nez-lande/dix-nez-lande/Debug/libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static IntPtr Algo_delete(IntPtr algo);
     }
 }

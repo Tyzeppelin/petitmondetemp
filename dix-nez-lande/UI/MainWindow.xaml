@@ -5,6 +5,9 @@
         xmlns:local="clr-namespace:UI"
         Background="#232323"
         Icon="/resources/icon.png"
-         >
-    <Frame Source="/GameMenu.xaml" NavigationUIVisibility="Hidden"/>
+        >
+    <Grid>
+        <Frame Source="/GameMenu.xaml" NavigationUIVisibility="Hidden"/>
+        <!-- <Label Name="lala" /> -->
+    </Grid>
 </Window>
