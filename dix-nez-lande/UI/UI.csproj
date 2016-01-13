@@ -64,7 +64,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GameSet.xaml">
+    <Page Include="GameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -82,8 +82,8 @@
     <Compile Include="GameMenu.xaml.cs">
       <DependentUpon>GameMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameSet.xaml.cs">
-      <DependentUpon>GameSet.xaml</DependentUpon>
+    <Compile Include="GameWindow.xaml.cs">
+      <DependentUpon>GameWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
