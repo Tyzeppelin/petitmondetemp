@@ -125,23 +125,25 @@ namespace dix_nez_lande.Implem
 
         public void moveTo(Unit u, Position to, Map m)
         {
-            if ((!canMove(to.x, to.y, u.race) || u.aBouge) && accessible(to, u) ) { }
+            if ( !canMove(to.x, to.y, u.race) && !u.aBouge && !accessible(to, u) ) { }
             else
             {
                 Position from = u.pos;
 
                 //Récupération de l'ancienne liste
                 //supression de l'unité
-                List<Unit> uList = new List<Unit>();
-                m.units.TryGetValue(from, out uList);
+                List<Unit> uList;
+                units.TryGetValue(from, out uList);
                 uList.Remove(u);
-                m.units.Add(from, uList);
+                units.Remove(from);
+                units.Add(from, uList);
 
                 //Récupération de la nouvelle liste
                 //et ajout de l'unité
-                m.units.TryGetValue(to, out uList);
+                units.TryGetValue(to, out uList);
                 uList.Add(u);
-                m.units.Add(to, uList);
+                units.Remove(to);
+                units.Add(to, uList);
             }
         }
 
@@ -179,7 +181,9 @@ namespace dix_nez_lande.Implem
 
         public bool accessible(Position p, Unit u)
         {
-            return (Math.Pow((u.pos.x - p.x),2) + Math.Pow((u.pos.y - p.y), 2) < u.mov);
+            bool a =(Math.Pow((u.pos.x - p.x), 2) + Math.Pow((u.pos.y - p.y), 2) < Math.Pow(u.mov, 2));
+            Console.Write(a);
+            return a;
         }
     }
 }
