@@ -44,6 +44,7 @@ namespace UI
             Game_Grid.Height = tileSize;
             Game_Grid.HorizontalAlignment = HorizontalAlignment.Center;
             Game_Grid.VerticalAlignment = VerticalAlignment.Center;
+            Game_Grid.ShowGridLines = false;
             for (int i = 0; i < size; i++)
             {
                 Game_Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(30, GridUnitType.Pixel) });
