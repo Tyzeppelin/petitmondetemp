@@ -32,9 +32,9 @@ namespace UI
             MessageBox.Show("~~TUTURU~~");
         }
 
-        private void aaa(object sender, MouseButtonEventArgs e)
+       /* private void aaa(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show(this.P1Name.ActualHeight + " height | width " + this.P1Name.ActualWidth);
-        }
+        }*/
     }
 }

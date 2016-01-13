@@ -16,7 +16,7 @@
         <WrapPanel Orientation="Vertical">
             <WrapPanel Orientation="Horizontal">
                 <WrapPanel Orientation="Vertical">
-                    <TextBox  Name="P1Name"  Text="Player1" FontSize="60" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Ace Futurism" MouseDoubleClick="aaa" Width="180" Height="55"/>
+                    <TextBox  Name="P1Name"  Text="Player1" FontSize="60" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Ace Futurism" Width="180" Height="55"/>
                     <ListBox  Name="P1Race" Background="#181818" FontSize="35" Foreground="#c1cdcd" FontFamily="./resources/#Break Down">
                         <ListBox.ItemContainerStyle>
                             <Style TargetType="ListBoxItem">
@@ -31,7 +31,7 @@
                                 </Style.Resources>
                             </Style>
                         </ListBox.ItemContainerStyle>
-                        <ListBoxItem Content="Orque"/>
+                        <ListBoxItem Content="Orc"/>
                         <ListBoxItem Content="Elf"/>
                         <ListBoxItem Content="Humain"/>
                     </ListBox>
@@ -54,18 +54,21 @@
                                 </Style.Resources>
                             </Style>
                         </ListBox.ItemContainerStyle>
-                        <ListBoxItem Content="Orque"/>
+                        <ListBoxItem Content="Orc"/>
                         <ListBoxItem Content="Elf"/>
                         <ListBoxItem Content="Humain"/>
                     </ListBox>
                 </WrapPanel>
             </WrapPanel>
-
-            <RadioButton Content="Little Map" GroupName="map" Name="lil" Foreground="#c1cdcd"/>
-            <RadioButton Content="Medium Map" GroupName="map" Name="mid" Foreground="#c1cdcd"/>
-            <RadioButton Content="Big Map" GroupName="map" Name="big" Foreground="#c1cdcd"/>
-
-        <Button Grid.Row="1" Content="GO" Margin="10,10,10,10"  FontSize="72" FontFamily="./resources/#Imagine Font" Click="playGame"
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <WrapPanel Orientation="Vertical" Margin="20,0">
+                    <RadioButton Content="Little Map" GroupName="map" Name="lil" Foreground="#c1cdcd"/>
+                    <RadioButton Content="Medium Map" GroupName="map" Name="mid" Foreground="#c1cdcd"/>
+                    <RadioButton Content="Big Map" GroupName="map" Name="big" Foreground="#c1cdcd"/>
+                </WrapPanel>
+                <CheckBox Name="allowCheat" Content="Cheat mode." Foreground="#c1cdcd" VerticalAlignment="Center"/>
+            </WrapPanel>
+            <Button Grid.Row="1" Content="GO" Margin="10,10,10,10"  FontSize="72" FontFamily="./resources/#Imagine Font" Click="playGame"
                 Background="#c1cdcd"
                 />
 
