@@ -125,29 +125,41 @@ namespace UI
 
             foreach (Unit u in game.players[0].units)
                 {
-                    Ellipse e = drawCircle("#aa0000");
+                    Image e = getImagePlayer(1);
                     Grid.SetRow(e, u.pos.y);
                     Grid.SetColumn(e, u.pos.x);
                     Game_Grid.Children.Add(e);
                 }
             foreach (Unit u in game.players[1].units)
             {
-                Ellipse e = drawCircle("black");
+                Image e = getImagePlayer(2);
                 Grid.SetRow(e, u.pos.y);
                 Grid.SetColumn(e, u.pos.x);
                 Game_Grid.Children.Add(e);
             }
         }
 
-        private Ellipse drawCircle(string col)
+        private Image getImagePlayer(int i)
         {
-            Ellipse e = new Ellipse() { Height = 20, Width = 20,  };
-            RadialGradientBrush brush = new RadialGradientBrush();
-            brush.GradientStops.Add(new GradientStop((Color)ColorConverter.ConvertFromString(col), 8));
-            e.Fill = brush;
-            return e;
-        }
+            Image img = new Image();
+            string path;
+            if (i == 1)
+            {
+                path = "Player1.png";
+            }
+            else
+            {
+                path = "Player2.png";
+            }
+            BitmapImage src = new BitmapImage();
+            src.BeginInit();
+            src.UriSource = new Uri("pack://application:,,,/resources/Textures/Players/" + path);
+            src.CacheOption = BitmapCacheOption.OnLoad;
+            src.EndInit();
+            img.Source = src;
 
+            return img;
+        }
 
         private void updateInfoBox()
         {
