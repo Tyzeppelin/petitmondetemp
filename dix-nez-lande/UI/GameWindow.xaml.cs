@@ -126,13 +126,17 @@ namespace UI
             foreach (Unit u in game.players[0].units)
                 {
                     Image e = getImagePlayer(1);
-                    Grid.SetRow(e, u.pos.y);
+                    e.MouseLeftButtonDown += Tile_Left_Clicked;
+                    e.MouseRightButtonDown += Tile_Right_Clicked;
+                     Grid.SetRow(e, u.pos.y);
                     Grid.SetColumn(e, u.pos.x);
                     Game_Grid.Children.Add(e);
                 }
             foreach (Unit u in game.players[1].units)
             {
                 Image e = getImagePlayer(2);
+                e.MouseLeftButtonDown += Tile_Left_Clicked;
+                e.MouseRightButtonDown += Tile_Right_Clicked;
                 Grid.SetRow(e, u.pos.y);
                 Grid.SetColumn(e, u.pos.x);
                 Game_Grid.Children.Add(e);
