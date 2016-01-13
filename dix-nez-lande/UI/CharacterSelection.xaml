@@ -7,14 +7,68 @@
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="600"
       Title="CharacterSelection"
-      Background="cyan"
+      Background="#181818"
       VerticalAlignment="Center"
       HorizontalAlignment="Center">
 
-    
-    
-    <Grid>
-        <Label Content="YOLOOO" />
-        <Button Grid.Row="1" Content="PLAY" Margin="10,10,10,10"  FontSize="72" FontFamily="./resources/#Imagine Font" Click="playGame"/>
+    <Grid Background="#181818">
+
+        <WrapPanel Orientation="Vertical">
+            <WrapPanel Orientation="Horizontal">
+                <WrapPanel Orientation="Vertical">
+                    <TextBox  Name="P1Name"  Text="Player1" FontSize="60" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Ace Futurism" MouseDoubleClick="aaa" Width="180" Height="55"/>
+                    <ListBox  Name="P1Race" Background="#181818" FontSize="35" Foreground="#c1cdcd" FontFamily="./resources/#Break Down">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="true">
+                                        <Setter Property="Background" Value="#515151"/>
+                                        <Setter Property="Foreground" Value="#77777c"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                                <Style.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#c4c4cc"/>
+                                </Style.Resources>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                        <ListBoxItem Content="Orque"/>
+                        <ListBoxItem Content="Elf"/>
+                        <ListBoxItem Content="Humain"/>
+                    </ListBox>
+                </WrapPanel>
+
+
+                <WrapPanel Orientation="Vertical">
+                    <TextBox  Name="P2Name"  Text="Player1"  FontSize="60" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Ace Futurism"  Width="180" Height="55"/>
+                    <ListBox  Name="P2Race" Background="#181818" FontSize="35" Foreground="#c1cdcd" FontFamily="./resources/#Break Down">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="true">
+                                        <Setter Property="Background" Value="#515151"/>
+                                        <Setter Property="Foreground" Value="#77777c"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                                <Style.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#c4c4cc"/>
+                                </Style.Resources>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                        <ListBoxItem Content="Orque"/>
+                        <ListBoxItem Content="Elf"/>
+                        <ListBoxItem Content="Humain"/>
+                    </ListBox>
+                </WrapPanel>
+            </WrapPanel>
+
+            <RadioButton Content="Little Map" GroupName="map" Name="lil" Foreground="#c1cdcd"/>
+            <RadioButton Content="Medium Map" GroupName="map" Name="mid" Foreground="#c1cdcd"/>
+            <RadioButton Content="Big Map" GroupName="map" Name="big" Foreground="#c1cdcd"/>
+
+        <Button Grid.Row="1" Content="GO" Margin="10,10,10,10"  FontSize="72" FontFamily="./resources/#Imagine Font" Click="playGame"
+                Background="#c1cdcd"
+                />
+
+        </WrapPanel>
     </Grid>
 </Page>

@@ -28,8 +28,13 @@ namespace UI
         private void playGame(object sender, RoutedEventArgs e)
         {
             CharacterSelection cs = new CharacterSelection();
-            this.NavigationService.Source = new System.Uri("/CharacterSelection.xaml", System.UriKind.Relative);
-            MessageBox.Show("TOUHOU");
+            this.NavigationService.Source = new System.Uri("/GameSet.xaml", System.UriKind.Relative);
+            MessageBox.Show("~~TUTURU~~");
+        }
+
+        private void aaa(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show(this.P1Name.ActualHeight + " height | width " + this.P1Name.ActualWidth);
         }
     }
 }
