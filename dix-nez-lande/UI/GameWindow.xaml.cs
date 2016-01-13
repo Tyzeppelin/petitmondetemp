@@ -120,7 +120,7 @@ namespace UI
                     Grid.SetColumn(e, u.pos.y);
                     Game_Grid.Children.Add(e);
                 }
-            foreach (Unit u in game.players[0].units)
+            foreach (Unit u in game.players[1].units)
             {
                 Ellipse e = drawCircle("black");
                 Grid.SetRow(e, u.pos.x);

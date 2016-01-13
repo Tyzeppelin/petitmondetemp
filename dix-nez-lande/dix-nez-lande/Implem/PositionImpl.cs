@@ -13,10 +13,6 @@ namespace dix_nez_lande.Implem
     */
     public class PositionImpl : Position
     {
-        #region Singleton
-
-        private static Position _instance = null;
-
         private PositionImpl(int x, int y)
         {
             this.x = x;
@@ -25,11 +21,9 @@ namespace dix_nez_lande.Implem
 
         public static Position getPosition(int x, int y)
         {
-            if (_instance == null)
-                _instance = new PositionImpl(x, y);
-            return _instance;
+            return new PositionImpl(x, y);
+
         }
-        #endregion
 
         private int _x;
         public int x
