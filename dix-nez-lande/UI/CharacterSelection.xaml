@@ -17,8 +17,8 @@
             <WrapPanel Orientation="Horizontal">
                 <WrapPanel Orientation="Vertical">
 
-                    <TextBox  Name="P1Name"  Text="Player1" FontSize="60" Background="#181818" Foreground="#aa0000" FontFamily="./resources/#Ace Futurism" Width="180" Height="55"/>
-                    <ListBox  Name="P1Race" Background="#181818" FontSize="50" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft" 
+                    <TextBox  Name="P1Name"  Text="Player1" FontSize="60" Background="#181818" Foreground="#aa0000" FontFamily="./resources/#Ace Futurism" Width="200" Height="55"/>
+                    <ListBox  Name="P1Race" Background="#181818" FontSize="40" Foreground="#c1cdcd" FontFamily="./resources/#Break Down" 
                               Style="{StaticResource SwagList}"
                               >
                         <ListBoxItem Content="Orc"/>
@@ -29,8 +29,8 @@
 
 
                 <WrapPanel Orientation="Vertical">
-                    <TextBox  Name="P2Name"  Text="Player2"  FontSize="60" Background="#181818" Foreground="#618dc0" FontFamily="./resources/#Ace Futurism"  Width="180" Height="55"/>
-                    <ListBox  Name="P2Race" Background="#181818" FontSize="50" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft"
+                    <TextBox  Name="P2Name"  Text="Player2"  FontSize="60" Background="#181818" Foreground="#618dc0" FontFamily="./resources/#Ace Futurism"  Width="200" Height="55"/>
+                    <ListBox  Name="P2Race" Background="#181818" FontSize="40" Foreground="#c1cdcd" FontFamily="./resources/#Break Down"
                               Style="{StaticResource SwagList}"
                               >
                         <ListBoxItem Content="Orc"/>
@@ -42,7 +42,7 @@
 
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <WrapPanel Orientation="Vertical" Margin="20,0">
-                    <ListBox  Name="Board" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft"
+                    <ListBox  Name="Board" Background="#181818" FontSize="20" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft"
                               Style="{StaticResource SwagList}"
                               >
                         <ListBoxItem Content="Demo" Tag= "0" IsSelected="True" />
