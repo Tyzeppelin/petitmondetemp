@@ -19,7 +19,7 @@ namespace dix_nez_lande.Implem
 
         private static Map _instance = null;
 
-        public MapImpl() {
+        private MapImpl() {
         }
 
         public static Map getMap()
@@ -67,6 +67,15 @@ namespace dix_nez_lande.Implem
             for (int i = 0; i < nbTiles; i++){
                 tiles[i] = tf.getTile(tab[i]);
             }
+
+            int j,k;
+            units = new Dictionary<Position, List<Unit>>();
+            for (k = 0; k < size; k++)
+                for (j = 0; j < size; j++)
+                    units.Add(PositionImpl.getPosition(k, j), new List<Unit>());
+
+            _instance = this;
+            
         }
 
         public void placeArmy(Player p, int numPlayer)
@@ -98,6 +107,11 @@ namespace dix_nez_lande.Implem
             Position position = PositionImpl.getPosition(posX, posY);
             foreach(Unit unit in p.units ) {
                 unit.pos = position;
+                List<Unit> u = new List<Unit>();
+                units.TryGetValue(position, out u);
+                u.Add(unit);
+                units.Remove(position);
+                units.Add(position, u);
             }
         }
 
@@ -111,24 +125,22 @@ namespace dix_nez_lande.Implem
 
         public void moveTo(Unit u, Position to, Map m)
         {
-            if (!canMove(to.x, to.y, u.race)) { }
-            else
-            {
-                Position from = u.pos;
+            Position from = u.pos;
 
-                //Récupération de l'ancienne liste
-                //supression de l'unité
-                List<Unit> uList = new List<Unit>();
-                m.units.TryGetValue(from, out uList);
-                uList.Remove(u);
-                m.units.Add(from, uList);
+            //Récupération de l'ancienne liste
+            //supression de l'unité
+            List<Unit> uList;
+            units.TryGetValue(from, out uList);
+            uList.Remove(u);
+            units.Remove(from);
+            units.Add(from, uList);
 
-                //Récupération de la nouvelle liste
-                //et ajout de l'unité
-                m.units.TryGetValue(to, out uList);
-                uList.Add(u);
-                m.units.Add(to, uList);
-            }
+            //Récupération de la nouvelle liste
+            //et ajout de l'unité
+            units.TryGetValue(to, out uList);
+            uList.Add(u);
+            units.Remove(to);
+            units.Add(to, uList);
         }
 
         public void attack(Unit attacker, Position p, Map m)

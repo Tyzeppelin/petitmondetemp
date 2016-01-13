@@ -13,14 +13,23 @@ namespace dix_nez_lande.Implem
     */
     public class PositionImpl : Position
     {
+        private static List<Position> _instances = new List<Position>();
         private PositionImpl(int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            this._x = x;
+            this._y = y;
+            _instances.Add(this);
         }
 
         public static Position getPosition(int x, int y)
         {
+            foreach(Position p in _instances)
+            {
+                if (p.x == x && p.y == y)
+                {
+                    return p;
+                }
+            }
             return new PositionImpl(x, y);
 
         }
