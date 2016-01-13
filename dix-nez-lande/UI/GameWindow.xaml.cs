@@ -2,6 +2,8 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using System.Windows.Media;
 using dix_nez_lande;
 using dix_nez_lande.Implem;
 
@@ -48,25 +50,31 @@ namespace UI
                 Game_Grid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(30, GridUnitType.Pixel) });
             }
 
+            initGrid();
+            updateUnits();
+
             game.start();
             this.updateInfoBox();
         }
 
-        private void updateGrid()
+        private void initGrid()
         {
             Map map = game.map;
             Tile[] tiles = map.tiles;
-            
-            var child = Game_Grid.Children;
-            foreach(UIElement ce in child)
-            {
-                int row = Grid.GetRow(ce);
-                int column = Grid.GetColumn(ce);
-                //tiles[i + (j * size)];
-               // ce.
 
+            var child = Game_Grid.Children;
+
+            for (int i = 0; i < game.map.size; i++)
+            {
+                for (int j = 0; j < game.map.size; j++)
+                {
+                    Image im = colorTile(game.map.tiles[i + size * j]);
+                    Grid.SetRow(im, i);
+                    Grid.SetColumn(im, j);
+                    Game_Grid.Children.Add(im);
+                }
+                Game_Grid.UpdateLayout();
             }
-                   // Game_Grid.Children.Add(image);
         }
 
         private Image colorTile(Tile tile)
@@ -76,30 +84,53 @@ namespace UI
             switch (tile.getName())
             {
                 case "water":
-                    path = ".\resources\\TilesTextures\\water.png";
+                    path = "pack://application:,,,/resources/TilesTextures/water.png";
                     break;
                 case "forest":
-                    path = ".\\resources\\TilesTextures\\forest.png";
+                    path = "pack://application:,,,/resources/TilesTextures/forest.png";
                     break;
                 case "plain":
-                    path = ".\\resources\\TilesTextures\\plain.png";
+                    path = "pack://application:,,,/resources/TilesTextures/plain.png";
                     break;
                 case "mountain":
-                    path = ".\\resources\\TilesTextures\\mountain.png";
+                    path = "pack://application:,,,/resources/TilesTextures/mountain.png";
                     break;
                 default :
-                    path = ".\\resources\\TilesTextures\\water.png";
+                    path = "pack://application:,,,/resources/TilesTextures/water.png";
                     break;
             }
             BitmapImage src = new BitmapImage();
             src.BeginInit();
-            src.UriSource = new System.Uri(path, UriKind.Relative);
+            src.UriSource = new Uri(path);
             src.CacheOption = BitmapCacheOption.OnLoad;
             src.EndInit();
             img.Source = src;
 
             return img;
         }
+
+        private void updateUnits()
+        {
+            foreach (Unit u in game.current.units)
+            {
+                Ellipse e = drawCircle();
+                Grid.SetRow(e, u.pos.x);
+                Grid.SetColumn(e, u.pos.y);
+                Game_Grid.Children.Add(e);
+
+
+            }
+        }
+
+        private Ellipse drawCircle()
+        {
+            Ellipse e = new Ellipse() { Height = 10, Width = 10,  };
+            RadialGradientBrush brush = new RadialGradientBrush();
+            brush.GradientStops.Add(new GradientStop((Color)ColorConverter.ConvertFromString("#FF7689"), 8));
+            e.Fill = brush;
+            return e;
+        }
+
 
         private void updateInfoBox()
         {
@@ -109,6 +140,7 @@ namespace UI
         private void switchPlayers()
         {
             this.game.endTurn();
+            this.updateUnits();
             this.updateInfoBox();
         }
 
@@ -116,6 +148,10 @@ namespace UI
         {
             Player winner = this.game.whoWin();
             MessageBox.Show(winner.name + " wins. Gratz!");
+            Window old = App.Current.MainWindow;
+            App.Current.MainWindow = new MainWindow();
+            App.Current.MainWindow.Show();
+            old.Close();
         }
 
         private void endTurn(object sender, RoutedEventArgs e)
@@ -140,8 +176,7 @@ namespace UI
         {
             this.game.undo();
             this.updateInfoBox();
-            this.updateGrid();
-            this.updateGrid();
+            this.updateUnits();
         }
 
         private void PopHelp(object sender, RoutedEventArgs e)
