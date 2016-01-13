@@ -27,14 +27,11 @@ namespace UI
 
         private void playGame(object sender, RoutedEventArgs e)
         {
-            CharacterSelection cs = new CharacterSelection();
-            this.NavigationService.Source = new System.Uri("/GameSet.xaml", System.UriKind.Relative);
+            Window old = App.Current.MainWindow;
+            App.Current.MainWindow = new GameWindow();
+            old.Close();
+            App.Current.MainWindow.Show();
             MessageBox.Show("~~TUTURU~~");
         }
-
-       /* private void aaa(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show(this.P1Name.ActualHeight + " height | width " + this.P1Name.ActualWidth);
-        }*/
     }
 }
