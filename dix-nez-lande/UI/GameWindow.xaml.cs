@@ -217,6 +217,7 @@ namespace UI
             MessageBox.Show("Useful Help");
         }
 
+        // select an unit
         private void Tile_Left_Clicked(object sender, RoutedEventArgs e)
         {
             if (sender.GetType().Equals(typeof(Image)))
@@ -226,12 +227,14 @@ namespace UI
                 int co = Grid.GetColumn(img);
                 int ro = Grid.GetRow(img);
 
+               
                 movingUnit = game.current.getUnit(co, ro);
                 //updateUnits();
                 e.Handled = true;
             }
         }
 
+        // move/attack if possible
         private void Tile_Right_Clicked(object sender, RoutedEventArgs e)
         {
             if (sender.GetType().Equals(typeof(Image)))
