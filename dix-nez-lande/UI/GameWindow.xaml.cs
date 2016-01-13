@@ -21,59 +21,54 @@ namespace UI
         public GameWindow()
         {
             InitializeComponent();
-            size = 16;
-            GameBuilder gb = GameBuilder.create();
-            gb.board(size);
-            gb.player1("Malabar", "human");
-            gb.player2("Tyzeplin", "elf");
-            game = gb.build();
-
-            int tileSize = size * 30;
-
-            Grid myGrid = new Grid();
-            Game_Grid.Width = tileSize;
-            Game_Grid.Height = tileSize;
-            Game_Grid.ShowGridLines = true;
-            Game_Grid.HorizontalAlignment = HorizontalAlignment.Center;
-            Game_Grid.VerticalAlignment = VerticalAlignment.Center;
-            for (int i = 0; i < size; i++)
-            {
-                Game_Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(tileSize, GridUnitType.Pixel) });
-                Game_Grid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(tileSize, GridUnitType.Pixel) });
-            }
         }
 
         public GameWindow(Game g, bool cheat)
         {
             InitializeComponent();
             this.turns = g.nbTurn;
+            this.size = g.map.size;
             this.isCheatAllowed = cheat;
             if (cheat)
             {
-                this.Undo.Visibility = Visibility.Visible;
+                this.Undo.IsEnabled = true;
             }
 
             game = g;
-            game.start();
 
+            int tileSize = size * 30;
+
+            Grid myGrid = new Grid();
+            Game_Grid.Width = tileSize;
+            Game_Grid.Height = tileSize;
+            Game_Grid.HorizontalAlignment = HorizontalAlignment.Center;
+            Game_Grid.VerticalAlignment = VerticalAlignment.Center;
+            for (int i = 0; i < size; i++)
+            {
+                Game_Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(30, GridUnitType.Pixel) });
+                Game_Grid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(30, GridUnitType.Pixel) });
+            }
+
+            game.start();
             this.updateInfoBox();
-            
         }
 
         private void updateGrid()
         {
             Map map = game.map;
             Tile[] tiles = map.tiles;
-            for (int i = 0; i < size; i++)
+            
+            var child = Game_Grid.Children;
+            foreach(UIElement ce in child)
             {
-                for (int j=0; i < size; j++)
-                {
-                    Image image = colorTile(tiles[i + (j * size)]);
-                    Grid.SetColumn(image, i);
-                    Grid.SetRow(image, j);
-                    Game_Grid.Children.Add(image);
-                }
+                int row = Grid.GetRow(ce);
+                int column = Grid.GetColumn(ce);
+                //tiles[i + (j * size)];
+                ce.
+
             }
+            
+                   // Game_Grid.Children.Add(image);
         }
 
         private Image colorTile(Tile tile)
@@ -140,7 +135,7 @@ namespace UI
         private void showHint(object sender, RoutedEventArgs e)
         {
             this.game.suggest();
-            MessageBox.Show(this.game.suggest().ToString());
+            MessageBox.Show("this button will disappear");
         }
 
         private void Cheat(object sender, RoutedEventArgs e)

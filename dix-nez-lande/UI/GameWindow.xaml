@@ -18,17 +18,26 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Name="infoBox" Text="NAME PLAYER plays." HorizontalAlignment="Center"  Margin="10,10,10,10" Background="WhiteSmoke"/>
-        <Grid x:Name="Game_Grid" Grid.Row="1" HorizontalAlignment="Center" Margin="10,10,10,10" >
+        <Grid x:Name="Game_Grid" Grid.Row="1" HorizontalAlignment="Center" Margin="10,10,10,10" ShowGridLines="True" >
+            <Grid.Resources>
+                <Style TargetType="RowDefinition">
+                    <Setter Property="MinHeight" Value="10"/>
+                </Style>
+                <Style TargetType="ColumnDefinition">
+                    <Setter Property="MinWidth" Value="10"/>
+                </Style>
+            </Grid.Resources>
+            
             <Rectangle x:Name="SelectionRectangle" Panel.ZIndex="333" Stroke="Black" StrokeThickness="2" 
                        Visibility="{Binding SelectedVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
                        Grid.Row="{Binding SelectedRow, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
                        Grid.Column="{Binding SelectedColumn, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
         <StackPanel Grid.Row="2" Margin="10,10,10,10" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Grid.Column="0" x:Name="End_turn" Content="End Turn" Background="#c4c4cc" Margin="10,10,10,10" Width="100" Height="50" Click="endTurn"/>
-            <Button Grid.Column="1" x:Name="Show_hint" Content="Show Hint" Background="#c4c4cc" Margin="10,10,10,10" Width="100" Height="50" Click="showHint"/>
-            <Button Grid.Column="2" x:Name="Undo" Content="Undo" Visibility="Hidden" Background="#c4c4cc" Width="100" Height="50" Margin="10,10,10,10" Click="Cheat"/>
-            <Button Grid.Column="3" x:Name="Show_help" Content="Help !" Background="#c4c4cc" Margin="10,10,10,10" Width="100" Height="50" Click="PopHelp"/> 
+            <Button Grid.Column="0" x:Name="End_turn" Content="End Turn"  Style="{StaticResource FutureButton}" Margin="10,10,10,10" Width="100" Height="50" Click="endTurn"/>
+            <Button Grid.Column="1" x:Name="Show_hint" Content="Show Hint" Style="{StaticResource FutureButton}" Margin="10,10,10,10" Width="100" Height="50" Click="showHint"/>
+            <Button Grid.Column="2" x:Name="Undo" Content="Undo" IsEnabled="false" Style="{StaticResource FutureButton}" Width="100" Height="50" Margin="10,10,10,10" Click="Cheat"/>
+            <Button Grid.Column="3" x:Name="Show_help" Content="Help !" Style="{StaticResource FutureButton}" Margin="10,10,10,10" Width="100" Height="50" Click="PopHelp"/> 
         </StackPanel>
     </Grid>
 </Window>

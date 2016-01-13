@@ -41,9 +41,14 @@ namespace dix_nez_lande.Implem
 
         public GameState pop()
         {
-            GameState g = states[states.Count - 1];
-            states.RemoveAt(states.Count - 1);
-            return g;
+            if (states.Count != 0)
+            {
+                GameState g = states[states.Count - 1];
+                states.RemoveAt(states.Count - 1);
+                return g;
+            }
+            else
+                return null;
         }
     }
 }
