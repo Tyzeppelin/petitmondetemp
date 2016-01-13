@@ -70,19 +70,19 @@ namespace UI
             switch (tile.getName())
             {
                 case "water":
-                    path = "./resources/TilesTextures/water.png";
+                    path = ".\resources\\TilesTextures\\water.png";
                     break;
                 case "forest":
-                    path = "./resources/TilesTextures/forest.png";
+                    path = ".\\resources\\TilesTextures\\forest.png";
                     break;
                 case "plain":
-                    path = "./resources/TilesTextures/plain.png";
+                    path = ".\\resources\\TilesTextures\\plain.png";
                     break;
                 case "mountain":
-                    path = "./resources/TilesTextures/mountain.png";
+                    path = ".\\resources\\TilesTextures\\mountain.png";
                     break;
                 default :
-                    path = "./resources/TilesTextures/water.png";
+                    path = ".\\resources\\TilesTextures\\water.png";
                     break;
             }
             BitmapImage src = new BitmapImage();
