@@ -10,6 +10,8 @@ namespace UI
     /// </summary>
     public partial class GameWindow : Window
     {
+
+        private Game gamu;
         public GameWindow()
         {
             InitializeComponent();
@@ -33,6 +35,11 @@ namespace UI
                 Game_Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(tileSize, GridUnitType.Pixel) });
                 Game_Grid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(tileSize, GridUnitType.Pixel) });
             }
+        }
+        public GameWindow(Game g)
+        {
+            InitializeComponent();
+            gamu = g;
         }
     }
 }

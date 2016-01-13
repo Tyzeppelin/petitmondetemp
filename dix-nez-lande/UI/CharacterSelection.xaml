@@ -17,7 +17,7 @@
             <WrapPanel Orientation="Horizontal">
                 <WrapPanel Orientation="Vertical">
 
-                    <TextBox  Name="P1Name"  Text="Player1" FontSize="60" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Ace Futurism" MouseDoubleClick="aaa" Width="180" Height="55"/>
+                    <TextBox  Name="P1Name"  Text="Player1" FontSize="60" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Ace Futurism" Width="180" Height="55"/>
                     <ListBox  Name="P1Race" Background="#181818" FontSize="50" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft">
 
                         <ListBox.ItemContainerStyle>
@@ -35,13 +35,13 @@
                         </ListBox.ItemContainerStyle>
                         <ListBoxItem Content="Orc"/>
                         <ListBoxItem Content="Elf"/>
-                        <ListBoxItem Content="Humain"/>
+                        <ListBoxItem Content="Humain" IsSelected="True"/>
                     </ListBox>
                 </WrapPanel>
 
 
                 <WrapPanel Orientation="Vertical">
-                    <TextBox  Name="P2Name"  Text="Player1"  FontSize="60" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Ace Futurism"  Width="180" Height="55"/>
+                    <TextBox  Name="P2Name"  Text="Player2"  FontSize="60" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Ace Futurism"  Width="180" Height="55"/>
                     <ListBox  Name="P2Race" Background="#181818" FontSize="50" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft">
                         <ListBox.ItemContainerStyle>
                             <Style TargetType="ListBoxItem">
@@ -58,16 +58,31 @@
                         </ListBox.ItemContainerStyle>
                         <ListBoxItem Content="Orc"/>
                         <ListBoxItem Content="Elf"/>
-                        <ListBoxItem Content="Humain"/>
+                        <ListBoxItem Content="Humain" IsSelected="True"/>
                     </ListBox>
                 </WrapPanel>
             </WrapPanel>
 
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <WrapPanel Orientation="Vertical" Margin="20,0">
-                    <RadioButton Content="Demo" GroupName="map" Name="lil" Foreground="#c1cdcd"/>
-                    <RadioButton Content="Small" GroupName="map" Name="mid" Foreground="#c1cdcd"/>
-                    <RadioButton Content="Standard" GroupName="map" Name="big" Foreground="#c1cdcd"/>
+                    <ListBox  Name="Board" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Break Down">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="true">
+                                        <Setter Property="Background" Value="#515151"/>
+                                        <Setter Property="Foreground" Value="#77777c"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                                <Style.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#c4c4cc"/>
+                                </Style.Resources>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                        <ListBoxItem Content="Little Map" IsSelected="True" />
+                        <ListBoxItem Content="Medium Map"/>
+                        <ListBoxItem Content="Big Map"/>
+                    </ListBox>
                 </WrapPanel>
                 <CheckBox Name="allowCheat" Content="Cheat mode." Foreground="#c1cdcd" VerticalAlignment="Center"/>
             </WrapPanel>

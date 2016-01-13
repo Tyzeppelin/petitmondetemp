@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using dix_nez_lande;
+using dix_nez_lande.Implem;
+
 
 namespace UI
 {
@@ -27,10 +30,28 @@ namespace UI
 
         private void playGame(object sender, RoutedEventArgs e)
         {
+
+            GameBuilder gb = GameBuilder.create();
+
+            gb.player1(this.P1Name.Text, (string)((ListBoxItem)this.P1Race.SelectedValue).Content);
+            gb.player2(this.P2Name.Text, (string)((ListBoxItem)this.P2Race.SelectedValue).Content);
+
+            int sm = GameBuilder.LitMap;
+
+            if ((string)((ListBoxItem)this.P1Race.SelectedValue).Content == "Little Map")
+                sm = GameBuilder.LitMap;
+            else if ((string)((ListBoxItem)this.P1Race.SelectedValue).Content == "Medium Map")
+                sm = GameBuilder.MidMap;
+            else if ((string)((ListBoxItem)this.P1Race.SelectedValue).Content == "Big Map")
+                sm = GameBuilder.BigMap;
+            gb.board(sm);
+            Game gamu = gb.build();
+
             Window old = App.Current.MainWindow;
-            App.Current.MainWindow = new GameWindow();
-            old.Close();
+            GameWindow megastrat = new GameWindow(gamu);
+            App.Current.MainWindow = megastrat;
             App.Current.MainWindow.Show();
+            old.Close();
             MessageBox.Show("~~TUTURU~~");
         }
     }
