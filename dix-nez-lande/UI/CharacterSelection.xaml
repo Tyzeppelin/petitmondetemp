@@ -45,9 +45,9 @@
                     <ListBox  Name="Board" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft"
                               Style="{StaticResource SwagList}"
                               >
-                        <ListBoxItem Content="Little Map" IsSelected="True" />
-                        <ListBoxItem Content="Medium Map"/>
-                        <ListBoxItem Content="Big Map"/>
+                        <ListBoxItem Content="Demo" Tag= "0" IsSelected="True" />
+                        <ListBoxItem Content="Small" Tag="1"/>
+                        <ListBoxItem Content="Standard" Tag="2"/>
                     </ListBox>
                 </WrapPanel>
                 <CheckBox Name="allowCheat" Content="Cheat mode." Foreground="#c1cdcd" VerticalAlignment="Center" IsChecked="True"/>

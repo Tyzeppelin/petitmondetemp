@@ -38,12 +38,12 @@ namespace UI
 
             int sm = GameBuilder.LitMap;
 
-            if ((string)((ListBoxItem)this.P1Race.SelectedValue).Content == "Little Map")
-                sm = GameBuilder.LitMap;
-            else if ((string)((ListBoxItem)this.P1Race.SelectedValue).Content == "Medium Map")
-                sm = GameBuilder.MidMap;
-            else if ((string)((ListBoxItem)this.P1Race.SelectedValue).Content == "Big Map") 
-                sm = GameBuilder.BigMap;
+            if ((string)((ListBoxItem)this.Board.SelectedValue).Tag == "0")
+            { sm = GameBuilder.LitMap; }
+            else if ((string)((ListBoxItem)this.Board.SelectedValue).Tag == "1")
+            { sm = GameBuilder.MidMap; }
+            else if ((string)((ListBoxItem)this.Board.SelectedValue).Tag == "2")
+            { sm = GameBuilder.BigMap; }
             gb.board(sm);
             Game gamu = gb.build();
 

@@ -38,7 +38,6 @@ namespace UI
 
             int tileSize = size * 30;
 
-            Grid myGrid = new Grid();
             Game_Grid.Width = tileSize;
             Game_Grid.Height = tileSize;
             Game_Grid.HorizontalAlignment = HorizontalAlignment.Center;
@@ -64,10 +63,9 @@ namespace UI
                 int row = Grid.GetRow(ce);
                 int column = Grid.GetColumn(ce);
                 //tiles[i + (j * size)];
-                ce.
+               // ce.
 
             }
-            
                    // Game_Grid.Children.Add(image);
         }
 
@@ -105,7 +103,7 @@ namespace UI
 
         private void updateInfoBox()
         {
-            this.infoBox.Text = "Tour " + (this.game.nbTurn/2) + "/" + (this.turns/2)+". " + this.game.current.name;
+           // this.infoBox.Text = "Tour " + (this.game.nbTurn/2) + "/" + (this.turns/2)+". " + this.game.current.name;
         }   
 
         private void switchPlayers()
