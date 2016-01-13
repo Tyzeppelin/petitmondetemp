@@ -53,19 +53,24 @@ namespace UI
                 Game_Grid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(30, GridUnitType.Pixel) });
             }
 
-            initGrid();
-            updateUnits();
+            updateGrid();
 
             game.start();
             this.updateInfoBox();
         }
 
-        private void initGrid()
+        private void updateGrid()
         {
             Map map = game.map;
             Tile[] tiles = map.tiles;
-
             var child = Game_Grid.Children;
+
+            List<UIElement> deletable = new List<UIElement>();
+            foreach (UIElement c in child)
+                if (c is Image)
+                    deletable.Add(c);
+            foreach (UIElement e in deletable)
+                Game_Grid.Children.Remove(e);
 
             for (int i = 0; i < game.map.size; i++)
             {
@@ -79,6 +84,26 @@ namespace UI
                     Game_Grid.Children.Add(im);
                 }
             }
+            
+            foreach (Unit u in game.players[0].units)
+            {
+                Image e = getImagePlayer(1);
+                e.MouseLeftButtonDown += Tile_Left_Clicked;
+                e.MouseRightButtonDown += Tile_Right_Clicked;
+                Grid.SetRow(e, u.pos.y);
+                Grid.SetColumn(e, u.pos.x);
+                Game_Grid.Children.Add(e);
+            }
+            foreach (Unit u in game.players[1].units)
+            {
+                Image e = getImagePlayer(2);
+                e.MouseLeftButtonDown += Tile_Left_Clicked;
+                e.MouseRightButtonDown += Tile_Right_Clicked;
+                Grid.SetRow(e, u.pos.y);
+                Grid.SetColumn(e, u.pos.x);
+                Game_Grid.Children.Add(e);
+            }
+
             Game_Grid.UpdateLayout();
         }
 
@@ -114,35 +139,6 @@ namespace UI
             return img;
         }
 
-        private void updateUnits()
-        {
-            List<UIElement> deletable = new List<UIElement>();
-            foreach (UIElement child in Game_Grid.Children)
-                if (child is Ellipse)
-                    deletable.Add(child);
-            foreach (UIElement e in deletable)
-                Game_Grid.Children.Remove(e);
-
-            foreach (Unit u in game.players[0].units)
-                {
-                    Image e = getImagePlayer(1);
-                    e.MouseLeftButtonDown += Tile_Left_Clicked;
-                    e.MouseRightButtonDown += Tile_Right_Clicked;
-                     Grid.SetRow(e, u.pos.y);
-                    Grid.SetColumn(e, u.pos.x);
-                    Game_Grid.Children.Add(e);
-                }
-            foreach (Unit u in game.players[1].units)
-            {
-                Image e = getImagePlayer(2);
-                e.MouseLeftButtonDown += Tile_Left_Clicked;
-                e.MouseRightButtonDown += Tile_Right_Clicked;
-                Grid.SetRow(e, u.pos.y);
-                Grid.SetColumn(e, u.pos.x);
-                Game_Grid.Children.Add(e);
-            }
-        }
-
         private Image getImagePlayer(int i)
         {
             Image img = new Image();
@@ -173,7 +169,7 @@ namespace UI
         private void switchPlayers()
         {
             this.game.endTurn();
-            this.updateUnits();
+            this.updateGrid();
             this.updateInfoBox();
         }
 
@@ -209,7 +205,7 @@ namespace UI
         {
             this.game.undo();
             this.updateInfoBox();
-            this.updateUnits();
+            this.updateGrid();
         }
 
         private void PopHelp(object sender, RoutedEventArgs e)
@@ -258,8 +254,9 @@ namespace UI
                     { 
                         m.attack(movingUnit, p, m);
                     }
+                    updateGrid();
                 }
-                updateUnits();
+                
                 e.Handled = true;
             }
         }
