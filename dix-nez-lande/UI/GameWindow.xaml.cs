@@ -244,7 +244,6 @@ namespace UI
                 {
                     Unit u = game.current.getUnit(co, ro);
                     Position p = PositionImpl.getPosition(co, ro);
-                    Map m = game.map;
                     if (u == null)
                     {
                         game.map.moveTo(movingUnit, p);
@@ -252,7 +251,7 @@ namespace UI
                     }
                     else
                     { 
-                        m.attack(movingUnit, p, m);
+                        game.map.attack(movingUnit, p);
                     }
                     updateGrid();
                 }

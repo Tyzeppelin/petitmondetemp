@@ -148,12 +148,12 @@ namespace dix_nez_lande.Implem
             }
         }
 
-        public void attack(Unit attacker, Position p, Map m)
+        public void attack(Unit attacker, Position p)
         {
             //On récupère la liste des défenseurs
             //présents sur la brique attaquée
             List<Unit> list = new List<Unit>();
-            m.units.TryGetValue(p, out list);
+            this.units.TryGetValue(p, out list);
 
             //On récupère le "meilleur" defenseur
             Unit defenser = new UnitImpl();

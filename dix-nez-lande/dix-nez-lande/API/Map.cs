@@ -37,7 +37,7 @@ namespace dix_nez_lande
         * @param attacker L'unité attaquante
         * @param t La Tile où l'unité attaque
         */
-        void attack(Unit attacker , Position p, Map m);
+        void attack(Unit attacker , Position p);
 
         /**
         * Est-ce que la case situé en x,y est une destination
