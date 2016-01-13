@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -71,8 +72,8 @@ namespace UI
                 for (int j = 0; j < game.map.size; j++)
                 {
                     Image im = colorTile(game.map.tiles[i + size * j]);
-                    Grid.SetRow(im, i);
-                    Grid.SetColumn(im, j);
+                    Grid.SetRow(im, j);
+                    Grid.SetColumn(im, i);
                     im.MouseLeftButtonDown += Tile_Left_Clicked;
                     im.MouseRightButtonDown += Tile_Right_Clicked;
                     Game_Grid.Children.Add(im);
@@ -115,18 +116,25 @@ namespace UI
 
         private void updateUnits()
         {
+            List<UIElement> deletable = new List<UIElement>();
+            foreach (UIElement child in Game_Grid.Children)
+                if (child is Ellipse)
+                    deletable.Add(child);
+            foreach (UIElement e in deletable)
+                Game_Grid.Children.Remove(e);
+
             foreach (Unit u in game.players[0].units)
                 {
                     Ellipse e = drawCircle("#aa0000");
-                    Grid.SetRow(e, u.pos.x);
-                    Grid.SetColumn(e, u.pos.y);
+                    Grid.SetRow(e, u.pos.y);
+                    Grid.SetColumn(e, u.pos.x);
                     Game_Grid.Children.Add(e);
                 }
             foreach (Unit u in game.players[1].units)
             {
                 Ellipse e = drawCircle("black");
-                Grid.SetRow(e, u.pos.x);
-                Grid.SetColumn(e, u.pos.y);
+                Grid.SetRow(e, u.pos.y);
+                Grid.SetColumn(e, u.pos.x);
                 Game_Grid.Children.Add(e);
             }
         }
@@ -203,7 +211,7 @@ namespace UI
                 int ro = Grid.GetRow(img);
 
                 movingUnit = game.current.getUnit(co, ro);
-                updateUnits();
+                //updateUnits();
                 e.Handled = true;
             }
         }
