@@ -111,22 +111,27 @@ namespace UI
 
         private void updateUnits()
         {
-            foreach (Unit u in game.current.units)
+            foreach (Unit u in game.players[0].units)
+                {
+                    Ellipse e = drawCircle("#aa0000");
+                    Grid.SetRow(e, u.pos.x);
+                    Grid.SetColumn(e, u.pos.y);
+                    Game_Grid.Children.Add(e);
+                }
+            foreach (Unit u in game.players[0].units)
             {
-                Ellipse e = drawCircle();
+                Ellipse e = drawCircle("black");
                 Grid.SetRow(e, u.pos.x);
                 Grid.SetColumn(e, u.pos.y);
                 Game_Grid.Children.Add(e);
-
-
             }
         }
 
-        private Ellipse drawCircle()
+        private Ellipse drawCircle(string col)
         {
-            Ellipse e = new Ellipse() { Height = 10, Width = 10,  };
+            Ellipse e = new Ellipse() { Height = 20, Width = 20,  };
             RadialGradientBrush brush = new RadialGradientBrush();
-            brush.GradientStops.Add(new GradientStop((Color)ColorConverter.ConvertFromString("#FF7689"), 8));
+            brush.GradientStops.Add(new GradientStop((Color)ColorConverter.ConvertFromString(col), 8));
             e.Fill = brush;
             return e;
         }
