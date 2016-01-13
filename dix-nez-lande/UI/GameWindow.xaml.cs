@@ -225,7 +225,7 @@ namespace UI
                 int co = Grid.GetColumn(img);
                 int ro = Grid.GetRow(img);
 
-                if(movingUnit != null)
+                if (movingUnit != null)
                 {
                     Unit u = game.current.getUnit(co, ro);
                     Position p = PositionImpl.getPosition(co, ro);
@@ -234,7 +234,7 @@ namespace UI
                         movingUnit.move(p);
                     }
                     else
-                    {
+                    { 
                         movingUnit.attack(p);
                     }
                 }

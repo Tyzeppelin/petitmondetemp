@@ -58,9 +58,9 @@ namespace dix_nez_lande.Implem
             int n = units.Count;
             for (int i = 0; i < n; i++)
             {
-                if (units[i].pos == pos) return units[i];
+                if (units[i].pos.x == pos.x && units[i].pos.y == pos.y) return units[i];
             }   
-            return units[0];
+            return null;
         }
 
         public void setUnit(Unit u)
