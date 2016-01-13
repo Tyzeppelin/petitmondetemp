@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:UI"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="800"
-      Title="GameWindow" Background="#232323">
+      Title="GameWindow" Background="#232323" Icon="/resources/icon.png">
 
     <Grid>
         <Grid.RowDefinitions >

@@ -13,6 +13,7 @@ namespace dix_nez_lande
     */
     public interface Tile
     {
+        String getName();
         int getPoints(Race r);
 
         Boolean isAcceptable(Race r);

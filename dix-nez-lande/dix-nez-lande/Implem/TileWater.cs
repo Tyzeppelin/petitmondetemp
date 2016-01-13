@@ -13,6 +13,10 @@ namespace dix_nez_lande.Implem
     */
     public class TileWater : Tile
     {
+        public String getName()
+        {
+            return "Water";
+        }
         public int getPoints(Race r)
         {
             return (r.name == "elf") ? 0:1 ;

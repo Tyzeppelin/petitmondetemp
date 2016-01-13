@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 using dix_nez_lande;
 using dix_nez_lande.Implem;
 
@@ -11,16 +13,18 @@ namespace UI
     public partial class GameWindow : Window
     {
 
-        private Game gamu;
+        private Game game;
+        private int size;
+
         public GameWindow()
         {
             InitializeComponent();
-            int size = 16;
+            size = 16;
             GameBuilder gb = GameBuilder.create();
             gb.board(size);
             gb.player1("Malabar", "human");
             gb.player2("Tyzeplin", "elf");
-            Game game = gb.build();
+            game = gb.build();
 
             int tileSize = size * 30;
 
@@ -36,10 +40,59 @@ namespace UI
                 Game_Grid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(tileSize, GridUnitType.Pixel) });
             }
         }
+
         public GameWindow(Game g)
         {
             InitializeComponent();
-            gamu = g;
+            game = g;
+        }
+
+        private void updateGrid()
+        {
+            Map map = game.map;
+            Tile[] tiles = map.tiles;
+            for (int i = 0; i < size; i++)
+            {
+                for (int j=0; i < size; j++)
+                {
+                    Image image = colorTile(tiles[i + (j * size)]);
+                    Grid.SetColumn(image, i);
+                    Grid.SetRow(image, j);
+                    Game_Grid.Children.Add(image);
+                }
+            }
+        }
+
+        private Image colorTile(Tile tile)
+        {
+            Image img = new Image();
+            string path;
+            switch (tile.getName())
+            {
+                case "water":
+                    path = "./resources/TilesTextures/water.png";
+                    break;
+                case "forest":
+                    path = "./resources/TilesTextures/forest.png";
+                    break;
+                case "plain":
+                    path = "./resources/TilesTextures/plain.png";
+                    break;
+                case "mountain":
+                    path = "./resources/TilesTextures/mountain.png";
+                    break;
+                default :
+                    path = "./resources/TilesTextures/water.png";
+                    break;
+            }
+            BitmapImage src = new BitmapImage();
+            src.BeginInit();
+            src.UriSource = new System.Uri(path, UriKind.Relative);
+            src.CacheOption = BitmapCacheOption.OnLoad;
+            src.EndInit();
+            img.Source = src;
+
+            return img;
         }
     }
 }
