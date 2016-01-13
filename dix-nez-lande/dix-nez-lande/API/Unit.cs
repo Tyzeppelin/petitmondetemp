@@ -17,6 +17,7 @@ namespace dix_nez_lande
         int atk { get; set; }
         int def { get; set; }
         int mov { get; set; }
+        bool aBouge { get; set; }
         int hp { get; set; }
         int dis { get; set; }
         string name { get; set; }

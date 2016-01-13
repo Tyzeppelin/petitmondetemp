@@ -49,6 +49,12 @@ namespace dix_nez_lande
             get { return _mov; }
             set { _mov = value; }
         }
+        private bool _aBouge;
+        public bool aBouge
+        {
+            get { return _aBouge; }
+            set { _aBouge = value; }
+        }
 
         private string _name;
         public string name
@@ -71,7 +77,7 @@ namespace dix_nez_lande
             set { _pos = value; }
         }
         
-
+        //Not used
         public void attack(Position p)
         {
             //MapImpl.getMap().attack(this, p);
@@ -86,6 +92,7 @@ namespace dix_nez_lande
         {
             //MapImpl.getMap().moveTo(this, p);
             pos = p;
+            aBouge = true;
         }
     }
 }

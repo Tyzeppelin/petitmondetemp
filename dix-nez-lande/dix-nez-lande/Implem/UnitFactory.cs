@@ -33,6 +33,7 @@ namespace dix_nez_lande
             Unit u = new UnitImpl();
             u.name = s;
             u.mov = 2;
+            u.aBouge = false;
             u.race = race;
             switch (race.name)
             {
