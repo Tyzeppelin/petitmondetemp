@@ -44,7 +44,5 @@ namespace dix_nez_lande
         * acceptable pour la race r
         */
         Boolean canMove(int x, int y, Race r);
-
-        void move(Unit u, int Col, int Row);
     }
 }

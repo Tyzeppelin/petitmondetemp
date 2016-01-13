@@ -157,23 +157,5 @@ namespace dix_nez_lande.Implem
         {
             return tiles[size * x + y].isAcceptable(r);
         }
-
-        public void move(Unit u, int Col, int Row)
-        {
-            List<Unit> list;
-            Position p = PositionImpl.getPosition(Col, Row);
-            try
-            {
-                units.TryGetValue(p, out list);
-            }
-            catch (ArgumentNullException e)
-            {
-                moveTo(u, p);
-            }
-            finally
-            {
-                attack(u, p);
-            }
-        }
     }
 }

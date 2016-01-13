@@ -219,7 +219,16 @@ namespace UI
 
                 if(movingUnit != null)
                 {
-                    movingUnit.move(co, ro);
+                    Unit u = game.current.getUnit(co, ro);
+                    Position p = PositionImpl.getPosition(co, ro);
+                    if (u == null)
+                    {
+                        movingUnit.move(p);
+                    }
+                    else
+                    {
+                        movingUnit.attack(p);
+                    }
                 }
                 updateUnits();
                 e.Handled = true;

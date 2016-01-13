@@ -87,10 +87,5 @@ namespace dix_nez_lande
             MapImpl.getMap().moveTo(this, p);
             pos = p;
         }
-
-        public void move(int Col, int Row)
-        {
-            MapImpl.getMap().move(this, Col, Row);
-        }
     }
 }

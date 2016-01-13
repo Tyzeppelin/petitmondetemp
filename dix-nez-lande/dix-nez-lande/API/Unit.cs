@@ -35,7 +35,6 @@ namespace dix_nez_lande
         */
         void move(Position p);
 
-        void move(int Col, int Row);
         /**
         * Permet de savoir si une unité est en vie ou non
         * @return Vrai si l'unité est en vie
