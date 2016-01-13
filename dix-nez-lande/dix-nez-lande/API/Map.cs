@@ -28,7 +28,7 @@ namespace dix_nez_lande
        * @param u L'unité à déplacer
        * @param t La Tile d'arrivée de l'unité
        */
-        void moveTo(Unit u, Position p);
+        void moveTo(Unit u, Position p, Map m);
 
         /**
         * Une unité attaque une autre unité sur une Tile
@@ -37,7 +37,7 @@ namespace dix_nez_lande
         * @param attacker L'unité attaquante
         * @param t La Tile où l'unité attaque
         */
-        void attack(Unit attacker , Position p);
+        void attack(Unit attacker , Position p, Map m);
 
         /**
         * Est-ce que la case situé en x,y est une destination

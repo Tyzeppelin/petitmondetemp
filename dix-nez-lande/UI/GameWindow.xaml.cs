@@ -248,13 +248,15 @@ namespace UI
                 {
                     Unit u = game.current.getUnit(co, ro);
                     Position p = PositionImpl.getPosition(co, ro);
+                    Map m = game.map;
                     if (u == null)
                     {
-                        game.map.moveTo(movingUnit, p);
+                        m.moveTo(movingUnit, p, m);
+                        movingUnit.move(p);
                     }
                     else
                     { 
-                        game.map.attack(movingUnit, p);
+                        m.attack(movingUnit, p, m);
                     }
                 }
                 updateUnits();

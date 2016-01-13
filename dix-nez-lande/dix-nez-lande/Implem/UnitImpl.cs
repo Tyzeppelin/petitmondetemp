@@ -74,7 +74,7 @@ namespace dix_nez_lande
 
         public void attack(Position p)
         {
-            MapImpl.getMap().attack(this, p);
+            //MapImpl.getMap().attack(this, p);
         }
 
         public bool isAlive()
@@ -84,7 +84,7 @@ namespace dix_nez_lande
 
         public void move(Position p)
         {
-            MapImpl.getMap().moveTo(this, p);
+            //MapImpl.getMap().moveTo(this, p);
             pos = p;
         }
     }
