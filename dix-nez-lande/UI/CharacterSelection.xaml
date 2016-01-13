@@ -17,22 +17,10 @@
             <WrapPanel Orientation="Horizontal">
                 <WrapPanel Orientation="Vertical">
 
-                    <TextBox  Name="P1Name"  Text="Player1" FontSize="60" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Ace Futurism" Width="180" Height="55"/>
-                    <ListBox  Name="P1Race" Background="#181818" FontSize="50" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft">
-
-                        <ListBox.ItemContainerStyle>
-                            <Style TargetType="ListBoxItem">
-                                <Style.Triggers>
-                                    <Trigger Property="IsSelected" Value="true">
-                                        <Setter Property="Background" Value="#515151"/>
-                                        <Setter Property="Foreground" Value="#77777c"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                                <Style.Resources>
-                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#c4c4cc"/>
-                                </Style.Resources>
-                            </Style>
-                        </ListBox.ItemContainerStyle>
+                    <TextBox  Name="P1Name"  Text="Player1" FontSize="60" Background="#181818" Foreground="#aa0000" FontFamily="./resources/#Ace Futurism" Width="180" Height="55"/>
+                    <ListBox  Name="P1Race" Background="#181818" FontSize="50" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft" 
+                              Style="{StaticResource SwagList}"
+                              >
                         <ListBoxItem Content="Orc"/>
                         <ListBoxItem Content="Elf"/>
                         <ListBoxItem Content="Humain" IsSelected="True"/>
@@ -41,21 +29,10 @@
 
 
                 <WrapPanel Orientation="Vertical">
-                    <TextBox  Name="P2Name"  Text="Player2"  FontSize="60" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Ace Futurism"  Width="180" Height="55"/>
-                    <ListBox  Name="P2Race" Background="#181818" FontSize="50" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft">
-                        <ListBox.ItemContainerStyle>
-                            <Style TargetType="ListBoxItem">
-                                <Style.Triggers>
-                                    <Trigger Property="IsSelected" Value="true">
-                                        <Setter Property="Background" Value="#515151"/>
-                                        <Setter Property="Foreground" Value="#77777c"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                                <Style.Resources>
-                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#c4c4cc"/>
-                                </Style.Resources>
-                            </Style>
-                        </ListBox.ItemContainerStyle>
+                    <TextBox  Name="P2Name"  Text="Player2"  FontSize="60" Background="#181818" Foreground="#618dc0" FontFamily="./resources/#Ace Futurism"  Width="180" Height="55"/>
+                    <ListBox  Name="P2Race" Background="#181818" FontSize="50" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft"
+                              Style="{StaticResource SwagList}"
+                              >
                         <ListBoxItem Content="Orc"/>
                         <ListBoxItem Content="Elf"/>
                         <ListBoxItem Content="Humain" IsSelected="True"/>
@@ -65,29 +42,18 @@
 
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <WrapPanel Orientation="Vertical" Margin="20,0">
-                    <ListBox  Name="Board" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft">
-                        <ListBox.ItemContainerStyle>
-                            <Style TargetType="ListBoxItem">
-                                <Style.Triggers>
-                                    <Trigger Property="IsSelected" Value="true">
-                                        <Setter Property="Background" Value="#515151"/>
-                                        <Setter Property="Foreground" Value="#77777c"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                                <Style.Resources>
-                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#c4c4cc"/>
-                                </Style.Resources>
-                            </Style>
-                        </ListBox.ItemContainerStyle>
+                    <ListBox  Name="Board" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft"
+                              Style="{StaticResource SwagList}"
+                              >
                         <ListBoxItem Content="Little Map" IsSelected="True" />
                         <ListBoxItem Content="Medium Map"/>
                         <ListBoxItem Content="Big Map"/>
                     </ListBox>
                 </WrapPanel>
-                <CheckBox Name="allowCheat" Content="Cheat mode." Foreground="#c1cdcd" VerticalAlignment="Center"/>
+                <CheckBox Name="allowCheat" Content="Cheat mode." Foreground="#c1cdcd" VerticalAlignment="Center" IsChecked="True"/>
             </WrapPanel>
             <Button Grid.Row="1" Content="GO" Margin="10,10,10,10"  FontSize="72" FontFamily="./resources/#Imagine Font" Click="playGame"
-                Background="#c1cdcd"
+                Background="#c1cdcd" Style="{StaticResource FutureButton}" 
                 />
 
         </WrapPanel>

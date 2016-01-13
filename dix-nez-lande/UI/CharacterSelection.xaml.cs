@@ -42,17 +42,16 @@ namespace UI
                 sm = GameBuilder.LitMap;
             else if ((string)((ListBoxItem)this.P1Race.SelectedValue).Content == "Medium Map")
                 sm = GameBuilder.MidMap;
-            else if ((string)((ListBoxItem)this.P1Race.SelectedValue).Content == "Big Map")
+            else if ((string)((ListBoxItem)this.P1Race.SelectedValue).Content == "Big Map") 
                 sm = GameBuilder.BigMap;
             gb.board(sm);
             Game gamu = gb.build();
 
             Window old = App.Current.MainWindow;
-            GameWindow megastrat = new GameWindow(gamu);
+            GameWindow megastrat = new GameWindow(gamu, this.allowCheat.IsChecked.Value);
             App.Current.MainWindow = megastrat;
             App.Current.MainWindow.Show();
             old.Close();
-            MessageBox.Show("~~TUTURU~~");
         }
     }
 }

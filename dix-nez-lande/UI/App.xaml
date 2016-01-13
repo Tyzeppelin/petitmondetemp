@@ -4,6 +4,38 @@
              xmlns:local="clr-namespace:UI"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <!-- Pour évoter les effet moches sur les boutons-->
+        <Style TargetType="{x:Type Button}" x:Key="FutureButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#c4c4cc"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="Background" Value="#e5e5e5"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="ListBox" x:Key="SwagList">
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="true">
+                    <Setter Property="Background" Value="#515151"/>
+                    <Setter Property="Foreground" Value="#77777c"/>
+                </Trigger>
+            </Style.Triggers>
+            <Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#c4c4cc"/>
+            </Style.Resources>
+        </Style>
     </Application.Resources>
 </Application>

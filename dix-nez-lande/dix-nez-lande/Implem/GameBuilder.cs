@@ -110,7 +110,7 @@ namespace dix_nez_lande.Implem
 
             game.current = game.players[rnd.Next(0,1)];
 
-            game.nbTurn = 0;
+           // game.nbTurn = 0;
 
             History h = HistoryFactory.getHistoryFactory().createHistory();
             game.saveStates = h;

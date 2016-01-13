@@ -15,6 +15,8 @@ namespace UI
 
         private Game game;
         private int size;
+        private int turns;
+        private bool isCheatAllowed;
 
         public GameWindow()
         {
@@ -41,10 +43,21 @@ namespace UI
             }
         }
 
-        public GameWindow(Game g)
+        public GameWindow(Game g, bool cheat)
         {
             InitializeComponent();
+            this.turns = g.nbTurn;
+            this.isCheatAllowed = cheat;
+            if (cheat)
+            {
+                this.Undo.Visibility = Visibility.Visible;
+            }
+
             game = g;
+            game.start();
+
+            this.updateInfoBox();
+            
         }
 
         private void updateGrid()
@@ -93,6 +106,54 @@ namespace UI
             img.Source = src;
 
             return img;
+        }
+
+        private void updateInfoBox()
+        {
+            this.infoBox.Text = "Tour " + (this.game.nbTurn/2) + "/" + (this.turns/2)+". " + this.game.current.name;
+        }   
+
+        private void switchPlayers()
+        {
+            this.game.endTurn();
+            this.updateInfoBox();
+        }
+
+        private void endGame()
+        {
+            Player winner = this.game.whoWin();
+            MessageBox.Show(winner.name + " wins. Gratz!");
+        }
+
+        private void endTurn(object sender, RoutedEventArgs e)
+        {
+            if(this.game.nbTurn == 0)
+            {
+                this.endGame();
+            }
+            else
+            {
+                this.switchPlayers();
+            }  
+        }
+
+        private void showHint(object sender, RoutedEventArgs e)
+        {
+            this.game.suggest();
+            MessageBox.Show(this.game.suggest().ToString());
+        }
+
+        private void Cheat(object sender, RoutedEventArgs e)
+        {
+            this.game.undo();
+            this.updateInfoBox();
+            this.updateGrid();
+            this.updateGrid();
+        }
+
+        private void PopHelp(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Useful Help");
         }
     }
 }
