@@ -111,27 +111,31 @@ namespace dix_nez_lande.Implem
 
         public void moveTo(Unit u, Position to)
         {
-            Position from = u.pos;
+            if (!canMove(to.x, to.y, u.race)) { }
+            else
+            {
+                Position from = u.pos;
 
-            //Récupération de l'ancienne liste
-            //supression de l'unité
-            List<Unit> uList;
-            units.TryGetValue(from, out uList);
-            uList.Remove(u);
-            units.Add(from, uList);
+                //Récupération de l'ancienne liste
+                //supression de l'unité
+                List<Unit> uList = new List<Unit>();
+                units.TryGetValue(from, out uList);
+                uList.Remove(u);
+                units.Add(from, uList);
 
-            //Récupération de la nouvelle liste
-            //et ajout de l'unité
-            units.TryGetValue(to, out uList);
-            uList.Add(u);
-            units.Add(to, uList);
+                //Récupération de la nouvelle liste
+                //et ajout de l'unité
+                units.TryGetValue(to, out uList);
+                uList.Add(u);
+                units.Add(to, uList);
+            }
         }
 
         public void attack(Unit attacker, Position p)
         {
             //On récupère la liste des défenseurs
             //présents sur la brique attaquée
-            List<Unit> list;
+            List<Unit> list = new List<Unit>();
             units.TryGetValue(p, out list);
 
             //On récupère le "meilleur" defenseur
