@@ -1,6 +1,21 @@
 DIX-NEZ-LANDE
 =============
 
+Comment Jouer
+--------------
+
+Le but du jeu est de posséder plus de case que l'adversaire.
+
+Pour se faire, vous devrez déplacer des pions sur la carte.
+Pour déplacer les pions,il suffit de faire un clique gauche de la souris pour 
+le selectionner, et un clique droit sur une des cases en en surbrillance pour
+bouger, ou attaquer si un pionennemi se présente.
+
+
+
+Dev
+----
+
 The best pun we could have possibly done. Period.
 
 This is the most amazing, the most beatiful and the weirdest smallworld-ish videogame
@@ -16,11 +31,10 @@ ever made (probably).
 ===============================================================================
 ===============================================================================
 
-Dans ce projet, il y a des chemins absolus afin de charger la DLL. Il faut les
-changer pour les faire correspondre à votre arborescence de fichier pour que le
-programme fonctionne. C'est le seul moyen que nous avons trouvé pour que Visual
-sache où sons situé les DLL. Les chemins à éditer sont présent à la fin du
-fichier ``` .\dix-nez-lande\dix-nez-lande\Implem\Algo.cs ```
+Il est nécessaire de générer la librairie (libCPP.dll) du projet libCPP avant de
+génerer tout le projet.	Une fois la dll géneré, il faut la placer dans le dossier
+dix-nez-lande\UI\bin\Debug pour pouvoir compiler le projet et pouvoir lancer le
+jeu.
 
 Afin de vous permettre de mieux apprécier cette petite modification, vous pourrez
 admirer ci-dessous une magnifique licorne, symbole de notre jeu.
