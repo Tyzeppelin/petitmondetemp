@@ -17,7 +17,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Name="infoBox" Text="NAME PLAYER plays." HorizontalAlignment="Center"  Margin="10,10,10,10" Background="WhiteSmoke"/>
+        <TextBlock Grid.Row="0" Name="infoBox" HorizontalAlignment="Center"  Margin="10,10,10,10" Foreground="WhiteSmoke" FontSize="30"/>
         <Grid x:Name="Game_Grid" Grid.Row="1" HorizontalAlignment="Center" Margin="10,10,10,10" ShowGridLines="True" >
             <Grid.Resources>
                 <Style TargetType="RowDefinition">

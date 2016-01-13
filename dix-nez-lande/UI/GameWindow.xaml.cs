@@ -103,7 +103,7 @@ namespace UI
 
         private void updateInfoBox()
         {
-           // this.infoBox.Text = "Tour " + (this.game.nbTurn/2) + "/" + (this.turns/2)+". " + this.game.current.name;
+           infoBox.Text = "Turn " + (this.game.nbTurn/2) + "/" + (this.turns/2)+". It's " + this.game.current.name + " turn.";
         }   
 
         private void switchPlayers()
