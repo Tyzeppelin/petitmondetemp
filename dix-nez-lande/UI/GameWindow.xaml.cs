@@ -84,24 +84,24 @@ namespace UI
             switch (tile.getName())
             {
                 case "water":
-                    path = "pack://application:,,,/resources/TilesTextures/water.png";
+                    path = "water.png";
                     break;
                 case "forest":
-                    path = "pack://application:,,,/resources/TilesTextures/forest.png";
+                    path = "forest.png";
                     break;
                 case "plain":
-                    path = "pack://application:,,,/resources/TilesTextures/plain.png";
+                    path = "plain.png";
                     break;
                 case "mountain":
-                    path = "pack://application:,,,/resources/TilesTextures/mountain.png";
+                    path = "mountain.png";
                     break;
                 default :
-                    path = "pack://application:,,,/resources/TilesTextures/water.png";
+                    path = "water.png";
                     break;
             }
             BitmapImage src = new BitmapImage();
             src.BeginInit();
-            src.UriSource = new Uri(path);
+            src.UriSource = new Uri("pack://application:,,,/resources/Textures/Tiles/"+path);
             src.CacheOption = BitmapCacheOption.OnLoad;
             src.EndInit();
             img.Source = src;

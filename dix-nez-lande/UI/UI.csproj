@@ -131,10 +131,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resources\TilesTextures\forest.png" />
-    <Resource Include="resources\TilesTextures\mountain.png" />
-    <Resource Include="resources\TilesTextures\plain.png" />
-    <Resource Include="resources\TilesTextures\water.png" />
+    <Resource Include="resources\Textures\Players\Player1.png" />
+    <Resource Include="resources\Textures\Players\Player2.png" />
+    <Resource Include="resources\Textures\Tiles\forest.png" />
+    <Resource Include="resources\Textures\Tiles\mountain.png" />
+    <Resource Include="resources\Textures\Tiles\plain.png" />
+    <Resource Include="resources\Textures\Tiles\water.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
