@@ -16,8 +16,10 @@
         <WrapPanel Orientation="Vertical">
             <WrapPanel Orientation="Horizontal">
                 <WrapPanel Orientation="Vertical">
-                    <TextBox  Name="P1Name"  Text="Player1" FontSize="60" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Ace Futurism" Width="180" Height="55"/>
-                    <ListBox  Name="P1Race" Background="#181818" FontSize="35" Foreground="#c1cdcd" FontFamily="./resources/#Break Down">
+
+                    <TextBox  Name="P1Name"  Text="Player1" FontSize="60" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Ace Futurism" MouseDoubleClick="aaa" Width="180" Height="55"/>
+                    <ListBox  Name="P1Race" Background="#181818" FontSize="50" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft">
+
                         <ListBox.ItemContainerStyle>
                             <Style TargetType="ListBoxItem">
                                 <Style.Triggers>
@@ -40,7 +42,7 @@
 
                 <WrapPanel Orientation="Vertical">
                     <TextBox  Name="P2Name"  Text="Player1"  FontSize="60" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Ace Futurism"  Width="180" Height="55"/>
-                    <ListBox  Name="P2Race" Background="#181818" FontSize="35" Foreground="#c1cdcd" FontFamily="./resources/#Break Down">
+                    <ListBox  Name="P2Race" Background="#181818" FontSize="50" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft">
                         <ListBox.ItemContainerStyle>
                             <Style TargetType="ListBoxItem">
                                 <Style.Triggers>
@@ -60,11 +62,12 @@
                     </ListBox>
                 </WrapPanel>
             </WrapPanel>
+
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <WrapPanel Orientation="Vertical" Margin="20,0">
-                    <RadioButton Content="Little Map" GroupName="map" Name="lil" Foreground="#c1cdcd"/>
-                    <RadioButton Content="Medium Map" GroupName="map" Name="mid" Foreground="#c1cdcd"/>
-                    <RadioButton Content="Big Map" GroupName="map" Name="big" Foreground="#c1cdcd"/>
+                    <RadioButton Content="Demo" GroupName="map" Name="lil" Foreground="#c1cdcd"/>
+                    <RadioButton Content="Small" GroupName="map" Name="mid" Foreground="#c1cdcd"/>
+                    <RadioButton Content="Standard" GroupName="map" Name="big" Foreground="#c1cdcd"/>
                 </WrapPanel>
                 <CheckBox Name="allowCheat" Content="Cheat mode." Foreground="#c1cdcd" VerticalAlignment="Center"/>
             </WrapPanel>

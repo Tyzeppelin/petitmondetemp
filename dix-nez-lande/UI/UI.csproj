@@ -113,6 +113,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Resource Include="resources\Minecraft.ttf" />
     <Resource Include="resources\ace_futurism.ttf" />
     <Resource Include="resources\Break-Down.ttf" />
     <Resource Include="resources\imagine_font.ttf" />
