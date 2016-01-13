@@ -65,7 +65,7 @@
 
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <WrapPanel Orientation="Vertical" Margin="20,0">
-                    <ListBox  Name="Board" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Break Down">
+                    <ListBox  Name="Board" Background="#181818" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft">
                         <ListBox.ItemContainerStyle>
                             <Style TargetType="ListBoxItem">
                                 <Style.Triggers>
