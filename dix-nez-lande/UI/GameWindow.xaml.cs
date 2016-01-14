@@ -21,6 +21,8 @@ namespace UI
         private int turns;
         private bool isCheatAllowed;
         private Unit movingUnit;
+        private int ptsPlayer1 = 0;
+        private int ptsPlayer2 = 0;
 
         public GameWindow()
         {
@@ -177,7 +179,14 @@ namespace UI
             foreach (Player p in game.players)
                 foreach (Unit u in p.units)
                     u.aBouge = false;
-
+            if (game.current.name == game.players[0].name)
+            {
+                ptsPlayer1 += game.map.getPoints(game.current);
+            }
+            else
+            {
+                ptsPlayer2 += game.map.getPoints(game.current);
+            }
             this.game.endTurn();
             this.updateGrid();
             this.updateInfoBox();
@@ -332,10 +341,8 @@ namespace UI
 
         private void printPoints()
         {
-            int p1 = game.map.getPoints(game.players[0]);
-            int p2 = game.map.getPoints(game.players[1]);
-            player1_pt.Text = game.players[0].name + " : " + p1;
-            player2_pt.Text = game.players[1].name + " : " + p2;
+            player1_pt.Text = game.players[0].name + " : " + ptsPlayer1;
+            player2_pt.Text = game.players[1].name + " : " + ptsPlayer2;
         }
 
         private void RestartGame(object sender, RoutedEventArgs e)
