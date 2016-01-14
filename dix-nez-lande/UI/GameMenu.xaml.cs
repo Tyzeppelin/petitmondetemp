@@ -32,10 +32,17 @@ namespace UI
         }
         private void optionButton(object sender, RoutedEventArgs e)
         {
-            ProcessStartInfo notepadStartInfo = new ProcessStartInfo("notepad.exe ./README.md");
+            /*ProcessStartInfo notepadStartInfo = new ProcessStartInfo("notepad.exe ./README.md");
             Process notepad = new Process();
             notepad.StartInfo = notepadStartInfo;
-            notepad.Start();
+            notepad.Start();*/
+            string[] lines = System.IO.File.ReadAllLines(@"..\..\resources\README.md");
+            string text = "";
+            foreach (string line in lines)
+            {
+                text += "\n" + line;
+            }
+            MessageBox.Show(text);
         }
 
         private void exitButton(object sender, RoutedEventArgs e)
