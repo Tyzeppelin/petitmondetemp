@@ -53,5 +53,15 @@ namespace UI
             App.Current.MainWindow.Show();
             old.Close();
         }
+        private void PopHelp(object sender, RoutedEventArgs e)
+        {
+            string[] lines = System.IO.File.ReadAllLines(@"..\..\resources\raceHelp.txt");
+            string text = "";
+            foreach (string line in lines)
+            {
+                text += "\n" + line;
+            }
+            MessageBox.Show(text);
+        }
     }
 }

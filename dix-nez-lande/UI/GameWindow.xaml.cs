@@ -214,7 +214,13 @@ namespace UI
 
         private void PopHelp(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Useful Help");
+            string[] lines = System.IO.File.ReadAllLines(@"..\..\resources\help.txt");
+            string text = "";
+            foreach (string line in lines)
+            {
+                text += "\n" + line;
+            }
+                MessageBox.Show(text);
         }
 
         // select an unit

@@ -1,0 +1,42 @@
+================================
+                    How to choose your race
+================================
+
+Shared Characteristics
+------------------------
+Each unit shall have 2 move points that corresponds to
+standard 2 moves on the map (from a tile to a connected one).
+The units shall not recover their life points lost during
+battles.
+
+Orc
+-----
+To move on a plain tile, an orc unit shall have to spend 0.5
+move point (instead of 1). On a mountain tile, orc units shall
+have an attack distance of 2 (1 otherwise). Orc units shall
+not move on water tiles. Elf units shall have 17 life points,
+5 attack points, and 2 defence points. An orc unit shall gather
+1 victory point on a plain tile, 2 victory point on a mountain
+tile, and 1 victory point on a forest tile.
+
+Elf
+-----
+Elf units shall have a distance attack of 2 (in the same
+direction, but they shall attack at a distance of 1). To move
+on a mountain tile, an elf unit shall have to spend 2 move
+points (instead of 1). Elf units shall not move on water
+tiles. Elf units shall have 12 life points, 4 attack points,
+and 3 defence points. An elf unit shall gather 1 victory
+point on a plain tile, 0 victory point on a mountain tile,
+and 3 victory point on a forest tile.
+
+Human
+--------
+Human units shall move on water tiles. A human unit located
+on a water tile shall bring no point to the player.
+Human units shall attack units placed on a tile just near
+those of the human unit (distance attack of 1).
+Human units shall have 15 life points, 6 attack points, and
+3 defence points. A human unit shall gather 2 victory point
+on a plain tile, 1 victory point on a mountain tile, and 1
+victory point on a forest tile.

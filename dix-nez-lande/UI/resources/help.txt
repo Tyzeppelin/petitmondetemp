@@ -1,0 +1,18 @@
+================================
+                            How to play
+================================
+
+The player 1 plays first. All his units are red dots.
+The player's 2 units are the blue dots.
+
+Moving
+--------
+Left click on the unit which you want to
+move.
+Right click on the tile you want to move.
+
+Attacking
+----------
+Like the moving part, left click to
+select the attacker and right click on
+the enemy unit.
