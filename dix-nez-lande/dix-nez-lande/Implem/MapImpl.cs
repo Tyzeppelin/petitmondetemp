@@ -82,7 +82,7 @@ namespace dix_nez_lande.Implem
         {
             Race r = p.race;
             Random rand = new Random(p.GetHashCode());
-            int pos = 0, posX=0, posY=0;
+            int pos = 0, posX=0, posY=0, chgmentLigne=0; 
             if (numPlayer == 1)
             {
                 posX = rand.Next(0, size);
@@ -98,6 +98,8 @@ namespace dix_nez_lande.Implem
                         posX = rand.Next(0, size);
                         pos = posX + (size * posY);
                         Console.WriteLine("Tile type : " + tiles[pos].getName());
+                        if (chgmentLigne > 20) posY++;
+                        chgmentLigne++;
                     }
                 }
             }
@@ -117,6 +119,8 @@ namespace dix_nez_lande.Implem
                         posX = rand.Next(0, size);
                         pos = posX + (size * posY);
                         Console.WriteLine("Tile type : " + tiles[pos].getName());
+                        if (chgmentLigne > 20) posY++;
+                        chgmentLigne--;
                     }
                 }
             }
