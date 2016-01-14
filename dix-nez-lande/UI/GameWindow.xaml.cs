@@ -331,8 +331,17 @@ namespace UI
 
         private void RestartGame(object sender, RoutedEventArgs e)
         {
+            GameBuilder gb = GameBuilder.create();
+
+            gb.player1(game.players[0].name, game.players[0].race.name);
+            gb.player2(game.players[1].name, game.players[1].race.name);
+
+            int sm = game.map.size;
+            gb.board(sm);
+            Game gamu = gb.build();
+
             Window old = App.Current.MainWindow;
-            GameWindow megastrat = new GameWindow(game, isCheatAllowed);
+            GameWindow megastrat = new GameWindow(gamu, isCheatAllowed);
             App.Current.MainWindow = megastrat;
             App.Current.MainWindow.Show();
             old.Close();
