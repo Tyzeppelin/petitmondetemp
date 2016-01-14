@@ -81,7 +81,7 @@ namespace dix_nez_lande.Implem
         public void placeArmy(Player p, int numPlayer)
         {
             Race r = p.race;
-            Random rand = new Random(new System.DateTime().Millisecond);
+            Random rand = new Random(p.GetHashCode());
             int pos = 0, posX=0, posY=0;
             if (numPlayer == 1)
             {
