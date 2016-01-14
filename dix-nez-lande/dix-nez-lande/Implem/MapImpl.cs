@@ -81,28 +81,36 @@ namespace dix_nez_lande.Implem
         public void placeArmy(Player p, int numPlayer)
         {
             Race r = p.race;
-            Random rand = new Random();
+            Random rand = new Random(numPlayer);
             int pos = 0, posX=0, posY=0;
             if (numPlayer == 1)
             {
-                while (!positionValide(pos, r))
+                posX = rand.Next(0, size);
+                pos = posY + (size * posX);
+                bool valide = positionValide(pos, r);
+                for (int i = 0; !valide && i < size/2; i++)
                 {
                     //On cherche une valeur aléatoire dans
                     //la moitié haute de la carte
-                    pos = rand.Next(0, (size* size)/2);
+                    posX++;
+                    posY = rand.Next(0, size);
+                    pos = posY + (size * posX);
+                    valide = positionValide(pos, r);
                 }
-                posX = 0;posY = 0;
             }
             else
             {
-                pos =(size*size)/2;
+                posY = size - 1;
+                posX = rand.Next(0, size);
+                pos = posY + (size * posX);
                 while (!positionValide(pos, r))
                 {
                     //On cherche une valeur aléatoire dans
                     //la moitié basse de la carte
-                    pos = rand.Next((size*size)/2, size*size);
+                    posX--;
+                    posY = rand.Next(0, size);
+                    pos = posY + (size * posX);
                 }
-                posX = size - 1; posY = size - 1;
             }
             
             Position position = PositionImpl.getPosition(posX, posY);
@@ -119,7 +127,7 @@ namespace dix_nez_lande.Implem
         private bool positionValide(int pos, Race r)
         {
             if (r.name != "human") {
-                return (tiles[pos].GetType() != typeof(TileWater));
+                return (tiles[pos].getName() != "water");
             }
             return true;
         }
@@ -209,7 +217,7 @@ namespace dix_nez_lande.Implem
 
         public bool accessible(Position p, Unit u)
         {
-            bool a =(Math.Pow((u.pos.x - p.x), 2) + Math.Pow((u.pos.y - p.y), 2) < Math.Pow(u.mov, 2));
+            bool a = Math.Abs(u.pos.x - p.x) + Math.Abs(u.pos.y - p.y) <= u.mov;
             Console.WriteLine("La position ("+ p.x + "," + p.y +") est accessible ? "+a);
             return a;
         }

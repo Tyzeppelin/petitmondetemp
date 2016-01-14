@@ -35,7 +35,7 @@
                               >
                         <ListBoxItem Content="Orc"/>
                         <ListBoxItem Content="Elf"/>
-                        <ListBoxItem Content="Humain" IsSelected="True"/>
+                        <ListBoxItem Content="Human" IsSelected="True"/>
                     </ListBox>
                 </WrapPanel>
             </WrapPanel>
