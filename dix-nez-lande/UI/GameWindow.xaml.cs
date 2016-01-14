@@ -254,27 +254,7 @@ namespace UI
                         proprio = game.players[0];
                     }
                 }
-                if (clickedUnit != null && clickedUnit.hp > 0)
-                {
-                    name_textBloc.Text = "Name : " + clickedUnit.name + " of " + proprio.name;
-                    race_textBloc.Text = "Race : " + clickedUnit.race.name;
-                    life_textBloc.Text = "Life : " + clickedUnit.hp;
-                    attack_textBloc.Text = "Attack : " + clickedUnit.atk;
-                    defense_textBloc.Text = "Defense : " + clickedUnit.def;
-                    move_textBloc.Text = "Move points : ";
-                    if (clickedUnit.aBouge) { move_textBloc.Text += 0; }
-                    else { move_textBloc.Text += clickedUnit.mov; }
-                }
-                else
-                {
-                    name_textBloc.Text = "";
-                    race_textBloc.Text = "";
-                    life_textBloc.Text = "";
-                    attack_textBloc.Text = "";
-                    defense_textBloc.Text = "";
-                    move_textBloc.Text = "";
-                    move_textBloc.Text = "";
-                }
+                printSelectedUnit(clickedUnit, proprio);
 
                 //updateUnits();
                 e.Handled = true;
@@ -317,9 +297,35 @@ namespace UI
                         }
                     }
                 }
+                printSelectedUnit(movingUnit, game.current);
                 updateGrid();
 
                 e.Handled = true;
+            }
+        }
+
+        private void printSelectedUnit(Unit u, Player proprio)
+        {
+            if (u != null && u.hp > 0)
+            {
+                name_textBloc.Text = "Name : " + u.name + " of " + proprio.name;
+                race_textBloc.Text = "Race : " + u.race.name;
+                life_textBloc.Text = "Life : " + u.hp;
+                attack_textBloc.Text = "Attack : " + u.atk;
+                defense_textBloc.Text = "Defense : " + u.def;
+                move_textBloc.Text = "Move points : ";
+                if (u.aBouge) { move_textBloc.Text += 0; }
+                else { move_textBloc.Text += u.mov; }
+            }
+            else
+            {
+                name_textBloc.Text = "";
+                race_textBloc.Text = "";
+                life_textBloc.Text = "";
+                attack_textBloc.Text = "";
+                defense_textBloc.Text = "";
+                move_textBloc.Text = "";
+                move_textBloc.Text = "";
             }
         }
     }
