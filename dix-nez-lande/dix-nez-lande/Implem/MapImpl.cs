@@ -170,9 +170,11 @@ namespace dix_nez_lande.Implem
 
                 //L'attaquant tape une fois
                 //Puis le defenseur tape s'il n'est pas mort
+                Console.WriteLine("L'unite " + attacker.name + " attaque " + defenser.name + ".");
                 defenser.hp -= attacker.atk - defenser.def;
                 if (defenser.isAlive())
                 {
+                    Console.WriteLine("L'unite " + defenser.name + " riposte.");
                     attacker.hp -= defenser.atk - attacker.def;
                     attacker.aBouge = true;
                     return false;
@@ -184,8 +186,9 @@ namespace dix_nez_lande.Implem
                     this.units.Add(p, list);
                     return list.Count == 0;
                 }
+                Console.WriteLine(attacker.name + " : " + attacker.hp + " points de vie");
+                Console.WriteLine(attacker.name + " : " + defenser.hp + " points de vie");
             }
-            
         }
 
         public Boolean canMove(int x, int y, Race r)
