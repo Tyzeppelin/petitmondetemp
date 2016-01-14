@@ -28,8 +28,9 @@ namespace dix_nez_lande.Implem
         #endregion
         public Race getRace(String race)
         {
+            string raceBis = race.ToLower();
             Race r;
-            switch (race) {
+            switch (raceBis) {
                 case "human":
                     r = this.getHuman();
                     break;
