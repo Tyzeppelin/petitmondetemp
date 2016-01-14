@@ -261,10 +261,17 @@ namespace UI
                         {
                             game.map.moveTo(movingUnit, p);
                         }
+                        else
+                        {
+                            if (!movingUnit.isAlive())
+                            {
+                                game.current.units.Remove(movingUnit);
+                            }
+                        }
                     }
-                    updateGrid();
                 }
-                
+                updateGrid();
+
                 e.Handled = true;
             }
         }

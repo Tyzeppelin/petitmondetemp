@@ -158,10 +158,10 @@ namespace dix_nez_lande.Implem
                 //présents sur la brique attaquée
                 List<Unit> list = new List<Unit>();
                 this.units.TryGetValue(p, out list);
+                if (list.Count == 0) { return false; }
 
                 //On récupère le "meilleur" defenseur
-                Unit defenser = new UnitImpl();
-                int nbUnits = list.Count();
+                Unit defenser = list[0];
                 foreach (Unit u in list)
                 {
                     if (defenser.hp < u.hp)
@@ -179,6 +179,12 @@ namespace dix_nez_lande.Implem
                     Console.WriteLine("L'unite " + defenser.name + " riposte.");
                     attacker.hp -= defenser.atk - attacker.def;
                     attacker.aBouge = true;
+                    if (!attacker.isAlive())
+                    {
+                        list.Remove(attacker);
+                        this.units.Remove(p);
+                        this.units.Add(p, list);
+                    }
                     return false;
                     Console.WriteLine(attacker.name + " : " + attacker.hp + " points de vie");
                     Console.WriteLine(attacker.name + " : " + defenser.hp + " points de vie");
