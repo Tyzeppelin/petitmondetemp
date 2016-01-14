@@ -238,6 +238,15 @@ namespace UI
                 //updateUnits();
                 e.Handled = true;
             }
+            name_textBloc.Text = "Name : " + movingUnit.name;
+            race_textBloc.Text = "Race : " + movingUnit.race.name;
+            life_textBloc.Text = "Life : " + movingUnit.hp;
+            attack_textBloc.Text = "Attack : " + movingUnit.atk;
+            defense_textBloc.Text = "Defense : " + movingUnit.def;
+            move_textBloc.Text = "Move points : ";
+            if (movingUnit.aBouge) { move_textBloc.Text += 0; }
+            else { move_textBloc.Text += movingUnit.mov; }
+            
         }
 
         // move/attack if possible
