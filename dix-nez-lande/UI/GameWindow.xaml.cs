@@ -168,6 +168,10 @@ namespace UI
 
         private void switchPlayers()
         {
+            foreach(Player p in game.players)
+                foreach(Unit u in p.units)
+                    u.aBouge = false;
+                
             this.game.endTurn();
             this.updateGrid();
             this.updateInfoBox();
@@ -251,7 +255,11 @@ namespace UI
                     }
                     else
                     { 
-                        game.map.attack(movingUnit, p);
+                        bool victory = game.map.attack(movingUnit, p);
+                        if (victory)
+                        {
+                            game.map.moveTo(movingUnit, p);
+                        }
                     }
                     updateGrid();
                 }

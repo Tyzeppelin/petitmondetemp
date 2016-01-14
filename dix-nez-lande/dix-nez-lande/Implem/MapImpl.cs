@@ -125,7 +125,7 @@ namespace dix_nez_lande.Implem
 
         public void moveTo(Unit u, Position to)
         {
-            if ( (!canMove(to.x, to.y, u.race) &&  !accessible(to, u)) || u.aBouge ) { }
+            if ( !canMove(to.x, to.y, u.race) ||  !accessible(to, u) || u.aBouge ) { }
             else
             {
                 Position from = u.pos;
@@ -148,31 +148,44 @@ namespace dix_nez_lande.Implem
             }
         }
 
-        public void attack(Unit attacker, Position p)
+        public bool attack(Unit attacker, Position p)
         {
-            //On récupère la liste des défenseurs
-            //présents sur la brique attaquée
-            List<Unit> list = new List<Unit>();
-            this.units.TryGetValue(p, out list);
+            if (!canMove(p.x, p.y, attacker.race) || !accessible(p, attacker) || attacker.aBouge) { return false; }
+            else {
+                //On récupère la liste des défenseurs
+                //présents sur la brique attaquée
+                List<Unit> list = new List<Unit>();
+                this.units.TryGetValue(p, out list);
 
-            //On récupère le "meilleur" defenseur
-            Unit defenser = new UnitImpl();
-            int nbUnits = list.Count();
-            for (int i = 0; i < nbUnits; i++)
-            {
-                if (defenser.hp < list.ElementAt(i).hp)
+                //On récupère le "meilleur" defenseur
+                Unit defenser = new UnitImpl();
+                int nbUnits = list.Count();
+                foreach (Unit u in list)
                 {
-                    defenser = list.ElementAt(i);
+                    if (defenser.hp < u.hp)
+                    {
+                        defenser = u;
+                    }
+                }
+
+                //L'attaquant tape une fois
+                //Puis le defenseur tape s'il n'est pas mort
+                defenser.hp -= attacker.atk - defenser.def;
+                if (defenser.isAlive())
+                {
+                    attacker.hp -= defenser.atk - attacker.def;
+                    attacker.aBouge = true;
+                    return false;
+                }
+                else
+                {
+                    list.Remove(defenser);
+                    this.units.Remove(p);
+                    this.units.Add(p, list);
+                    return list.Count == 0;
                 }
             }
-
-            //L'attaquant tape une fois
-            //Puis le defenseur tape s'il n'est pas mort
-            defenser.hp -= attacker.atk - defenser.def;
-            if (defenser.isAlive())
-            {
-                attacker.hp -= defenser.atk - attacker.def;
-            }
+            
         }
 
         public Boolean canMove(int x, int y, Race r)
