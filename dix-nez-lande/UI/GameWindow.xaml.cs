@@ -233,20 +233,36 @@ namespace UI
                 int co = Grid.GetColumn(img);
                 int ro = Grid.GetRow(img);
 
-               
                 movingUnit = game.current.getUnit(co, ro);
                 //updateUnits();
                 e.Handled = true;
-            }
-            name_textBloc.Text = "Name : " + movingUnit.name;
-            race_textBloc.Text = "Race : " + movingUnit.race.name;
-            life_textBloc.Text = "Life : " + movingUnit.hp;
-            attack_textBloc.Text = "Attack : " + movingUnit.atk;
-            defense_textBloc.Text = "Defense : " + movingUnit.def;
-            move_textBloc.Text = "Move points : ";
-            if (movingUnit.aBouge) { move_textBloc.Text += 0; }
-            else { move_textBloc.Text += movingUnit.mov; }
-            
+                Player proprio = game.current;
+                Unit clickedUnit = game.current.getUnit(co, ro);
+                if (clickedUnit == null)
+                {
+                    if (game.current.name == game.players[0].name)
+                    {
+                        clickedUnit = game.players[1].getUnit(co, ro);
+                        proprio = game.players[1];
+                    }
+                    else
+                    {
+                        clickedUnit = game.players[0].getUnit(co, ro);
+                        proprio = game.players[0];
+                    }
+                }
+                if (clickedUnit != null)
+                {
+                    name_textBloc.Text = "Name : " + clickedUnit.name + " of " + proprio.name;
+                    race_textBloc.Text = "Race : " + clickedUnit.race.name;
+                    life_textBloc.Text = "Life : " + clickedUnit.hp;
+                    attack_textBloc.Text = "Attack : " + clickedUnit.atk;
+                    defense_textBloc.Text = "Defense : " + clickedUnit.def;
+                    move_textBloc.Text = "Move points : ";
+                    if (clickedUnit.aBouge) { move_textBloc.Text += 0; }
+                    else { move_textBloc.Text += clickedUnit.mov; }
+                }              
+            }            
         }
 
         // move/attack if possible
