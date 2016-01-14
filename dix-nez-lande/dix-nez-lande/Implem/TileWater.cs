@@ -15,7 +15,7 @@ namespace dix_nez_lande.Implem
     {
         public String getName()
         {
-            return "Water";
+            return "water";
         }
         public int getPoints(Race r)
         {

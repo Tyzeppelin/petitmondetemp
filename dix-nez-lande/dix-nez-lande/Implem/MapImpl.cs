@@ -86,30 +86,38 @@ namespace dix_nez_lande.Implem
             if (numPlayer == 1)
             {
                 posX = rand.Next(0, size);
-                pos = posY + (size * posX);
-                bool valide = positionValide(pos, r);
-                for (int i = 0; !valide && i < size/2; i++)
+                pos = posX + (size * posY);
+                if (p.race.name != "human")
                 {
-                    //On cherche une valeur aléatoire dans
-                    //la moitié haute de la carte
-                    posX++;
-                    posY = rand.Next(0, size);
-                    pos = posY + (size * posX);
-                    valide = positionValide(pos, r);
+                    Console.WriteLine("Attention, race non humaine pour le joueur 1");
+                    Console.WriteLine("Position : "+pos);
+                    Console.WriteLine("Tile type : " + tiles[pos].getName());
+                    while (tiles[pos].getName() == "water")
+                    {
+                        Console.WriteLine("Position trouvée est sur l'eau pour joueur 1, on relance la recherche");
+                        posX = rand.Next(0, size);
+                        pos = posX + (size * posY);
+                        Console.WriteLine("Tile type : " + tiles[pos].getName());
+                    }
                 }
             }
             else
             {
                 posY = size - 1;
                 posX = rand.Next(0, size);
-                pos = posY + (size * posX);
-                while (!positionValide(pos, r))
+                pos = posX + (size * posY);
+                if (p.race.name != "human")
                 {
-                    //On cherche une valeur aléatoire dans
-                    //la moitié basse de la carte
-                    posX--;
-                    posY = rand.Next(0, size);
-                    pos = posY + (size * posX);
+                    Console.WriteLine("Attention, race non humaine pour le joueur 2");
+                    Console.WriteLine("Position : " + pos);
+                    Console.WriteLine("Tile type : " + tiles[pos].getName());
+                    while (tiles[pos].getName() == "water")
+                    {
+                        Console.WriteLine("Position trouvée est sur l'eau pour joueur 2, on relance la recherche");
+                        posX = rand.Next(0, size);
+                        pos = posX + (size * posY);
+                        Console.WriteLine("Tile type : " + tiles[pos].getName());
+                    }
                 }
             }
             
