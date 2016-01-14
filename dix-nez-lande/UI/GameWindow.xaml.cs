@@ -84,24 +84,29 @@ namespace UI
                     Game_Grid.Children.Add(im);
                 }
             }
-            
+
             foreach (Unit u in game.players[0].units)
             {
-                Image e = getImagePlayer(1);
-                e.MouseLeftButtonDown += Tile_Left_Clicked;
-                e.MouseRightButtonDown += Tile_Right_Clicked;
-                Grid.SetRow(e, u.pos.y);
-                Grid.SetColumn(e, u.pos.x);
-                Game_Grid.Children.Add(e);
+                if (u.hp > 0) {
+                    Image e = getImagePlayer(1);
+                    e.MouseLeftButtonDown += Tile_Left_Clicked;
+                    e.MouseRightButtonDown += Tile_Right_Clicked;
+                    Grid.SetRow(e, u.pos.y);
+                    Grid.SetColumn(e, u.pos.x);
+                    Game_Grid.Children.Add(e);
+                }
             }
             foreach (Unit u in game.players[1].units)
             {
-                Image e = getImagePlayer(2);
-                e.MouseLeftButtonDown += Tile_Left_Clicked;
-                e.MouseRightButtonDown += Tile_Right_Clicked;
-                Grid.SetRow(e, u.pos.y);
-                Grid.SetColumn(e, u.pos.x);
-                Game_Grid.Children.Add(e);
+                if (u.hp > 0)
+                {
+                    Image e = getImagePlayer(2);
+                    e.MouseLeftButtonDown += Tile_Left_Clicked;
+                    e.MouseRightButtonDown += Tile_Right_Clicked;
+                    Grid.SetRow(e, u.pos.y);
+                    Grid.SetColumn(e, u.pos.x);
+                    Game_Grid.Children.Add(e);
+                }
             }
 
             Game_Grid.UpdateLayout();
@@ -125,13 +130,13 @@ namespace UI
                 case "mountain":
                     path = "mountain.png";
                     break;
-                default :
+                default:
                     path = "water.png";
                     break;
             }
             BitmapImage src = new BitmapImage();
             src.BeginInit();
-            src.UriSource = new Uri("pack://application:,,,/resources/Textures/Tiles/"+path);
+            src.UriSource = new Uri("pack://application:,,,/resources/Textures/Tiles/" + path);
             src.CacheOption = BitmapCacheOption.OnLoad;
             src.EndInit();
             img.Source = src;
@@ -163,15 +168,15 @@ namespace UI
 
         private void updateInfoBox()
         {
-           infoBox.Text = "Turn " + (this.game.nbTurn/2) + "/" + (this.turns/2)+". It's " + this.game.current.name + " turn.";
-        }   
+            infoBox.Text = "Turn " + (this.game.nbTurn / 2) + "/" + (this.turns / 2) + ". It's " + this.game.current.name + " turn.";
+        }
 
         private void switchPlayers()
         {
-            foreach(Player p in game.players)
-                foreach(Unit u in p.units)
+            foreach (Player p in game.players)
+                foreach (Unit u in p.units)
                     u.aBouge = false;
-                
+
             this.game.endTurn();
             this.updateGrid();
             this.updateInfoBox();
@@ -189,14 +194,14 @@ namespace UI
 
         private void endTurn(object sender, RoutedEventArgs e)
         {
-            if(this.game.nbTurn == 0)
+            if (this.game.nbTurn == 0)
             {
                 this.endGame();
             }
             else
             {
                 this.switchPlayers();
-            }  
+            }
         }
 
         private void showHint(object sender, RoutedEventArgs e)
@@ -220,7 +225,7 @@ namespace UI
             {
                 text += "\n" + line;
             }
-                MessageBox.Show(text);
+            MessageBox.Show(text);
         }
 
         // select an unit
@@ -234,8 +239,6 @@ namespace UI
                 int ro = Grid.GetRow(img);
 
                 movingUnit = game.current.getUnit(co, ro);
-                //updateUnits();
-                e.Handled = true;
                 Player proprio = game.current;
                 Unit clickedUnit = game.current.getUnit(co, ro);
                 if (clickedUnit == null)
@@ -251,7 +254,7 @@ namespace UI
                         proprio = game.players[0];
                     }
                 }
-                if (clickedUnit != null)
+                if (clickedUnit != null && clickedUnit.hp > 0)
                 {
                     name_textBloc.Text = "Name : " + clickedUnit.name + " of " + proprio.name;
                     race_textBloc.Text = "Race : " + clickedUnit.race.name;
@@ -261,8 +264,21 @@ namespace UI
                     move_textBloc.Text = "Move points : ";
                     if (clickedUnit.aBouge) { move_textBloc.Text += 0; }
                     else { move_textBloc.Text += clickedUnit.mov; }
-                }              
-            }            
+                }
+                else
+                {
+                    name_textBloc.Text = "";
+                    race_textBloc.Text = "";
+                    life_textBloc.Text = "";
+                    attack_textBloc.Text = "";
+                    defense_textBloc.Text = "";
+                    move_textBloc.Text = "";
+                    move_textBloc.Text = "";
+                }
+
+                //updateUnits();
+                e.Handled = true;
+            }
         }
 
         // move/attack if possible
@@ -283,10 +299,10 @@ namespace UI
                     if (u == null)
                     {
                         game.map.moveTo(movingUnit, p);
-                        
+
                     }
                     else
-                    { 
+                    {
                         bool victory = game.map.attack(movingUnit, p);
                         if (victory)
                         {
