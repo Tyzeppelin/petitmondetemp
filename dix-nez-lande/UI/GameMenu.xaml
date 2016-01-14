@@ -7,7 +7,14 @@
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="800"
       Title="GameMenu">
+    
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Margin="20,20,20,20"  Background="#FF595D63" Height="Auto"  Width="Auto" HorizontalAlignment="Center">
+        <StackPanel Margin="20,20,20,20"  Background="#e5e5e5" Height="200"  Width="Auto" HorizontalAlignment="Center">
+            <TextBlock Text="Dix-Nez-Lande"  FontFamily="./resources/#Break Down" FontSize="60" TextAlignment="Center" 
+        		RenderTransformOrigin="0.495,0.533" Height="103" Margin="20,50,20,0" />
+        </StackPanel>
+        </StackPanel>
         <Grid Background="#FF595D63" HorizontalAlignment="Center" VerticalAlignment="Center" >
             <Grid.RowDefinitions >
                 <RowDefinition Height="Auto" />
