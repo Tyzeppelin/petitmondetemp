@@ -10,5 +10,6 @@ namespace dix_nez_lande
         Player player1 { get; set; }
         Player player2 { get; set; }
         int nbTurn { get; set; }
+        Dictionary<Position, List<Unit>> units { get; set; }
     }
 }

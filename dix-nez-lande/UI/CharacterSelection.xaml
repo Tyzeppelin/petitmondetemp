@@ -50,7 +50,7 @@
                         <ListBoxItem Content="Standard" Tag="2"/>
                     </ListBox>
                 </WrapPanel>
-                <CheckBox Name="allowCheat" Content="Cheat mode." Foreground="#c1cdcd" VerticalAlignment="Center" IsChecked="False" IsEnabled="False"/>
+                <CheckBox Name="allowCheat" Content="Cheat mode." Foreground="#c1cdcd" VerticalAlignment="Center" IsChecked="False" IsEnabled="True"/>
                 <Button x:Name="Show_help" Content="Help!" Margin="20,20,20,20" Width="100" Height="50" Click="PopHelp"
                         FontFamily="./resources/#Minecraft" FontSize="30" VerticalAlignment="Center"/>
             </WrapPanel>

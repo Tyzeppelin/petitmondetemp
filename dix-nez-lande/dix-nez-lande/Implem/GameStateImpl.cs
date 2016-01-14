@@ -28,6 +28,13 @@ namespace dix_nez_lande.Implem
             set { _nbTurn = value; }
         }
 
+        private Dictionary<Position, List<Unit>> _units;
+        public Dictionary<Position, List<Unit>> units
+        {
+            get { return _units; }
+            set { _units = value; }
+        }
+
         public GameStateImpl() { }
     }
 }

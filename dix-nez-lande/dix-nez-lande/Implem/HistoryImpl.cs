@@ -31,6 +31,7 @@ namespace dix_nez_lande.Implem
 
         public void save()
         {
+            Console.WriteLine("-dave()");
             states.Add(stateToSave);
         }
         // Set the game to the state it were at GameState g.

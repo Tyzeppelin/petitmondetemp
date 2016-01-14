@@ -86,18 +86,21 @@ namespace dix_nez_lande.Implem
             // Pour l'history
             if (nbTurn%2 == 0)
             {
+                Console.WriteLine("-stocjkage");
                 GameState gs = saveStates.stateToSave;
                 gs.player1 = current;
                 gs.nbTurn = nbTurn;
+                gs.units = map.units;
                 saveStates.set(gs);
                 saveStates.save();
                 saveStates.set(GameStateFactory.getStateFactory().createGameState());
             }
             else
             {
+                Console.WriteLine("-settage");
                 GameState gs = saveStates.stateToSave;
                 gs.player2 = current;
-                saveStates.set(gs);
+                //saveStates.set(gs);
             }
         }
 
@@ -133,8 +136,11 @@ namespace dix_nez_lande.Implem
 
         public void undo()
         {
+            Console.WriteLine("-resettage");
             GameState gs = saveStates.pop();
+            Console.WriteLine("--"+nbTurn+" -> "+gs.nbTurn);
             nbTurn = gs.nbTurn;
+            map.units = gs.units;
             if (gs.player1.name == players[0].name) {
                 players[0] = gs.player1;
                 players[1] = gs.player2;

@@ -114,6 +114,16 @@ namespace dix_nez_lande.Implem
 
             History h = HistoryFactory.getHistoryFactory().createHistory();
             game.saveStates = h;
+
+            GameState gs = GameStateFactory.getStateFactory().createGameState();
+            gs.player1 = game.players[0];
+            gs.player2 = game.players[1];
+            gs.nbTurn = game.nbTurn;
+            gs.units = game.map.units;
+            game.saveStates.set(gs);
+            game.saveStates.save();
+            game.saveStates.set(GameStateFactory.getStateFactory().createGameState());
+
             return game;
         }
     }

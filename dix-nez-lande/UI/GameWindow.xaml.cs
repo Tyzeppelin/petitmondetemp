@@ -222,9 +222,13 @@ namespace UI
 
         private void Cheat(object sender, RoutedEventArgs e)
         {
-            this.game.undo();
-            this.updateInfoBox();
-            this.updateGrid();
+            if (game.nbTurn != turns)
+            {
+                MessageBox.Show("aze"+game.nbTurn);
+                this.game.undo();
+                this.updateInfoBox();
+                this.updateGrid();
+            }
         }
 
         private void PopHelp(object sender, RoutedEventArgs e)
