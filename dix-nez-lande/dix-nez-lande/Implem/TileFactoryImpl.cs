@@ -19,10 +19,10 @@ namespace dix_nez_lande.Implem
 
         private TileFactoryImpl()
         {
-            instances.Add(3, new TileWater());
+            instances.Add(0, new TileWater());
             instances.Add(2, new TileForest());
-            instances.Add(1, new TileMountain());
-            instances.Add(0 , new TilePlain());
+            instances.Add(3, new TileMountain());
+            instances.Add(1 , new TilePlain());
         }
 
         public static TileFactory getTileFactory()

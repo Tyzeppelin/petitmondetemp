@@ -9,8 +9,18 @@ using namespace std;
 void Algo::fillMap(int map[], int size)
 {
 	srand(time(NULL));
+	cout << "Size : " << size << endl;
 	int MapSize = size * size;
-	int nbType[4] = { MapSize / 4, MapSize / 4, MapSize / 4, MapSize / 4 };
+	cout << "MapSize : " << MapSize << endl;
+	int water = MapSize / 4;
+	cout << "Water : " << water;
+	int mountain = MapSize / 4;
+	cout << " Mountain : " << mountain;
+	int plain = MapSize / 4;
+	cout << " Plain : " << plain;
+	int forest = MapSize / 4;
+	cout << " Forest : " << forest << endl;
+	int nbType[4] = { water, plain, forest, mountain };
 	for (int x = 0; x < MapSize; x++)
 	{
 		int tile = rand() % 4;

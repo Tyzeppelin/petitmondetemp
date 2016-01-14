@@ -57,8 +57,8 @@ namespace dix_nez_lande.Implem
             //un tableau d'entier
             Algo a = new Algo();
             size = s;
-            int nbTiles = size*size;
-            int[] tab = a.FillMap(nbTiles);
+            int nbTiles = size * size;
+            int[] tab = a.FillMap(size);
 
             //Utilisation de ce tableau pour générer le
             //tableau de Tiles
