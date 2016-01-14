@@ -180,6 +180,8 @@ namespace dix_nez_lande.Implem
                     attacker.hp -= defenser.atk - attacker.def;
                     attacker.aBouge = true;
                     return false;
+                    Console.WriteLine(attacker.name + " : " + attacker.hp + " points de vie");
+                    Console.WriteLine(attacker.name + " : " + defenser.hp + " points de vie");
                 }
                 else
                 {
@@ -187,9 +189,9 @@ namespace dix_nez_lande.Implem
                     this.units.Remove(p);
                     this.units.Add(p, list);
                     return list.Count == 0;
+                    Console.WriteLine(attacker.name + " : " + attacker.hp + " points de vie");
+                    Console.WriteLine(attacker.name + " : " + defenser.hp + " points de vie");
                 }
-                Console.WriteLine(attacker.name + " : " + attacker.hp + " points de vie");
-                Console.WriteLine(attacker.name + " : " + defenser.hp + " points de vie");
             }
         }
 
@@ -201,7 +203,7 @@ namespace dix_nez_lande.Implem
         public bool accessible(Position p, Unit u)
         {
             bool a =(Math.Pow((u.pos.x - p.x), 2) + Math.Pow((u.pos.y - p.y), 2) < Math.Pow(u.mov, 2));
-            Console.Write(a);
+            Console.WriteLine("La position ("+ p.x + "," + p.y +") est accessible ? "+a);
             return a;
         }
     }
