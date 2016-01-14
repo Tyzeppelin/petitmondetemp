@@ -69,10 +69,10 @@ namespace dix_nez_lande.Implem
 
         public void endTurn()
         {
-            foreach (Unit unit in current.units)
+            /*foreach (Unit unit in current.units)
             {
                 current.points += getPoints(unit);
-            }
+            }*/
             Console.WriteLine("Le joueur " + current.name + " a fini de jouer son tour");
             if (nbTurn == 0)
             {
@@ -122,13 +122,13 @@ namespace dix_nez_lande.Implem
         public void rageQuit()
         {
             Console.WriteLine("Le joueur " + current.name + " abandonne lâchement");
-            current.points = -1;
+            current.points=new List<Position>();
             endGame();
         }
 
         public Player whoWin()
         {
-            return players[0].points > players[1].points? players[0]:players[1];
+            return this.map.getPoints(players[0]) > this.map.getPoints(players[1])? players[0]:players[1];
         }
 
         public void undo()

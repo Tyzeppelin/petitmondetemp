@@ -332,10 +332,10 @@ namespace UI
 
         private void printPoints()
         {
-            Player p1 = game.players[0];
-            Player p2 = game.players[1];
-            player1_pt.Text = p1.name + " : " + p1.points;
-            player2_pt.Text = p2.name + " : " + p2.points;
+            int p1 = game.map.getPoints(game.players[0]);
+            int p2 = game.map.getPoints(game.players[1]);
+            player1_pt.Text = game.players[0].name + " : " + p1;
+            player2_pt.Text = game.players[1].name + " : " + p2;
         }
 
         private void RestartGame(object sender, RoutedEventArgs e)

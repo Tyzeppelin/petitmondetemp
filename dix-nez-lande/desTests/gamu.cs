@@ -74,7 +74,8 @@ namespace desTests {
             Game tg = g.build();
             Assert.IsNotNull(tg);
 
-            tg.players[0].points = 12;
+            tg.players[0].points.Add(PositionImpl.getPosition(1, 1));
+            tg.players[0].points.Add(PositionImpl.getPosition(5, 5));
 
             Assert.AreEqual(tg.whoWin(), tg.players[0]);
 

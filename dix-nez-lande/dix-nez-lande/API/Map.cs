@@ -50,5 +50,10 @@ namespace dix_nez_lande
         * est reglementaire
         */
         bool accessible(Position p, Unit u);
+
+        /**
+        *  Rends les points d'un joueur
+        */
+        int getPoints(Player p);
     }
 }

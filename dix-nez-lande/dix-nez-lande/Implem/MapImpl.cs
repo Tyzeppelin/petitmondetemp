@@ -233,5 +233,35 @@ namespace dix_nez_lande.Implem
             Console.WriteLine("La position ("+ p.x + "," + p.y +") est accessible ? "+a);
             return a;
         }
+
+        public int getPoints(Player p)
+        {
+            int cpt = 0;
+            List<Position> lp = p.points;
+            foreach(Position pos in lp)
+            {
+                string tile = tiles[pos.x + size * pos.y].getName();
+                switch (p.race.name)
+                {
+                    case "human":
+                        if (tile == "plain") cpt += 2;
+                        else if (tile == "water") { }
+                        else cpt ++;
+                        break;
+                    case "elf":
+                        if (tile == "forest") cpt += 3;
+                        else if (tile == "plain") cpt++;
+                            break;
+                    case "orc":
+                        if (tile == "mountain") cpt += 2;
+                        else if (tile == "plain" || tile == "forest") cpt++;
+                        break;
+                    default:
+                        break;
+
+                }
+            }
+            return cpt;
+        }
     }
 }
