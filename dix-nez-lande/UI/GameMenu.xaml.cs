@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,10 @@ namespace UI
         }
         private void optionButton(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("plop");
+            ProcessStartInfo notepadStartInfo = new ProcessStartInfo("notepad.exe ./README.md");
+            Process notepad = new Process();
+            notepad.StartInfo = notepadStartInfo;
+            notepad.Start();
         }
 
         private void exitButton(object sender, RoutedEventArgs e)

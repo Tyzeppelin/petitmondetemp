@@ -8,6 +8,31 @@
       Height="600" Width="800"
       Title="GameWindow" Background="#232323" Icon="/resources/icon.png">
 
+    <Window.Resources>
+        <!-- Pour éviter les effet moches sur les boutons-->
+        <Style TargetType="{x:Type Button}" x:Key="FutureButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontFamily" Value="./resources/#Imagine Font"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#c4c4cc"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="Background" Value="#e5e5e5"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions >
             <RowDefinition Height="Auto" />
@@ -35,7 +60,7 @@
         </Grid>
         <StackPanel Grid.Row="2" Margin="10,10,10,10" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Grid.Column="0" x:Name="End_turn" Content="End Turn"  Style="{StaticResource FutureButton}" Margin="10,10,10,10" Width="100" Height="50" Click="endTurn"/>
-            <Button Grid.Column="1" x:Name="Show_hint" Content="Show Hint" Style="{StaticResource FutureButton}" Margin="10,10,10,10" Width="100" Height="50" Click="showHint"/>
+            <!--<Button Grid.Column="1" x:Name="Show_hint" Content="Show Hint" Style="{StaticResource FutureButton}" Margin="10,10,10,10" Width="100" Height="50" Click="showHint"/>-->
             <Button Grid.Column="2" x:Name="Undo" Content="Undo" IsEnabled="false" Style="{StaticResource FutureButton}" Width="100" Height="50" Margin="10,10,10,10" Click="Cheat"/>
             <Button Grid.Column="3" x:Name="Show_help" Content="Help !" Style="{StaticResource FutureButton}" Margin="10,10,10,10" Width="100" Height="50" Click="PopHelp"/> 
         </StackPanel>

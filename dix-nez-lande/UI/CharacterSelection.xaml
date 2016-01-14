@@ -50,7 +50,7 @@
                         <ListBoxItem Content="Standard" Tag="2"/>
                     </ListBox>
                 </WrapPanel>
-                <CheckBox Name="allowCheat" Content="Cheat mode." Foreground="#c1cdcd" VerticalAlignment="Center" IsChecked="True"/>
+                <CheckBox Name="allowCheat" Content="Cheat mode." Foreground="#c1cdcd" VerticalAlignment="Center" IsChecked="False" IsEnabled="False"/>
             </WrapPanel>
             <Button Grid.Row="1" Content="GO" Margin="10,10,10,10"  FontSize="72" FontFamily="./resources/#Imagine Font" Click="playGame"
                 Background="#c1cdcd" Style="{StaticResource FutureButton}" 

@@ -43,6 +43,12 @@ namespace dix_nez_lande
         * Est-ce que la case situé en x,y est une destination
         * acceptable pour la race r
         */
-        Boolean canMove(int x, int y, Race r);
+        bool canMove(int x, int y, Race r);
+
+        /**
+        * Calcul si la distance entre u et p
+        * est reglementaire
+        */
+        bool accessible(Position p, Unit u);
     }
 }

@@ -82,7 +82,7 @@ namespace dix_nez_lande.Implem
         {
             Race r = p.race;
             Random rand = new Random();
-            int pos = 0;
+            int pos = 0, posX=0, posY=0;
             if (numPlayer == 1)
             {
                 while (!positionValide(pos, r))
@@ -91,6 +91,7 @@ namespace dix_nez_lande.Implem
                     //la moitié haute de la carte
                     pos = rand.Next(0, (size* size)/2);
                 }
+                posX = 0;posY = 0;
             }
             else
             {
@@ -101,9 +102,9 @@ namespace dix_nez_lande.Implem
                     //la moitié basse de la carte
                     pos = rand.Next((size*size)/2, size*size);
                 }
+                posX = size - 1; posY = size - 1;
             }
-            int posX = pos % size;
-            int posY = pos / size;
+            
             Position position = PositionImpl.getPosition(posX, posY);
             foreach(Unit unit in p.units ) {
                 unit.pos = position;
@@ -126,7 +127,7 @@ namespace dix_nez_lande.Implem
         public void moveTo(Unit u, Position to)
         {
 
-            if ( (!canMove(to.x, to.y, u.race) &&  !accessible(to, u)) || u.aBouge ) { }
+            if (!canMove(to.x, to.y, u.race) || !accessible(to, u) || u.aBouge) { }
             else
             {
                 Console.WriteLine("L'unite " + u.name + " bouge de (" + u.pos.x + "," + u.pos.y + ") en (" + to.x + "," + to.y + ")");
@@ -201,7 +202,7 @@ namespace dix_nez_lande.Implem
             }
         }
 
-        public Boolean canMove(int x, int y, Race r)
+        public bool canMove(int x, int y, Race r)
         {
             return tiles[size * y + x].isAcceptable(r);
         }

@@ -5,7 +5,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
-        <!-- Pour évoter les effet moches sur les boutons-->
+        <!-- Pour éviter les effet moches sur les boutons-->
         <Style TargetType="{x:Type Button}" x:Key="FutureButton">
             <Setter Property="Template">
                 <Setter.Value>

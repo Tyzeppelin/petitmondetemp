@@ -36,7 +36,13 @@ namespace dix_nez_lande.Implem
         private int _points;
         public int points
         {
-            get { return _points; }
+            get {
+                List<Position> pts = new List<Position>();
+                foreach(Unit u in units)
+                    if (!pts.Contains(u.pos))
+                        pts.Add(u.pos);
+                _points = pts.Count;
+                return _points; }
             set { _points = value; }
         }
 
