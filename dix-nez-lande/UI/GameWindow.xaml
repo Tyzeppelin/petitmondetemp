@@ -90,7 +90,8 @@
             <Button Grid.Column="0" x:Name="End_turn" Content="End Turn"  Style="{StaticResource FutureButton}" Margin="20,20,20,20" Width="100" Height="50" Click="endTurn"/>
             <!--<Button Grid.Column="1" x:Name="Show_hint" Content="Show Hint" Style="{StaticResource FutureButton}" Margin="10,10,10,10" Width="100" Height="50" Click="showHint"/>-->
             <Button Grid.Column="2" x:Name="Undo" Content="Undo" IsEnabled="false" Style="{StaticResource FutureButton}" Margin="20,20,20,20" Width="100" Height="50" Click="Cheat"/>
-            <Button Grid.Column="3" x:Name="Show_help" Content="Help !" Style="{StaticResource FutureButton}" Margin="20,20,20,20" Width="100" Height="50" Click="PopHelp"/> 
+            <Button Grid.Column="3" x:Name="Show_help" Content="Help !" Style="{StaticResource FutureButton}" Margin="20,20,20,20" Width="100" Height="50" Click="PopHelp"/>
+            <Button Grid.Column="4" x:Name="Restart" Content="Restart" Style="{StaticResource FutureButton}" Margin="20,20,20,20" Width="100" Height="50" Click="RestartGame" />
         </StackPanel>
     </Grid>
 </Window>

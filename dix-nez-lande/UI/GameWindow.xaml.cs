@@ -328,5 +328,14 @@ namespace UI
                 move_textBloc.Text = "";
             }
         }
+
+        private void RestartGame(object sender, RoutedEventArgs e)
+        {
+            Window old = App.Current.MainWindow;
+            GameWindow megastrat = new GameWindow(game, isCheatAllowed);
+            App.Current.MainWindow = megastrat;
+            App.Current.MainWindow.Show();
+            old.Close();
+        }
     }
 }
