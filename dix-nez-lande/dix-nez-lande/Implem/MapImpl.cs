@@ -125,9 +125,11 @@ namespace dix_nez_lande.Implem
 
         public void moveTo(Unit u, Position to)
         {
-            if ( !canMove(to.x, to.y, u.race) ||  !accessible(to, u) || u.aBouge ) { }
+
+            if ( (!canMove(to.x, to.y, u.race) &&  !accessible(to, u)) || u.aBouge ) { }
             else
             {
+                Console.WriteLine("L'unite " + u.name + " bouge de (" + u.pos.x + "," + u.pos.y + ") en (" + to.x + "," + to.y + ")");
                 Position from = u.pos;
 
                 //Récupération de l'ancienne liste
