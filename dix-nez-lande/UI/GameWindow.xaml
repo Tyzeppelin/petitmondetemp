@@ -64,26 +64,48 @@
                     </Style>
                 </Grid.Resources>
             </Grid>
-            <Grid x:Name="Selected_unit" Grid.Column="1" VerticalAlignment="Center" Margin="20,0,0,0"  Background="AntiqueWhite">
+            <Grid Grid.Column="1" VerticalAlignment="Center">
                 <Grid.RowDefinitions >
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Selected Unit" Style="{StaticResource SuchText}" FontSize="35" Grid.Row="0"/>
-                <TextBlock x:Name="name_textBloc" Style="{StaticResource SuchText}" Grid.Row="1"/>
-                <TextBlock x:Name="race_textBloc" Style="{StaticResource SuchText}" Grid.Row="2"/>
-                <TextBlock x:Name="life_textBloc" Style="{StaticResource SuchText}" Grid.Row="3"/>
-                <TextBlock x:Name="attack_textBloc" Style="{StaticResource SuchText}" Grid.Row="4"/>
-                <TextBlock x:Name="defense_textBloc" Style="{StaticResource SuchText}" Grid.Row="5"/>
-                <TextBlock x:Name="move_textBloc" Style="{StaticResource SuchText}" Grid.Row="6" />
+                <Grid x:Name="Points" Grid.Row="0" VerticalAlignment="Center" Margin="20,0,0,20" Background="LightGray">
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Points" Style="{StaticResource SuchText}" FontSize="35" Grid.Row="0"/>
+                    <TextBlock x:Name="player1_pt" Style="{StaticResource SuchText}" Grid.Row="1"/>
+                    <TextBlock x:Name="player2_pt" Style="{StaticResource SuchText}" Grid.Row="2"/>
+                </Grid>
+                <Grid x:Name="Selected_unit" Grid.Row="1" VerticalAlignment="Center" Margin="20,20,0,0"  Background="LightGray">
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Selected Unit" Style="{StaticResource SuchText}" FontSize="35" Grid.Row="0"/>
+                    <TextBlock x:Name="name_textBloc" Style="{StaticResource SuchText}" Grid.Row="1"/>
+                    <TextBlock x:Name="race_textBloc" Style="{StaticResource SuchText}" Grid.Row="2"/>
+                    <TextBlock x:Name="life_textBloc" Style="{StaticResource SuchText}" Grid.Row="3"/>
+                    <TextBlock x:Name="attack_textBloc" Style="{StaticResource SuchText}" Grid.Row="4"/>
+                    <TextBlock x:Name="defense_textBloc" Style="{StaticResource SuchText}" Grid.Row="5"/>
+                    <TextBlock x:Name="move_textBloc" Style="{StaticResource SuchText}" Grid.Row="6" />
+                </Grid>
             </Grid>
         </Grid>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">

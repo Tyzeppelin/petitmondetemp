@@ -110,6 +110,7 @@ namespace UI
             }
 
             Game_Grid.UpdateLayout();
+            printPoints();
         }
 
         private Image colorTile(Tile tile)
@@ -327,6 +328,14 @@ namespace UI
                 move_textBloc.Text = "";
                 move_textBloc.Text = "";
             }
+        }
+
+        private void printPoints()
+        {
+            Player p1 = game.players[0];
+            Player p2 = game.players[1];
+            player1_pt.Text = p1.name + " : " + p1.points;
+            player2_pt.Text = p2.name + " : " + p2.points;
         }
 
         private void RestartGame(object sender, RoutedEventArgs e)

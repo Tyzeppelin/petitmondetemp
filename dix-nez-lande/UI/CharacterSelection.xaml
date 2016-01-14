@@ -18,19 +18,19 @@
                 <WrapPanel Orientation="Vertical">
 
                     <TextBox  Name="P1Name"  Text="Player1" FontSize="60" Background="#181818" Foreground="#aa0000" FontFamily="./resources/#Ace Futurism" Width="200" Height="55"/>
-                    <ListBox  Name="P1Race" Background="#181818" FontSize="40" Foreground="#c1cdcd" FontFamily="./resources/#Break Down" 
+                    <ListBox  Name="P1Race" Background="#181818" FontSize="40" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft" 
                               Style="{StaticResource SwagList}"
                               >
                         <ListBoxItem Content="Orc"/>
                         <ListBoxItem Content="Elf"/>
-                        <ListBoxItem Content="Humain" IsSelected="True"/>
+                        <ListBoxItem Content="Human" IsSelected="True"/>
                     </ListBox>
                 </WrapPanel>
 
 
                 <WrapPanel Orientation="Vertical">
                     <TextBox  Name="P2Name"  Text="Player2"  FontSize="60" Background="#181818" Foreground="#618dc0" FontFamily="./resources/#Ace Futurism"  Width="200" Height="55"/>
-                    <ListBox  Name="P2Race" Background="#181818" FontSize="40" Foreground="#c1cdcd" FontFamily="./resources/#Break Down"
+                    <ListBox  Name="P2Race" Background="#181818" FontSize="40" Foreground="#c1cdcd" FontFamily="./resources/#Minecraft"
                               Style="{StaticResource SwagList}"
                               >
                         <ListBoxItem Content="Orc"/>
