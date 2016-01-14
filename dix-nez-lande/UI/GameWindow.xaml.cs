@@ -246,7 +246,8 @@ namespace UI
 
                 if (movingUnit != null)
                 {
-                    Unit u = game.current.getUnit(co, ro);
+                    int i = game.current == game.players[0] ? 1 : 0;
+                    Unit u = game.players[i].getUnit(co, ro);
                     Position p = PositionImpl.getPosition(co, ro);
                     if (u == null)
                     {
