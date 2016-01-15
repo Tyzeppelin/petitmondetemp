@@ -226,6 +226,7 @@ namespace UI
             {
                 MessageBox.Show("aze"+game.nbTurn);
                 this.game.undo();
+                
                 this.updateInfoBox();
                 this.updateGrid();
             }

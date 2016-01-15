@@ -88,9 +88,20 @@ namespace dix_nez_lande.Implem
             {
                 Console.WriteLine("-stocjkage");
                 GameState gs = saveStates.stateToSave;
-                gs.player1 = current;
+
+                List<Unit> lu = new List<Unit>();
+                lu.AddRange(UnitFactory.getUnitFactory().createArmy(current.race, current.units.Count));
+                int i = 0;
+                while (i < lu.Count)
+                {
+                    lu[i].pos = current.units[i].pos;
+                    i++;
+                }
+                
+                Player p = PlayerFactory.getPlayerFactory().createPlayer(current.race, current.name, lu);
+                gs.player1 = p;
                 gs.nbTurn = nbTurn;
-                gs.units = map.units;
+                gs.units = clone(map.units);
                 saveStates.set(gs);
                 saveStates.save();
                 saveStates.set(GameStateFactory.getStateFactory().createGameState());
@@ -99,7 +110,17 @@ namespace dix_nez_lande.Implem
             {
                 Console.WriteLine("-settage");
                 GameState gs = saveStates.stateToSave;
-                gs.player2 = current;
+                List<Unit> lu = new List<Unit>();
+                lu.AddRange(UnitFactory.getUnitFactory().createArmy(current.race, current.units.Count));
+                int i = 0;
+                while (i < lu.Count)
+                {
+                    lu[i].pos = current.units[i].pos;
+                    i++;
+                }
+
+                Player p = PlayerFactory.getPlayerFactory().createPlayer(current.race, current.name, lu);
+                gs.player2 = p;
                 //saveStates.set(gs);
             }
         }
@@ -168,6 +189,29 @@ namespace dix_nez_lande.Implem
                     res.Add(p);
                 }
             }
+            return res;
+        }
+
+        public Dictionary<Position, List<Unit>> clone(Dictionary<Position, List<Unit>> d)
+        {
+            Dictionary<Position, List<Unit>> res = new Dictionary<Position, List<Unit>>();
+            UnitFactory f = UnitFactory.getUnitFactory();
+            foreach(Position p in d.Keys)
+            {
+                if (d[p].Count == 0) res.Add(p, new List<Unit>());
+                else
+                {
+                    List<Unit> lu = new List<Unit>();
+                    lu.AddRange(UnitFactory.getUnitFactory().createArmy(current.race, d[p].Count));
+                    int i = 0;
+                    while (i < lu.Count)
+                    {
+                        lu[i].pos = d[p][i].pos;
+                        i++;
+                    }
+                }
+            }
+
             return res;
         }
     }

@@ -42,9 +42,10 @@ namespace dix_nez_lande.Implem
 
         public GameState pop()
         {
+            stateToSave = GameStateFactory.getStateFactory().createGameState();
             if (states.Count != 0)
             {
-                GameState g = states[states.Count - 1];
+                GameState g = states.Last();
                 states.RemoveAt(states.Count - 1);
                 return g;
             }
