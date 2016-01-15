@@ -49,7 +49,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Name="infoBox" HorizontalAlignment="Center" Margin="10,10,10,10" Foreground="WhiteSmoke" FontSize="30"/>
-        <Grid x:Name="Game_manager" Grid.Row="1" HorizontalAlignment="Center" >
+        <Grid x:Name="Game_manager" Grid.Row="1" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -64,7 +64,7 @@
                     </Style>
                 </Grid.Resources>
             </Grid>
-            <Grid Grid.Column="1" VerticalAlignment="Center">
+            <Grid Grid.Column="1" VerticalAlignment="Center" Background="#FF595D63" Margin="20,0,0,0">
                 <Grid.RowDefinitions >
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -72,7 +72,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Grid x:Name="Points" Grid.Row="0" VerticalAlignment="Center" Margin="20,0,0,20" Background="LightGray">
+                <Grid x:Name="Points" Grid.Row="0" VerticalAlignment="Center" Margin="10,10,10,10" Background="LightGray">
                     <Grid.RowDefinitions >
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -85,7 +85,7 @@
                     <TextBlock x:Name="player1_pt" Style="{StaticResource SuchText}" Grid.Row="1"/>
                     <TextBlock x:Name="player2_pt" Style="{StaticResource SuchText}" Grid.Row="2"/>
                 </Grid>
-                <Grid x:Name="Selected_unit" Grid.Row="1" VerticalAlignment="Center" Margin="20,20,0,0"  Background="LightGray">
+                <Grid x:Name="Selected_unit" Grid.Row="1" VerticalAlignment="Center" Margin="10,0,10,10"  Background="LightGray">
                     <Grid.RowDefinitions >
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
