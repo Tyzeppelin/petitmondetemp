@@ -224,7 +224,6 @@ namespace UI
         {
             if (game.nbTurn != turns)
             {
-                MessageBox.Show("aze"+game.nbTurn);
                 this.game.undo();
                 
                 this.updateInfoBox();
