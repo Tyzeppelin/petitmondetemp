@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:UI"
       mc:Ignorable="d" 
       Height="700" Width="800"
-      Title="GameWindow" Background="#232323" Icon="/resources/icon.png">
+      Title="♫ It's a Small World ♫" Background="#232323" Icon="/resources/icon.png">
 
     <Window.Resources>
         <!-- Pour éviter les effet moches sur les boutons-->
